@@ -57,7 +57,7 @@ with changing raw data, email the WQX help desk: WQX@epa.gov'><!-- mathjax --><s
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="../articles/CONTRIBUTING.html">Contributing</a>
-    <a class="dropdown-item" href="../articles/TADAModule1.html">Tools for Automated Data Analysis (TADA) Module 1: Water Quality Portal Data Discovery and Cleaning</a>
+    <a class="dropdown-item" href="../articles/TADAModule1.html">TADA Module 1: Water Quality Portal Data Discovery and Cleaning</a>
   </div>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
@@ -139,7 +139,8 @@ default is errorsonly = FALSE.</p></dd>
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>When clean_outsideUSA is "no", "change sign", or clean_imprecise argument is FALSE,
+<p>Returns input TADA dataset with the added "TADA.InvalidCoordinates.Flag" column.
+When clean_outsideUSA is "no", "change sign", or clean_imprecise argument is FALSE,
 a column flagging rows with the respective QA check is appended to the input
 dataframe. When clean_outsideUSA is "remove" or clean_imprecise is TRUE,
 "invalid" or "imprecise" data is removed, respectively. When errorsonly is TRUE,

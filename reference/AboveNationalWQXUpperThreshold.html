@@ -47,7 +47,7 @@ errorsonly = FALSE."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/a
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="../articles/CONTRIBUTING.html">Contributing</a>
-    <a class="dropdown-item" href="../articles/TADAModule1.html">Tools for Automated Data Analysis (TADA) Module 1: Water Quality Portal Data Discovery and Cleaning</a>
+    <a class="dropdown-item" href="../articles/TADAModule1.html">TADA Module 1: Water Quality Portal Data Discovery and Cleaning</a>
   </div>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
@@ -111,14 +111,14 @@ flagged as above the upper WQX threshold. Default is errorsonly = FALSE.</p></dd
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>When clean = FALSE and errorsonly = FALSE, a column which flags data above the
-upper WQX threshold is appended to the dataframe. When clean = FALSE and
+<p>The input TADA dataset with the added
+TADA.AboveNationalWQXUpperThreshold column. When clean = FALSE and
 errorsonly = TRUE, the dataframe is filtered to show only data found above
-the WQX threshold. When clean = TRUE and errorsonly = FALSE, rows with values
-that are above the upper WQX threshold are removed from the dataframe and no
-column is appended. When clean = TRUE and and errorsonly = TRUE, the function
-is not executed and an error message is returned. Defaults are clean = TRUE and
-errorsonly = FALSE.</p>
+the WQX threshold. When clean = TRUE and errorsonly = FALSE, rows with
+values that are above the upper WQX threshold are removed from the
+dataframe and no column is appended. When clean = TRUE and and errorsonly =
+TRUE, the function is not executed and an error message is returned.
+Defaults are clean = TRUE and errorsonly = FALSE.</p>
     </div>
 
     <div class="section level2">

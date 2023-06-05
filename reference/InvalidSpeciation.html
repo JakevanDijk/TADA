@@ -35,7 +35,7 @@ Default is errorsonly = FALSE.'><!-- mathjax --><script src="https://cdnjs.cloud
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="../articles/CONTRIBUTING.html">Contributing</a>
-    <a class="dropdown-item" href="../articles/TADAModule1.html">Tools for Automated Data Analysis (TADA) Module 1: Water Quality Portal Data Discovery and Cleaning</a>
+    <a class="dropdown-item" href="../articles/TADAModule1.html">TADA Module 1: Water Quality Portal Data Discovery and Cleaning</a>
   </div>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
@@ -104,9 +104,8 @@ errorsonly = TRUE. Default is errorsonly = FALSE.</p></dd>
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>When clean = "none" and errorsonly = FALSE, this function adds the
-following column to your dataframe: TADA.MethodSpeciation.Flag. This column
-flags each CharacteristicName and MethodSpecificationName combination in your
+<p>This function adds TADA.MethodSpeciation.Flag to the dataframe. This column
+flags each TADA.CharacteristicName and MethodSpecificationName combination in your
 dataframe as either "Nonstandardized", "Invalid", or "Valid". When clean = "none"
 and errorsonly = TRUE, the dataframe is filtered to show only the "Invalid" and
 "Nonstandardized data; the column TADA.MethodSpeciation.Flag is still appended.

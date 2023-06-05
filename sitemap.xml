@@ -46,21 +46,6 @@
     <loc>usepa.github.io/TADA/reference/ConvertSpecialChars.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/FilterFieldReview.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/FilterFields.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/FilterParFieldReview.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/FilterParFields.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/FilterParList.html</loc>
-  </url>
-  <url>
     <loc>usepa.github.io/TADA/reference/GetActivityTypeRef.html</loc>
   </url>
   <url>
@@ -100,9 +85,6 @@
     <loc>usepa.github.io/TADA/reference/JoinWQPProfiles.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/MeasureValueSpecialCharacters.html</loc>
-  </url>
-  <url>
     <loc>usepa.github.io/TADA/reference/Nutrients_Utah.html</loc>
   </url>
   <url>
@@ -121,12 +103,6 @@
     <loc>usepa.github.io/TADA/reference/QualityControlActivity.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/RemoveEmptyColumns.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/TADA.env.html</loc>
-  </url>
-  <url>
     <loc>usepa.github.io/TADA/reference/TADABigdataRetrieval.html</loc>
   </url>
   <url>
@@ -140,6 +116,9 @@
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_boxplot.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_hist.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_stats.html</loc>
@@ -199,10 +178,22 @@
     <loc>usepa.github.io/TADA/reference/checkType.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/decimalnumcount.html</loc>
+    <loc>usepa.github.io/TADA/reference/createComparableId.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/decimalplaces.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/fieldCounts.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/fieldValuesPie.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/fieldValuesTable.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/getTADATemplate.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/idCensoredData.html</loc>

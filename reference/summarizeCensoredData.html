@@ -29,7 +29,7 @@ censored data estimation methods that depend upon the distribution of the datase
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="../articles/CONTRIBUTING.html">Contributing</a>
-    <a class="dropdown-item" href="../articles/TADAModule1.html">Tools for Automated Data Analysis (TADA) Module 1: Water Quality Portal Data Discovery and Cleaning</a>
+    <a class="dropdown-item" href="../articles/TADAModule1.html">TADA Module 1: Water Quality Portal Data Discovery and Cleaning</a>
   </div>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
@@ -82,7 +82,7 @@ censored data estimation methods that depend upon the distribution of the datase
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>A summary dataframe yielding sample ncounts, censored data ncounts,
+<p>A summary dataframe yielding measurement ncounts, censored data ncounts,
 and percent of dataset that is censored, aggregated by user-defined grouping
 variables. Also produces a column "TADA.Censored.Note" that identifies
 when there is sufficient non-censored data to estimate censored data using statistical
@@ -92,6 +92,18 @@ on the Baseline Assessment of Left-Censored Environmental Data Using R Tech Note
 More info can be found here: https://www.epa.gov/sites/default/files/2016-05/documents/tech_notes_10_jun2014_r.pdf</p>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Load example dataset:</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"TADAProfileClean18_TNonly"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># TADAProfileClean18_TNonly dataframe is clean, harmonized, and filtered</span></span></span>
+<span class="r-in"><span><span class="co"># down to one Comparable Data Identifier</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Create summarizeCensoredData table:</span></span></span>
+<span class="r-in"><span><span class="va">TADAProfileClean18_TNonly_summarizeCensoredData</span> <span class="op">&lt;-</span> <span class="fu">summarizeCensoredData</span><span class="op">(</span><span class="va">TADAProfileClean18_TNonly</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>
 

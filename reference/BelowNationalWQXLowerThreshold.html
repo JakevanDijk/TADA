@@ -41,7 +41,7 @@ errorsonly = FALSE"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="../articles/CONTRIBUTING.html">Contributing</a>
-    <a class="dropdown-item" href="../articles/TADAModule1.html">Tools for Automated Data Analysis (TADA) Module 1: Water Quality Portal Data Discovery and Cleaning</a>
+    <a class="dropdown-item" href="../articles/TADAModule1.html">TADA Module 1: Water Quality Portal Data Discovery and Cleaning</a>
   </div>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
@@ -103,15 +103,16 @@ errorsonly = FALSE.</p></dd>
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>When clean = FALSE and errorsonly = FALSE, the following column is
-added to your dataframe: TADA.ResultValueBelowLowerThreshold.Flag. This column flags rows with
+<p>The input TADA dataset with the added
+TADA.BelowNationalWQXLowerThreshold column. This column flags rows with
 data that are below the lower WQX threshold. When clean = FALSE and
-errorsonly = TRUE, the dataframe is filtered to show only the rows which are
-flagged as below the WQX threshold; the column TADA.ResultValueBelowLowerThreshold.Flag is still
-appended. When clean = TRUE and errorsonly = FALSE, data that is below the lower
-WQX threshold is removed from the dataframe. When clean = TRUE and
-errorsonly = TRUE, the function does not execute and an error message is
-returned. The defaults are clean = TRUE and errorsonly = FALSE.</p>
+errorsonly = TRUE, the dataframe is filtered to show only the rows which
+are flagged as below the WQX threshold; the column
+TADA.ResultValueBelowLowerThreshold.Flag is still appended. When clean =
+TRUE and errorsonly = FALSE, data that is below the lower WQX threshold is
+removed from the dataframe. When clean = TRUE and errorsonly = TRUE, the
+function does not execute and an error message is returned. The defaults
+are clean = TRUE and errorsonly = FALSE.</p>
     </div>
 
     <div class="section level2">

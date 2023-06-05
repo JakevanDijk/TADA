@@ -37,7 +37,7 @@ accompanying QAPP document is required to use data in assessments.'><!-- mathjax
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="../articles/CONTRIBUTING.html">Contributing</a>
-    <a class="dropdown-item" href="../articles/TADAModule1.html">Tools for Automated Data Analysis (TADA) Module 1: Water Quality Portal Data Discovery and Cleaning</a>
+    <a class="dropdown-item" href="../articles/TADAModule1.html">TADA Module 1: Water Quality Portal Data Discovery and Cleaning</a>
   </div>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
@@ -91,9 +91,10 @@ document from the dataframe when clean = TRUE. Default is clean = FALSE.</p></dd
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>When clean = FALSE, a column is appended to the input data set that
+<p>Returns input dataframe with the added "TADA.QAPPDocAvailable" column.
+When clean = FALSE, no data are removed and the TADA.QAPPDocAvailable column
 flags rows with an associated QAPP document. When clean = TRUE,
-data without an associated QAPP document is removed from the dataframe.</p>
+data without an associated QAPP document are removed from the dataframe.</p>
     </div>
 
     <div class="section level2">
