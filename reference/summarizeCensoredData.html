@@ -30,6 +30,7 @@ censored data estimation methods that depend upon the distribution of the datase
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="../articles/CONTRIBUTING.html">Contributing</a>
     <a class="dropdown-item" href="../articles/TADAModule1.html">TADA Module 1: Water Quality Portal Data Discovery and Cleaning</a>
+    <a class="dropdown-item" href="../articles/TADATrainingShepherdstown.html">TADA R Package Training: A Markdown for Shepherdstown</a>
     <a class="dropdown-item" href="../articles/WQXValidationService.html">WQX QAQC Service User Guide</a>
   </div>
 </li>
@@ -96,12 +97,12 @@ More info can be found here: https://www.epa.gov/sites/default/files/2016-05/doc
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Load example dataset:</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"TADAProfileClean18_TNonly"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="co"># TADAProfileClean18_TNonly dataframe is clean, harmonized, and filtered</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">TADAProfileCleanTP</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># TADAProfileCleanTP dataframe is clean, harmonized, and filtered</span></span></span>
 <span class="r-in"><span><span class="co"># down to one Comparable Data Identifier</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Create summarizeCensoredData table:</span></span></span>
-<span class="r-in"><span><span class="va">TADAProfileClean18_TNonly_summarizeCensoredData</span> <span class="op">&lt;-</span> <span class="fu">summarizeCensoredData</span><span class="op">(</span><span class="va">TADAProfileClean18_TNonly</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">TADAProfileCleanTP_summarizeCensoredData</span> <span class="op">&lt;-</span> <span class="fu">summarizeCensoredData</span><span class="op">(</span><span class="va">TADAProfileCleanTP</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
