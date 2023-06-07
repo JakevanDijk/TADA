@@ -13,6 +13,9 @@
     <loc>usepa.github.io/TADA/articles/TADAModule1.html</loc>
   </url>
   <url>
+    <loc>usepa.github.io/TADA/articles/WQXValidationService.html</loc>
+  </url>
+  <url>
     <loc>usepa.github.io/TADA/articles/index.html</loc>
   </url>
   <url>
@@ -28,19 +31,7 @@
     <loc>usepa.github.io/TADA/reference/AggregatedContinuousData.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/AutoFilter.html</loc>
-  </url>
-  <url>
     <loc>usepa.github.io/TADA/reference/BelowNationalWQXLowerThreshold.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/ConvertDepthUnits.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/ConvertResultUnits.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/ConvertSpecialChars.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/GetActivityTypeRef.html</loc>
@@ -85,9 +76,6 @@
     <loc>usepa.github.io/TADA/reference/Nutrients_Utah.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/OrderTADACols.html</loc>
-  </url>
-  <url>
     <loc>usepa.github.io/TADA/reference/PotentialDuplicateRowID.html</loc>
   </url>
   <url>
@@ -112,6 +100,21 @@
     <loc>usepa.github.io/TADA/reference/TADAReadWQPWebServices.html</loc>
   </url>
   <url>
+    <loc>usepa.github.io/TADA/reference/TADA_AutoClean.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_ConvertDepthUnits.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_ConvertResultUnits.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_ConvertSpecialChars.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_OrderCols.html</loc>
+  </url>
+  <url>
     <loc>usepa.github.io/TADA/reference/TADA_boxplot.html</loc>
   </url>
   <url>
@@ -125,9 +128,6 @@
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADAdataRetrieval.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/TADAprofileCheck.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TribalData.html</loc>
@@ -164,9 +164,6 @@
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/WaterTemp_US.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/autoclean.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/checkColumns.html</loc>
