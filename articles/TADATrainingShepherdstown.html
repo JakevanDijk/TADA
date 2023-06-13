@@ -98,8 +98,8 @@ the user should be confident that their data are properly documented and
 applicable to the analysis at hand.</p>
 <p><strong>Note: TADA is still under development. New functionality is
 added weekly, and sometimes we need to make bug fixes in response to
-tester and user feedback. We appreciate your interest (and patience) in
-these helpful tools.</strong></p>
+tester and user feedback. We appreciate your feedback, patience, and
+interest in these helpful tools.</strong></p>
 </div>
 <div class="section level2">
 <h2 id="customize-or-contribute">Customize or contribute<a class="anchor" aria-label="anchor" href="#customize-or-contribute"></a>
@@ -123,6 +123,10 @@ conventions.</p>
 <p>Users can install the TADA package from GitHub into their R library
 using the <code>remotes</code> package. Copy and paste the code below
 into your R or RStudio console to download and install.</p>
+<p>TADA package relies on other packages, therefore you may be prompted
+in the console to update dependency packages that have more recent
+versions available. If you see this prompt, it is recommended to update
+all of them (enter 1 into the console).</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Install TADA</span></span>
 <span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="st">"remotes"</span><span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span><span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
@@ -133,13 +137,15 @@ into your R or RStudio console to download and install.</p>
 <p>It’s that easy! The most stable branch for TADA right now is the
 develop branch. Contributors generally create their own branches based
 on develop, make some improvements, and then submit a pull request to be
-reviewed by the TADA Team. However, you are welcome to download any
-branch you’d like using the <code>ref</code> input in
-<code>install_github</code> .</p>
-<p>The following code block ensures the proper packages needed to run
-the code in this RMarkdown document are loaded. However, users may also
-use the <code>package name:: package function</code> notation to avoid
-the list of <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library()</a></code> calls.</p>
+reviewed by the TADA Team. Once approved, updates are then merged into
+the develop branch. However, you are welcome to download any branch
+you’d like using the <code>ref</code> input in
+<code>install_github</code> (see code chunk above). This functionality
+is mainly only useful to TADA package developers/contributors.</p>
+<p>The following code block ensures the additional packages needed to
+run the code in this RMarkdown document are loaded. However, users may
+also use the <code>package name:: package function</code> notation to
+avoid the list of <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library()</a></code> calls.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load tidyverse</span></span>
 <span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="st">"tidyverse"</span><span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span><span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
@@ -169,22 +175,25 @@ column names and create new TADA-specific columns based on these
 elements. Users may upload their own custom dataset into R for use with
 TADA by ensuring their column names and data formats (e.g. numeric,
 character) align with WQP profiles.</p>
-<p>If you are interested in the columns headers and formats required to
-run TADA, use the function below, which saves an example spreadsheet to
-the user’s working directory. You can also take a look at an example
-dataset, like <code><a href="../reference/Nutrients_Utah.html">TADA::Nutrients_Utah</a></code> to get an idea of the
-data structure and format.</p>
+<p>If you are interested in reviewing the column headers and formats
+required to run TADA, use the function below, which saves an example
+spreadsheet to the user’s working directory. You can also take a look at
+an example dataset, like <code><a href="../reference/Nutrients_Utah.html">TADA::Nutrients_Utah</a></code> to get an
+idea of the data structure and format.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># find your working directory</span></span>
-<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/getTADATemplate.html">getTADATemplate</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># download template to working directory</span></span></code></pre></div>
+<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/getTADATemplate.html">getTADATemplate</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># download template to working directory</span></span>
+<span></span>
+<span><span class="co"># uncomment below to review example dataset</span></span>
+<span><span class="co"># Nutrients_Utah &lt;- TADA::Nutrients_Utah </span></span></code></pre></div>
 <p><code>TADAdataRetrieval</code> is built upon USGS’s
 <code>readWQPdata</code> function within the dataRetrieval package,
-which uses API service calls to bring WQP data into the R environment.
+which uses web service calls to bring WQP data into the R environment.
 Additionally, <code>TADAdataRetrieval</code> performs some basic quality
 control checks on the data using new TADA-specific columns to preserve
 the original dataset:</p>
 <ul>
-<li><p>Converts some key character columns to ALL CAPS for easier
+<li><p>Converts key character columns to ALL CAPS for easier
 harmonization and validation.</p></li>
 <li><p>Removes complete duplicate results.</p></li>
 <li><p>Identifies different classes of result values (numeric, text,
@@ -193,9 +202,10 @@ preceded by a tilde, etc.) and converts values to numeric where
 feasible.</p></li>
 <li><p>Fills NA result values and units with detection limit values and
 units where the detection condition text indicates a censored data
-value.</p></li>
-<li><p>Identifies censored data results and categorizes them as
-over-detect, non-detect, or other.</p></li>
+value. Identifies censored data results and categorizes them as
+over-detect, non-detect, or other. These data preprocessing features
+facilitate more complex detection limit value handling using other TADA
+functions (more details to come later in this training).</p></li>
 <li><p>Unifies result and depth units to common units to improve ease of
 data harmonization. See <code><a href="../reference/TADA_ConvertResultUnits.html">?TADA_ConvertResultUnits</a></code> and
 <code><a href="../reference/TADA_ConvertDepthUnits.html">?TADA_ConvertDepthUnits</a></code> for more information on these
@@ -203,7 +213,8 @@ processes.</p></li>
 </ul>
 <p>Let’s give it a try. <code>TADAdataRetrieval</code> follows similar
 parameterization to <code>readWQPdata</code>, but check out the <a href="https://usepa.github.io/TADA/reference/TADAdataRetrieval.html">help
-page</a> for all input parameters and several examples.</p>
+page</a> or enter ?TADA::TADAdataRetrieval into the console for more
+information about input parameters and to see several examples.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># download data for NCTC's HUC12</span></span>
 <span><span class="va">dataset_0</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADAdataRetrieval.html">TADAdataRetrieval</a></span><span class="op">(</span></span>
@@ -229,10 +240,10 @@ WQP data profiles: Sample Results (Physical/Chemical), Site data, and
 Project data. This ensures that all important quality control columns
 are included in the dataset.</p>
 <p><strong>Note:</strong> USGS and EPA are working together to create
-WQP 3.0 data profiles. One data profile will contain the columns
-critical to TADA, removing the need to combine profiles in this first
-step. TADA package users likely will not notice a difference in their
-usage of the <code>TADAdataRetrieval</code> function, but it will
+WQP 3.0 data profiles. Once released, one data profile will contain the
+columns critical to TADA, removing the need to combine profiles in this
+first step. TADA package users likely will not notice a difference in
+their usage of the <code>TADAdataRetrieval</code> function, but it will
 simplify the steps needed to upload a custom or WQP GUI-downloaded
 dataset into the R package.</p>
 </div>
@@ -246,15 +257,14 @@ from the TADAdataRetrieval function.</p>
 <p><strong>Question 1: What are the dimensions of your
 dataset?</strong></p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">dataset_0</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">dataset_0</span><span class="op">)</span> <span class="co"># returns x and of x (as the numbers of rows and columns respectively)</span></span></code></pre></div>
 <p>Before we start filtering and flagging our data, let’s create a
-little function that performs dimension checks between the results that
-pass QC checks and those that do not. Dimension checks ensure we catch
-any situations where results may be lost or duplicated by counting the
-total number of rows in the input data frame, the total number of rows
-in the passing data frame, and the total number of rows in the removed
-data frame. The latter two should add up to the total number of rows of
-all the data.</p>
+function (dimCheck) that performs dimension checks between the results
+that pass each filter or QC flag check (and are retained) and those that
+do not (and are removed). These dimension checks ensure that the total
+number of rows in the original input dataset (all_result_num) equal the
+the total number of rows added up between the passing (pass_data) and
+removed (fail_data) data frames.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># defining a dimension check function that compares removed and retained data dimensions against the initial data input</span></span>
 <span><span class="va">dimCheck</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">all_result_num</span>, <span class="va">pass_data</span>, <span class="va">fail_data</span>, <span class="va">checkName</span><span class="op">)</span><span class="op">{</span></span>
@@ -267,19 +277,21 @@ all the data.</p>
 <span><span class="op">}</span><span class="kw">else</span><span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"Good to go. Zero results created or destroyed in "</span>,<span class="va">checkName</span>,<span class="st">" check."</span><span class="op">)</span><span class="op">)</span><span class="op">}</span></span>
 <span>  </span>
 <span><span class="op">}</span></span></code></pre></div>
-<p>Next, we can use the <code><a href="../reference/fieldCounts.html">fieldCounts()</a></code> function to see how
-many unique values are contained within each column of the dataset.
+<p>Next, we can use the TADA <code><a href="../reference/fieldCounts.html">fieldCounts()</a></code> function to see
+how many unique values are contained within each column of the dataset.
 We’re using the command <code>display = "all"</code> to view all of the
 columns but could also use <code>"most"</code> or <code>"key"</code> to
-cut down on the number of columns reviewed.</p>
+cut down on the number of columns reviewed. Enter ?TADA::fieldCounts()
+into the console for more information on this function.</p>
 <p><strong>Question 2: Which column should have a unique value in every
 row and why?</strong></p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># different columns displayed in table</span></span>
 <span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/fieldCounts.html">fieldCounts</a></span><span class="op">(</span><span class="va">dataset_0</span>, display <span class="op">=</span> <span class="st">"key"</span><span class="op">)</span></span>
 <span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/fieldCounts.html">fieldCounts</a></span><span class="op">(</span><span class="va">dataset_0</span>, display <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span></span></code></pre></div>
-<p><strong>Question 3: How many unique TADA.ActivityMediaNames exist in
-your dataset? Are there any media types that are not water?</strong></p>
+<p><strong>Question 3: How many unique ‘TADA.ActivityMediaName’ values
+exist in your dataset? Are there any media types that are not
+water?</strong></p>
 <p>TADA is currently designed to accommodate water data from the WQP.
 Let’s ensure that we remove all non-water data first.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
@@ -298,8 +310,8 @@ Let’s ensure that we remove all non-water data first.</p>
 <span><span class="fu">dimCheck</span><span class="op">(</span><span class="va">all_result_num</span>, <span class="va">dataset</span>, <span class="va">removed</span>, checkName <span class="op">=</span> <span class="st">"Activity Media"</span><span class="op">)</span></span></code></pre></div>
 <p>Two additional helper functions one can use at any step in the
 process are <code><a href="../reference/fieldValuesTable.html">fieldValuesTable()</a></code> and
-<code><a href="../reference/fieldValuesPie.html">fieldValuesPie()</a></code>. These functions create a summay table and
-pie chart (respectively) of all the unique values in a given column.
+<code><a href="../reference/fieldValuesPie.html">fieldValuesPie()</a></code>. These functions create a summary table
+and pie chart (respectively) of all the unique values in a given column.
 Let’s give it a try on ActivityTypeCode, which is a WQP column
 describing the type of sample collected for each result.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
