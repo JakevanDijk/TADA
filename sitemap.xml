@@ -118,6 +118,12 @@
     <loc>usepa.github.io/TADA/reference/TADA_ConvertSpecialChars.html</loc>
   </url>
   <url>
+    <loc>usepa.github.io/TADA/reference/TADA_FindPotentialDuplicates.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_NearbySites.html</loc>
+  </url>
+  <url>
     <loc>usepa.github.io/TADA/reference/TADA_OrderCols.html</loc>
   </url>
   <url>
@@ -197,9 +203,6 @@
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/idCensoredData.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/identifyPotentialDuplicates.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/index.html</loc>
