@@ -28,85 +28,25 @@
     <loc>usepa.github.io/TADA/index.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/AboveNationalWQXUpperThreshold.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/AggregatedContinuousData.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/BelowNationalWQXLowerThreshold.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/GetActivityTypeRef.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/GetDetCondRef.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/GetDetLimitRef.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/GetMeasureUnitRef.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/GetWQXCharValRef.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/HarmonizationRefTable.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/HarmonizeData.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/InvalidCoordinates.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/InvalidFraction.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/InvalidMethod.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/InvalidResultUnit.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/InvalidSpeciation.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/JoinWQPProfiles.html</loc>
-  </url>
-  <url>
     <loc>usepa.github.io/TADA/reference/NCTCShepherdstown_HUC12.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/Nutrients_Utah.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/PotentialDuplicateRowID.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/QAPPDocAvailable.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/QAPPapproved.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/QualityControlActivity.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/TADABigdataRetrieval.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/TADAOverviewMap.html</loc>
-  </url>
-  <url>
     <loc>usepa.github.io/TADA/reference/TADAProfileCleanTP.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/TADAReadWQPWebServices.html</loc>
+    <loc>usepa.github.io/TADA/reference/TADA_AutoClean.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/TADA_AutoClean.html</loc>
+    <loc>usepa.github.io/TADA/reference/TADA_BigDataRetrieval.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_CheckColumns.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_CheckType.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_ConvertDepthUnits.html</loc>
@@ -118,46 +58,136 @@
     <loc>usepa.github.io/TADA/reference/TADA_ConvertSpecialChars.html</loc>
   </url>
   <url>
+    <loc>usepa.github.io/TADA/reference/TADA_CreateComparableID.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_DataRetrieval.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_DecimalPlaces.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_FieldCounts.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_FieldValuesPie.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_FieldValuesTable.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_FindContinuousData.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_FindNearbySites.html</loc>
+  </url>
+  <url>
     <loc>usepa.github.io/TADA/reference/TADA_FindPotentialDuplicates.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/TADA_NearbySites.html</loc>
+    <loc>usepa.github.io/TADA/reference/TADA_FindQualityControlData.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_FlagCoordinates.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_FlagFraction.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_FlagMethod.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_FlagResultAboveThreshold.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_FlagResultBelowThreshold.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_FlagResultUnit.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_FlagSpeciation.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_GetActivityTypeRef.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_GetDetCondRef.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_GetDetLimitRef.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_GetMeasureUnitRef.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_GetSynonymRef.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_GetTemplate.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_GetWQXCharValRef.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_HarmonizeSynonyms.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_Histogram.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_IDCensoredData.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_JoinWQPProfiles.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_OrderCols.html</loc>
   </url>
   <url>
+    <loc>usepa.github.io/TADA/reference/TADA_OverviewMap.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_QAPPDocAvailable.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_QAPPapproved.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_ReadWQPWebServices.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_SimpleCensoredMethods.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_Stats.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_SummarizeCensoredData.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_SummarizeColumn.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_UpdateActivityTypeRef.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_UpdateDetCondRef.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_UpdateDetLimitRef.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_UpdateMeasureUnitRef.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_UpdateWQXCharValRef.html</loc>
+  </url>
+  <url>
     <loc>usepa.github.io/TADA/reference/TADA_boxplot.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/TADA_hist.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/TADA_stats.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/TADA_summarizeColumn.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/TADAdataRetrieval.html</loc>
-  </url>
-  <url>
     <loc>usepa.github.io/TADA/reference/TribalData.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/UpdateActivityTypeRef.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/UpdateDetCondRef.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/UpdateDetLimitRef.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/UpdateMeasureUnitRef.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/UpdateWQXCharValRef.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/WQXActivityTypeRef_Cached.html</loc>
@@ -178,33 +208,6 @@
     <loc>usepa.github.io/TADA/reference/WaterTemp_US.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/checkColumns.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/checkType.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/createComparableId.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/decimalplaces.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/fieldCounts.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/fieldValuesPie.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/fieldValuesTable.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/getTADATemplate.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/idCensoredData.html</loc>
-  </url>
-  <url>
     <loc>usepa.github.io/TADA/reference/index.html</loc>
   </url>
   <url>
@@ -217,12 +220,6 @@
     <loc>usepa.github.io/TADA/reference/resultphyschem.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/simpleCensoredMethods.html</loc>
-  </url>
-  <url>
     <loc>usepa.github.io/TADA/reference/station.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/summarizeCensoredData.html</loc>
   </url>
 </urlset>

@@ -74,7 +74,7 @@
       <img src="" class="logo" alt=""><h1>TADA R Package Training: A Markdown for Shepherdstown</h1>
                         <h4 data-toc-skip class="author">TADA Team</h4>
             
-            <h4 data-toc-skip class="date">2023-07-03</h4>
+            <h4 data-toc-skip class="date">2023-07-05</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/USEPA/TADA/blob/HEAD/vignettes/TADATrainingShepherdstown.Rmd" class="external-link"><code>vignettes/TADATrainingShepherdstown.Rmd</code></a></small>
       <div class="d-none name"><code>TADATrainingShepherdstown.Rmd</code></div>
@@ -164,7 +164,7 @@ reference</a> page on the GitHub site. Users can also access the help
 page for a given function in R or RStudio using the following format
 (example below): <code>?TADA::[name of TADA function]</code></p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="op">?</span><span class="fu">TADA</span><span class="fu">::</span><span class="va"><a href="../reference/TADAdataRetrieval.html">TADAdataRetrieval</a></span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="op">?</span><span class="fu">TADA</span><span class="fu">::</span><span class="va"><a href="../reference/TADA_DataRetrieval.html">TADA_DataRetrieval</a></span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="upload-data">Upload data<a class="anchor" aria-label="anchor" href="#upload-data"></a>
@@ -184,16 +184,16 @@ an example dataset, like <code><a href="../reference/Nutrients_Utah.html">TADA::
 idea of the data structure and format.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># find your working directory</span></span>
-<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/getTADATemplate.html">getTADATemplate</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># download template to working directory</span></span>
+<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu">getTADATemplate</span><span class="op">(</span><span class="op">)</span> <span class="co"># download template to working directory</span></span>
 <span></span>
 <span><span class="co"># uncomment below to review example dataset</span></span>
 <span><span class="co"># Nutrients_Utah &lt;- TADA::Nutrients_Utah </span></span></code></pre></div>
-<p><code>TADAdataRetrieval</code> is built upon USGS’s
+<p><code>TADA_DataRetrieval</code> is built upon USGS’s
 <code>readWQPdata</code> function within the dataRetrieval package,
 which uses web service calls to bring WQP data into the R environment.
-Additionally, <code>TADAdataRetrieval</code> performs some basic quality
-control checks on the data using new TADA-specific columns to preserve
-the original dataset:</p>
+Additionally, <code>TADA_DataRetrieval</code> performs some basic
+quality control checks on the data using new TADA-specific columns to
+preserve the original dataset:</p>
 <ul>
 <li><p>Converts key character columns to ALL CAPS for easier
 harmonization and validation.</p></li>
@@ -213,13 +213,13 @@ data harmonization. See <code><a href="../reference/TADA_ConvertResultUnits.html
 <code><a href="../reference/TADA_ConvertDepthUnits.html">?TADA_ConvertDepthUnits</a></code> for more information on these
 processes.</p></li>
 </ul>
-<p>Let’s give it a try. <code>TADAdataRetrieval</code> follows similar
-parameterization to <code>readWQPdata</code>, but check out the <a href="https://usepa.github.io/TADA/reference/TADAdataRetrieval.html">help
-page</a> or enter ?TADA::TADAdataRetrieval into the console for more
+<p>Let’s give it a try. <code>TADA_DataRetrieval</code> follows similar
+parameterization to <code>readWQPdata</code>, but check out the <a href="https://usepa.github.io/TADA/reference/TADA_DataRetrieval.html">help
+page</a> or enter ?TADA::TADA_DataRetrieval into the console for more
 information about input parameters and to see several examples.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># download data for NCTC's HUC12</span></span>
-<span><span class="co"># dataset_0 = TADA::TADAdataRetrieval(</span></span>
+<span><span class="co"># dataset_0 = TADA::TADA_DataRetrieval(</span></span>
 <span><span class="co">#   startDate = "2020-06-22",</span></span>
 <span><span class="co">#   endDate = "null",</span></span>
 <span><span class="co">#   countycode = "null",</span></span>
@@ -240,15 +240,15 @@ information about input parameters and to see several examples.</p>
 <span></span>
 <span><span class="co"># Let's take a look at all of the TADA-created columns:</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">dataset_0</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grepl</a></span><span class="op">(</span><span class="st">"TADA."</span>,<span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">dataset_0</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span></code></pre></div>
-<p>Currently, the <code>TADAdataRetrieval</code> function combines three
-WQP data profiles: Sample Results (Physical/Chemical), Site data, and
-Project data. This ensures that all important quality control columns
-are included in the dataset.</p>
+<p>Currently, the <code>TADA_DataRetrieval</code> function combines
+three WQP data profiles: Sample Results (Physical/Chemical), Site data,
+and Project data. This ensures that all important quality control
+columns are included in the dataset.</p>
 <p><strong>Note:</strong> USGS and EPA are working together to create
 WQP 3.0 data profiles. Once released, one data profile will contain the
 columns critical to TADA, removing the need to combine profiles in this
 first step. TADA package users likely will not notice a difference in
-their usage of the <code>TADAdataRetrieval</code> function, but it will
+their usage of the <code>TADA_DataRetrieval</code> function, but it will
 simplify the steps needed to upload a custom or WQP GUI-downloaded
 dataset into the R package.</p>
 </div>
@@ -257,7 +257,7 @@ dataset into the R package.</p>
 </h2>
 <p>Now that we’ve pulled the data into the R session, let’s take a look
 at it. Note that any column names with a leading “TADA.” were generated
-from the TADAdataRetrieval function.</p>
+from the TADA_DataRetrieval function.</p>
 <p>First, always good to take a look at the data frame dimensions.</p>
 <p><strong>Question 1: What are the dimensions of your
 dataset?</strong></p>
@@ -285,18 +285,18 @@ removed (fail_data) data frames.</p>
 <span></span>
 <span><span class="co"># let's first get the total number of rows in the dataset.</span></span>
 <span><span class="va">all_result_num</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">dataset_0</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span></code></pre></div>
-<p>Next, we can use the TADA <code><a href="../reference/fieldCounts.html">fieldCounts()</a></code> function to see
-how many unique values are contained within each column of the dataset.
-The function can either return all column counts, most, or just the key
-columns. We’ll try the input with <code>display = "key"</code> and
-<code>display = "all"</code>. Enter ?TADA::fieldCounts() into the
-console for more information on this function.</p>
+<p>Next, we can use the TADA <code><a href="../reference/TADA_FieldCounts.html">TADA_FieldCounts()</a></code> function to
+see how many unique values are contained within each column of the
+dataset. The function can either return all column counts, most, or just
+the key columns. We’ll try the input with <code>display = "key"</code>
+and <code>display = "all"</code>. Enter ?TADA::TADA_FieldCounts() into
+the console for more information on this function.</p>
 <p><strong>Question 2: Which column should have a unique value in every
 row and why?</strong></p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/fieldCounts.html">fieldCounts</a></span><span class="op">(</span><span class="va">dataset_0</span>, display <span class="op">=</span> <span class="st">"key"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FieldCounts.html">TADA_FieldCounts</a></span><span class="op">(</span><span class="va">dataset_0</span>, display <span class="op">=</span> <span class="st">"key"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/fieldCounts.html">fieldCounts</a></span><span class="op">(</span><span class="va">dataset_0</span>, display <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FieldCounts.html">TADA_FieldCounts</a></span><span class="op">(</span><span class="va">dataset_0</span>, display <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span></span></code></pre></div>
 <p><strong>Question 3: How many unique ‘TADA.ActivityMediaName’ values
 exist in your dataset? Are there any media types that are not
 water?</strong></p>
@@ -314,14 +314,14 @@ Let’s ensure that we remove all non-water data first.</p>
 <span></span>
 <span><span class="fu">dimCheck</span><span class="op">(</span><span class="va">all_result_num</span>, <span class="va">dataset</span>, <span class="va">removed</span>, checkName <span class="op">=</span> <span class="st">"Activity Media"</span><span class="op">)</span></span></code></pre></div>
 <p>Two additional helper functions one can use at any step in the
-process are <code><a href="../reference/fieldValuesTable.html">fieldValuesTable()</a></code> and
-<code><a href="../reference/fieldValuesPie.html">fieldValuesPie()</a></code>. These functions create a summary table
-and pie chart (respectively) of all the unique values in a given column.
-Let’s give it a try on ActivityTypeCode, which is a WQP column
+process are <code><a href="../reference/TADA_FieldValuesTable.html">TADA_FieldValuesTable()</a></code> and
+<code><a href="../reference/TADA_FieldValuesPie.html">TADA_FieldValuesPie()</a></code>. These functions create a summary
+table and pie chart (respectively) of all the unique values in a given
+column. Let’s give it a try on ActivityTypeCode, which is a WQP column
 describing the type of sample collected for each result.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/fieldValuesTable.html">fieldValuesTable</a></span><span class="op">(</span><span class="va">dataset</span>,field<span class="op">=</span><span class="st">"OrganizationFormalName"</span><span class="op">)</span></span>
-<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/fieldValuesPie.html">fieldValuesPie</a></span><span class="op">(</span><span class="va">dataset</span>,field<span class="op">=</span><span class="st">"OrganizationFormalName"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FieldValuesTable.html">TADA_FieldValuesTable</a></span><span class="op">(</span><span class="va">dataset</span>,field<span class="op">=</span><span class="st">"OrganizationFormalName"</span><span class="op">)</span></span>
+<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FieldValuesPie.html">TADA_FieldValuesPie</a></span><span class="op">(</span><span class="va">dataset</span>,field<span class="op">=</span><span class="st">"OrganizationFormalName"</span><span class="op">)</span></span></code></pre></div>
 <p><strong>Question 4: When might a user choose to view a column’s
 unique values as a table rather than in a pie chart?</strong></p>
 <p>We can take a quick look at some of the TADA-created columns that
@@ -335,7 +335,7 @@ are populated. Use <code><a href="../reference/TADA_ConvertSpecialChars.html">?T
 details on result value types and handling.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># take a look at datatypes</span></span>
-<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/fieldValuesTable.html">fieldValuesTable</a></span><span class="op">(</span><span class="va">dataset</span>,field<span class="op">=</span><span class="st">"TADA.ResultMeasureValueDataTypes.Flag"</span><span class="op">)</span></span>
+<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FieldValuesTable.html">TADA_FieldValuesTable</a></span><span class="op">(</span><span class="va">dataset</span>,field<span class="op">=</span><span class="st">"TADA.ResultMeasureValueDataTypes.Flag"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Numeric or numeric-coerced data types</span></span>
 <span><span class="va">rv_datatypes</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">dataset</span>, <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">dataset</span><span class="op">$</span><span class="va">TADA.ResultMeasureValue</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">TADA.ResultMeasureValueDataTypes.Flag</span><span class="op">)</span></span>
@@ -361,18 +361,18 @@ details on result value types and handling.</p>
 <span><span class="fu"><a href="https://rdrr.io/r/base/rm.html" class="external-link">rm</a></span><span class="op">(</span><span class="va">incompatible_datatype</span>, <span class="va">check</span>, <span class="va">rv_datatypes</span>, <span class="va">na_rv_datatypes</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">dimCheck</span><span class="op">(</span><span class="va">all_result_num</span>, <span class="va">dataset</span>, <span class="va">removed</span>, checkName <span class="op">=</span> <span class="st">"Result Format"</span><span class="op">)</span></span></code></pre></div>
-<p>During <code>TADAdataRetrieval</code>, TADA automatically sorts
+<p>During <code>TADA_DataRetrieval</code>, TADA automatically sorts
 result values into detection limit categories (e.g. non-detect,
 over-detect) based on populated values in the
 ResultDetectionConditionText and DetectionQuantitationLimitTypeName
 columns. You can find the reference tables used to make these decisions
-in <code><a href="../reference/GetDetCondRef.html">GetDetCondRef()</a></code> and <code><a href="../reference/GetDetLimitRef.html">GetDetLimitRef()</a></code>
-functions. In some cases, results are missing detection limit/condition
-info, or there is a conflict in the detection limit and condition. The
-user may want to remove problematic detection limit data before
-proceeding.</p>
+in <code><a href="../reference/TADA_GetDetCondRef.html">TADA_GetDetCondRef()</a></code> and
+<code><a href="../reference/TADA_GetDetLimitRef.html">TADA_GetDetLimitRef()</a></code> functions. In some cases, results are
+missing detection limit/condition info, or there is a conflict in the
+detection limit and condition. The user may want to remove problematic
+detection limit data before proceeding.</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/fieldValuesPie.html">fieldValuesPie</a></span><span class="op">(</span><span class="va">dataset</span>, field <span class="op">=</span> <span class="st">"TADA.CensoredData.Flag"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FieldValuesPie.html">TADA_FieldValuesPie</a></span><span class="op">(</span><span class="va">dataset</span>, field <span class="op">=</span> <span class="st">"TADA.CensoredData.Flag"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">problem_censored</span> <span class="op">=</span> <span class="va">dataset</span><span class="op"><a href="../reference/pipe.html">%&gt;%</a></span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">TADA.CensoredData.Flag</span><span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Non-Detect"</span>,<span class="st">"Over-Detect"</span>,<span class="st">"Other"</span>,<span class="st">"Uncensored"</span><span class="op">)</span><span class="op">)</span><span class="op"><a href="../reference/pipe.html">%&gt;%</a></span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>TADA.RemovalReason <span class="op">=</span> <span class="st">"Detection limit information contains errors or missing information."</span><span class="op">)</span></span>
 <span></span>
@@ -394,14 +394,14 @@ proceeding.</p>
 <p>We’ve taken a quick look at the raw dataset and split off some data
 that are not compatible with TADA, now let’s run through some quality
 control checks. The most important ones to run to ensure your dataset is
-ready for subsequent steps are <code><a href="../reference/InvalidFraction.html">InvalidFraction()</a></code>,
-<code><a href="../reference/InvalidSpeciation.html">InvalidSpeciation()</a></code>, <code><a href="../reference/InvalidResultUnit.html">InvalidResultUnit()</a></code>, and
-<code><a href="../reference/QualityControlActivity.html">QualityControlActivity()</a></code>. With the exception of
-<code><a href="../reference/QualityControlActivity.html">QualityControlActivity()</a></code>, these flagging functions leverage
-WQX’s <a href="https://cdx.epa.gov/wqx/download/DomainValues/QAQCCharacteristicValidation.CSV" class="external-link">QAQC
-Validation Table</a>. <code><a href="../reference/QualityControlActivity.html">QualityControlActivity()</a></code> uses a
+ready for subsequent steps are <code><a href="../reference/TADA_FlagFraction.html">TADA_FlagFraction()</a></code>,
+<code><a href="../reference/TADA_FlagSpeciation.html">TADA_FlagSpeciation()</a></code>, <code><a href="../reference/TADA_FlagResultUnit.html">TADA_FlagResultUnit()</a></code>,
+and <code><a href="../reference/TADA_FindQualityControlData.html">TADA_FindQualityControlData()</a></code>. With the exception of
+<code><a href="../reference/TADA_FindQualityControlData.html">TADA_FindQualityControlData()</a></code>, these flagging functions
+leverage WQX’s <a href="https://cdx.epa.gov/wqx/download/DomainValues/QAQCCharacteristicValidation.CSV" class="external-link">QAQC
+Validation Table</a>. <code><a href="../reference/TADA_FindQualityControlData.html">TADA_FindQualityControlData()</a></code> uses a
 TADA-specific domain table users can review with
-<code><a href="../reference/GetActivityTypeRef.html">GetActivityTypeRef()</a></code>. All QAQC tables are frequently
+<code><a href="../reference/TADA_GetActivityTypeRef.html">TADA_GetActivityTypeRef()</a></code>. All QAQC tables are frequently
 updated in the package to ensure they match the latest version on the
 web. You can find guidance for using the WQX QAQC Validation Tables in
 this <a href="https://usepa.github.io/TADA/articles/WQXValidationService.html">vignette</a>
@@ -409,7 +409,7 @@ on the TADA GitHub site.</p>
 <p>Bring the QAQC Validation Table into your R session to view or save
 with the following command:</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">qaqc_ref</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/GetWQXCharValRef.html">GetWQXCharValRef</a></span><span class="op">(</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">qaqc_ref</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_GetWQXCharValRef.html">TADA_GetWQXCharValRef</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">qaqc_ref</span><span class="op">)</span></span>
 <span></span>
@@ -421,10 +421,10 @@ column indicates?</strong></p>
 flagging columns for each function. Let’s run these four flagging
 functions.</p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">dataset_flags</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/InvalidFraction.html">InvalidFraction</a></span><span class="op">(</span><span class="va">dataset</span>, clean <span class="op">=</span> <span class="cn">FALSE</span>, errorsonly <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="va">dataset_flags</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/InvalidSpeciation.html">InvalidSpeciation</a></span><span class="op">(</span><span class="va">dataset_flags</span>, clean <span class="op">=</span> <span class="st">"none"</span>, errorsonly <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="va">dataset_flags</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/InvalidResultUnit.html">InvalidResultUnit</a></span><span class="op">(</span><span class="va">dataset_flags</span>, clean <span class="op">=</span> <span class="st">"none"</span>, errorsonly <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="va">dataset_flags</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/QualityControlActivity.html">QualityControlActivity</a></span><span class="op">(</span><span class="va">dataset_flags</span>, clean <span class="op">=</span> <span class="cn">FALSE</span>, errorsonly <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">dataset_flags</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FlagFraction.html">TADA_FlagFraction</a></span><span class="op">(</span><span class="va">dataset</span>, clean <span class="op">=</span> <span class="cn">FALSE</span>, errorsonly <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="va">dataset_flags</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FlagSpeciation.html">TADA_FlagSpeciation</a></span><span class="op">(</span><span class="va">dataset_flags</span>, clean <span class="op">=</span> <span class="st">"none"</span>, errorsonly <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="va">dataset_flags</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FlagResultUnit.html">TADA_FlagResultUnit</a></span><span class="op">(</span><span class="va">dataset_flags</span>, clean <span class="op">=</span> <span class="st">"none"</span>, errorsonly <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="va">dataset_flags</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FindQualityControlData.html">TADA_FindQualityControlData</a></span><span class="op">(</span><span class="va">dataset_flags</span>, clean <span class="op">=</span> <span class="cn">FALSE</span>, errorsonly <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">dimCheck</span><span class="op">(</span><span class="va">all_result_num</span>, <span class="va">dataset_flags</span>, <span class="va">removed</span>, checkName <span class="op">=</span> <span class="st">"Run Flag Functions"</span><span class="op">)</span></span></code></pre></div>
 <p><strong>Question 6: Did any warnings or messages appear in the
@@ -433,10 +433,10 @@ say?</strong></p>
 <p>Now that we’ve run all the key flagging functions, let’s take a look
 at the results and make some decisions.</p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/fieldValuesPie.html">fieldValuesPie</a></span><span class="op">(</span><span class="va">dataset_flags</span>, field <span class="op">=</span> <span class="st">"TADA.SampleFraction.Flag"</span><span class="op">)</span></span>
-<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/fieldValuesPie.html">fieldValuesPie</a></span><span class="op">(</span><span class="va">dataset_flags</span>, field <span class="op">=</span> <span class="st">"TADA.MethodSpeciation.Flag"</span><span class="op">)</span></span>
-<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/fieldValuesPie.html">fieldValuesPie</a></span><span class="op">(</span><span class="va">dataset_flags</span>, field <span class="op">=</span> <span class="st">"TADA.ResultUnit.Flag"</span><span class="op">)</span></span>
-<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/fieldValuesPie.html">fieldValuesPie</a></span><span class="op">(</span><span class="va">dataset_flags</span>, field <span class="op">=</span> <span class="st">"TADA.ActivityType.Flag"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FieldValuesPie.html">TADA_FieldValuesPie</a></span><span class="op">(</span><span class="va">dataset_flags</span>, field <span class="op">=</span> <span class="st">"TADA.SampleFraction.Flag"</span><span class="op">)</span></span>
+<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FieldValuesPie.html">TADA_FieldValuesPie</a></span><span class="op">(</span><span class="va">dataset_flags</span>, field <span class="op">=</span> <span class="st">"TADA.MethodSpeciation.Flag"</span><span class="op">)</span></span>
+<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FieldValuesPie.html">TADA_FieldValuesPie</a></span><span class="op">(</span><span class="va">dataset_flags</span>, field <span class="op">=</span> <span class="st">"TADA.ResultUnit.Flag"</span><span class="op">)</span></span>
+<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FieldValuesPie.html">TADA_FieldValuesPie</a></span><span class="op">(</span><span class="va">dataset_flags</span>, field <span class="op">=</span> <span class="st">"TADA.ActivityType.Flag"</span><span class="op">)</span></span></code></pre></div>
 <p>Any results flagged as “Invalid” are recognized in the QAQC
 Validation Table as having some data quality issue. “Nonstandardized”
 means that the format has not been fully vetted or processed, while
@@ -462,19 +462,20 @@ review and filter in your workflow?</strong></p>
 removing results that do not pass QC checks. Let’s look at the breakdown
 of these data in the removed object.</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/fieldValuesTable.html">fieldValuesTable</a></span><span class="op">(</span><span class="va">removed</span>, field <span class="op">=</span> <span class="st">"TADA.RemovalReason"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FieldValuesTable.html">TADA_FieldValuesTable</a></span><span class="op">(</span><span class="va">removed</span>, field <span class="op">=</span> <span class="st">"TADA.RemovalReason"</span><span class="op">)</span></span></code></pre></div>
 <p>You can review any other columns of interest and create custom domain
 tables of your “Valid” and “Invalid” criteria using R or Excel. Also
 check out some of the other flagging functions available in TADA:</p>
 <ul>
-<li><p><code>?AboveNationalWQXUpperThreshold()</code></p></li>
-<li><p><code>?BelowNationalWQXLowerThreshold()</code></p></li>
-<li><p><code>?AggregatedContinuousData()</code></p></li>
-<li><p><code>?InvalidCoordinates()</code></p></li>
-<li><p><code>?InvalidMethod()</code></p></li>
-<li><p><code>?QAPPapproved()</code></p></li>
-<li><p><code>?QAPPDocAvailable()</code></p></li>
-<li><p><code>?idPotentialDuplicates()</code> - in development</p></li>
+<li><p><code>?TADA_FlagResultAboveThreshold()</code></p></li>
+<li><p><code>?TADA_FlagResultBelowThreshold()</code></p></li>
+<li><p><code>?TADA_FindContinuousData()</code></p></li>
+<li><p><code>?TADA_FlagCoordinates()</code></p></li>
+<li><p><code>?TADA_FlagMethod()</code></p></li>
+<li><p><code>?TADA_QAPPapproved()</code></p></li>
+<li><p><code>?TADA_QAPPDocAvailable()</code></p></li>
+<li><p><code>?TADA_FindPotentialDuplicates()</code> - in
+development</p></li>
 </ul>
 <p>Please let us know of other flagging functions you think would have
 broad appeal in the TADA package or need assistance
@@ -496,24 +497,24 @@ Likelihood, Kaplan-Meier, Robust Regression on Order Statistics) or
 similar must be performed outside of the current version of TADA (though
 future development is planned).</p>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">dataset_cens</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/simpleCensoredMethods.html">simpleCensoredMethods</a></span><span class="op">(</span><span class="va">dataset_flags</span>, nd_method <span class="op">=</span> <span class="st">"multiplier"</span>,nd_multiplier <span class="op">=</span> <span class="fl">0.5</span>, od_method <span class="op">=</span> <span class="st">"as-is"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">dataset_cens</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_SimpleCensoredMethods.html">TADA_SimpleCensoredMethods</a></span><span class="op">(</span><span class="va">dataset_flags</span>, nd_method <span class="op">=</span> <span class="st">"multiplier"</span>,nd_multiplier <span class="op">=</span> <span class="fl">0.5</span>, od_method <span class="op">=</span> <span class="st">"as-is"</span><span class="op">)</span></span></code></pre></div>
 <p><strong>Question 8: How would you parameterize
-<code><a href="../reference/simpleCensoredMethods.html">simpleCensoredMethods()</a></code> to make non-detect values a random
-number between 0 and the provided detection limit?</strong></p>
+<code><a href="../reference/TADA_SimpleCensoredMethods.html">TADA_SimpleCensoredMethods()</a></code> to make non-detect values a
+random number between 0 and the provided detection limit?</strong></p>
 <p>Let’s take a look at how the censored data handling function affects
 the <code>TADA.ResultMeasureValueDataTypes.Flag</code> column.</p>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># before</span></span>
-<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/fieldValuesTable.html">fieldValuesTable</a></span><span class="op">(</span><span class="va">dataset_flags</span>, field <span class="op">=</span> <span class="st">"TADA.ResultMeasureValueDataTypes.Flag"</span><span class="op">)</span></span>
+<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FieldValuesTable.html">TADA_FieldValuesTable</a></span><span class="op">(</span><span class="va">dataset_flags</span>, field <span class="op">=</span> <span class="st">"TADA.ResultMeasureValueDataTypes.Flag"</span><span class="op">)</span></span>
 <span><span class="co"># after</span></span>
-<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/fieldValuesTable.html">fieldValuesTable</a></span><span class="op">(</span><span class="va">dataset_cens</span>, field <span class="op">=</span> <span class="st">"TADA.ResultMeasureValueDataTypes.Flag"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FieldValuesTable.html">TADA_FieldValuesTable</a></span><span class="op">(</span><span class="va">dataset_cens</span>, field <span class="op">=</span> <span class="st">"TADA.ResultMeasureValueDataTypes.Flag"</span><span class="op">)</span></span></code></pre></div>
 <p><strong>Question 9: Is there a difference between the first and
 second tables?</strong></p>
 <p>If you’d like to start thinking about using statistical methods to
 estimate detection limit values, check out the
-<code><a href="../reference/summarizeCensoredData.html">?summarizeCensoredData</a></code> function, which accepts user-defined
-data groupings to prescribe estimation tests based on the number of
-results, % of dataset censored, and number of censoring levels
+<code><a href="../reference/TADA_SummarizeCensoredData.html">?TADA_SummarizeCensoredData</a></code> function, which accepts
+user-defined data groupings to prescribe estimation tests based on the
+number of results, % of dataset censored, and number of censoring levels
 (detection limits). The decision tree used in the function was outlined
 in an <a href="https://www.epa.gov/sites/default/files/2016-05/documents/tech_notes_10_jun2014_r.pdf" class="external-link">National
 Nonpoint Source Tech Memo</a>.</p>
@@ -533,32 +534,32 @@ Let’s first check out characteristics in the dataset using
 <span><span class="co"># get table of characteristics with number of results, sites, and organizations</span></span>
 <span><span class="va">dataset_cens</span><span class="op"><a href="../reference/pipe.html">%&gt;%</a></span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">TADA.CharacteristicName</span><span class="op">)</span><span class="op"><a href="../reference/pipe.html">%&gt;%</a></span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise</a></span><span class="op">(</span>Result_Count <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">ResultIdentifier</span><span class="op">)</span>, Site_Count <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">MonitoringLocationIdentifier</span><span class="op">)</span><span class="op">)</span>, Org_Count <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">OrganizationIdentifier</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op"><a href="../reference/pipe.html">%&gt;%</a></span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html" class="external-link">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html" class="external-link">desc</a></span><span class="op">(</span><span class="va">Result_Count</span><span class="op">)</span><span class="op">)</span><span class="op"><a href="../reference/pipe.html">%&gt;%</a></span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span>n <span class="op">=</span> <span class="va">nrow</span><span class="op">)</span></span></code></pre></div>
 <p>You may see a characteristic that you’d like to investigate further
-in isolation. <code><a href="../reference/fieldValuesPie.html">fieldValuesPie()</a></code> will also produce summary
-pie charts for a given column <em>within</em> a specific characteristic.
-Let’s take a look.</p>
+in isolation. <code><a href="../reference/TADA_FieldValuesPie.html">TADA_FieldValuesPie()</a></code> will also produce
+summary pie charts for a given column <em>within</em> a specific
+characteristic. Let’s take a look.</p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># go ahead and pick a characteristic name from the table generated above. I picked nitrogen, mixed forms</span></span>
-<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/fieldValuesPie.html">fieldValuesPie</a></span><span class="op">(</span><span class="va">dataset_cens</span>, field <span class="op">=</span> <span class="st">"TADA.ResultSampleFractionText"</span>, characteristicName <span class="op">=</span> <span class="st">"NITROGEN, MIXED FORMS (NH3), (NH4), ORGANIC, (NO2) AND (NO3)"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FieldValuesPie.html">TADA_FieldValuesPie</a></span><span class="op">(</span><span class="va">dataset_cens</span>, field <span class="op">=</span> <span class="st">"TADA.ResultSampleFractionText"</span>, characteristicName <span class="op">=</span> <span class="st">"NITROGEN, MIXED FORMS (NH3), (NH4), ORGANIC, (NO2) AND (NO3)"</span><span class="op">)</span></span></code></pre></div>
 <p>We can view the site locations using a TADA mapping function. In this
 map, the circles indicate monitoring locations in the dataset; their
 size corresponds to the number of results collected at that site, while
 the darker the circle, the more characteristics were sampled at that
 site.</p>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADAOverviewMap.html">TADAOverviewMap</a></span><span class="op">(</span><span class="va">dataset_cens</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_OverviewMap.html">TADA_OverviewMap</a></span><span class="op">(</span><span class="va">dataset_cens</span><span class="op">)</span></span></code></pre></div>
 <p>Out of curiosity, let’s take a look at a breakdown of these
 monitoring location types. Do they all indicate surface water samples?
 Depending upon your program’s goals and methods, you might want to
 filter out some of the types you see.</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/fieldValuesPie.html">fieldValuesPie</a></span><span class="op">(</span><span class="va">dataset_cens</span>, field <span class="op">=</span> <span class="st">"MonitoringLocationTypeName"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FieldValuesPie.html">TADA_FieldValuesPie</a></span><span class="op">(</span><span class="va">dataset_cens</span>, field <span class="op">=</span> <span class="st">"MonitoringLocationTypeName"</span><span class="op">)</span></span></code></pre></div>
 <p>One of the next big steps is data harmonization: translating and
 aggregating synonyms, combining multiple forms/species of certain
 characteristics, etc. We won’t get to that in this demo (more coming
 soon in TADA!), but we can start looking at data distributions within a
 single characteristic-speciation-fraction-unit using the plotting
-functions <code><a href="../reference/TADA_hist.html">TADA_hist()</a></code> and <code><a href="../reference/TADA_boxplot.html">TADA_boxplot()</a></code>. We
-can also view a stats table using <code>TADA_stats</code>.</p>
+functions <code><a href="../reference/TADA_Histogram.html">TADA_Histogram()</a></code> and <code><a href="../reference/TADA_boxplot.html">TADA_Boxplot()</a></code>.
+We can also view a stats table using <code>TADA_Stats</code>.</p>
 <p>Let’s first take a look at the column TADA.ComparableDataIdentifier,
 which breaks down characteristics into groups by name, fraction,
 speciation, and unit. These four columns are important to evaluate
@@ -567,7 +568,7 @@ on a single plot together: it doesn’t make sense to plot characteristics
 with different units or fractions in the same distribution.</p>
 <div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># trusty field values table - lets just look at the first few entries with the most associated records</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/fieldValuesTable.html">fieldValuesTable</a></span><span class="op">(</span><span class="va">dataset_cens</span>, field <span class="op">=</span> <span class="st">"TADA.ComparableDataIdentifier"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FieldValuesTable.html">TADA_FieldValuesTable</a></span><span class="op">(</span><span class="va">dataset_cens</span>, field <span class="op">=</span> <span class="st">"TADA.ComparableDataIdentifier"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Now that we have an idea for what the TADA.ComparableDataIdentifier
 looks like, we can check out how it is used to plot distinct
 characteristic groups.</p>
@@ -577,11 +578,11 @@ characteristic groups.</p>
 <span></span>
 <span><span class="va">plot_data</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">dataset_cens</span>, <span class="va">dataset_cens</span><span class="op">$</span><span class="va">TADA.ComparableDataIdentifier</span><span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span><span class="va">comp_data_id</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_hist.html">TADA_hist</a></span><span class="op">(</span><span class="va">plot_data</span>, id_col <span class="op">=</span> <span class="st">"TADA.ComparableDataIdentifier"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_Histogram.html">TADA_Histogram</a></span><span class="op">(</span><span class="va">plot_data</span>, id_col <span class="op">=</span> <span class="st">"TADA.ComparableDataIdentifier"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_boxplot.html">TADA_boxplot</a></span><span class="op">(</span><span class="va">plot_data</span>, id_col <span class="op">=</span> <span class="st">"TADA.ComparableDataIdentifier"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_boxplot.html">TADA_Boxplot</a></span><span class="op">(</span><span class="va">plot_data</span>, id_col <span class="op">=</span> <span class="st">"TADA.ComparableDataIdentifier"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_stats.html">TADA_stats</a></span><span class="op">(</span><span class="va">plot_data</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_Stats.html">TADA_Stats</a></span><span class="op">(</span><span class="va">plot_data</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Finally, we can download our PASS and FAIL datasets together into an
 Excel spreadsheet to see all of the TADA-related columns together.
 TADA-generated columns will occur at the far end of the dataset.</p>
