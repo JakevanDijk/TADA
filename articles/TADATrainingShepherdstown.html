@@ -74,7 +74,7 @@
       <img src="" class="logo" alt=""><h1>TADA R Package Training: A Markdown for Shepherdstown</h1>
                         <h4 data-toc-skip class="author">TADA Team</h4>
             
-            <h4 data-toc-skip class="date">2023-07-05</h4>
+            <h4 data-toc-skip class="date">2023-07-06</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/USEPA/TADA/blob/HEAD/vignettes/TADATrainingShepherdstown.Rmd" class="external-link"><code>vignettes/TADATrainingShepherdstown.Rmd</code></a></small>
       <div class="d-none name"><code>TADATrainingShepherdstown.Rmd</code></div>
@@ -396,10 +396,10 @@ that are not compatible with TADA, now let’s run through some quality
 control checks. The most important ones to run to ensure your dataset is
 ready for subsequent steps are <code><a href="../reference/TADA_FlagFraction.html">TADA_FlagFraction()</a></code>,
 <code><a href="../reference/TADA_FlagSpeciation.html">TADA_FlagSpeciation()</a></code>, <code><a href="../reference/TADA_FlagResultUnit.html">TADA_FlagResultUnit()</a></code>,
-and <code><a href="../reference/TADA_FindQualityControlData.html">TADA_FindQualityControlData()</a></code>. With the exception of
-<code><a href="../reference/TADA_FindQualityControlData.html">TADA_FindQualityControlData()</a></code>, these flagging functions
-leverage WQX’s <a href="https://cdx.epa.gov/wqx/download/DomainValues/QAQCCharacteristicValidation.CSV" class="external-link">QAQC
-Validation Table</a>. <code><a href="../reference/TADA_FindQualityControlData.html">TADA_FindQualityControlData()</a></code> uses a
+and <code><a href="../reference/TADA_FindQCActivities.html">TADA_FindQCActivities()</a></code>. With the exception of
+<code><a href="../reference/TADA_FindQCActivities.html">TADA_FindQCActivities()</a></code>, these flagging functions leverage
+WQX’s <a href="https://cdx.epa.gov/wqx/download/DomainValues/QAQCCharacteristicValidation.CSV" class="external-link">QAQC
+Validation Table</a>. <code><a href="../reference/TADA_FindQCActivities.html">TADA_FindQCActivities()</a></code> uses a
 TADA-specific domain table users can review with
 <code><a href="../reference/TADA_GetActivityTypeRef.html">TADA_GetActivityTypeRef()</a></code>. All QAQC tables are frequently
 updated in the package to ensure they match the latest version on the
@@ -424,7 +424,7 @@ functions.</p>
 <code class="sourceCode R"><span><span class="va">dataset_flags</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FlagFraction.html">TADA_FlagFraction</a></span><span class="op">(</span><span class="va">dataset</span>, clean <span class="op">=</span> <span class="cn">FALSE</span>, errorsonly <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="va">dataset_flags</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FlagSpeciation.html">TADA_FlagSpeciation</a></span><span class="op">(</span><span class="va">dataset_flags</span>, clean <span class="op">=</span> <span class="st">"none"</span>, errorsonly <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="va">dataset_flags</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FlagResultUnit.html">TADA_FlagResultUnit</a></span><span class="op">(</span><span class="va">dataset_flags</span>, clean <span class="op">=</span> <span class="st">"none"</span>, errorsonly <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="va">dataset_flags</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FindQualityControlData.html">TADA_FindQualityControlData</a></span><span class="op">(</span><span class="va">dataset_flags</span>, clean <span class="op">=</span> <span class="cn">FALSE</span>, errorsonly <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="va">dataset_flags</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_FindQCActivities.html">TADA_FindQCActivities</a></span><span class="op">(</span><span class="va">dataset_flags</span>, clean <span class="op">=</span> <span class="cn">FALSE</span>, errorsonly <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">dimCheck</span><span class="op">(</span><span class="va">all_result_num</span>, <span class="va">dataset_flags</span>, <span class="va">removed</span>, checkName <span class="op">=</span> <span class="st">"Run Flag Functions"</span><span class="op">)</span></span></code></pre></div>
 <p><strong>Question 6: Did any warnings or messages appear in the
@@ -467,13 +467,13 @@ of these data in the removed object.</p>
 tables of your “Valid” and “Invalid” criteria using R or Excel. Also
 check out some of the other flagging functions available in TADA:</p>
 <ul>
-<li><p><code>?TADA_FlagResultAboveThreshold()</code></p></li>
-<li><p><code>?TADA_FlagResultBelowThreshold()</code></p></li>
+<li><p><code>?TADA_FlagAboveThreshold()</code></p></li>
+<li><p><code>?TADA_FlagBelowThreshold()</code></p></li>
 <li><p><code>?TADA_FindContinuousData()</code></p></li>
 <li><p><code>?TADA_FlagCoordinates()</code></p></li>
 <li><p><code>?TADA_FlagMethod()</code></p></li>
-<li><p><code>?TADA_QAPPapproved()</code></p></li>
-<li><p><code>?TADA_QAPPDocAvailable()</code></p></li>
+<li><p><code>?TADA_FindQAPPApproval()</code></p></li>
+<li><p><code>?TADA_FindQAPPDoc()</code></p></li>
 <li><p><code>?TADA_FindPotentialDuplicates()</code> - in
 development</p></li>
 </ul>
