@@ -184,7 +184,7 @@ an example dataset, like <code><a href="../reference/Nutrients_Utah.html">TADA::
 idea of the data structure and format.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># find your working directory</span></span>
-<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu">getTADATemplate</span><span class="op">(</span><span class="op">)</span> <span class="co"># download template to working directory</span></span>
+<span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_GetTemplate.html">TADA_GetTemplate</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># download template to working directory</span></span>
 <span></span>
 <span><span class="co"># uncomment below to review example dataset</span></span>
 <span><span class="co"># Nutrients_Utah &lt;- TADA::Nutrients_Utah </span></span></code></pre></div>
@@ -558,7 +558,7 @@ aggregating synonyms, combining multiple forms/species of certain
 characteristics, etc. We won’t get to that in this demo (more coming
 soon in TADA!), but we can start looking at data distributions within a
 single characteristic-speciation-fraction-unit using the plotting
-functions <code><a href="../reference/TADA_Histogram.html">TADA_Histogram()</a></code> and <code><a href="../reference/TADA_boxplot.html">TADA_Boxplot()</a></code>.
+functions <code><a href="../reference/TADA_Histogram.html">TADA_Histogram()</a></code> and <code><a href="../reference/TADA_Boxplot.html">TADA_Boxplot()</a></code>.
 We can also view a stats table using <code>TADA_Stats</code>.</p>
 <p>Let’s first take a look at the column TADA.ComparableDataIdentifier,
 which breaks down characteristics into groups by name, fraction,
@@ -580,7 +580,7 @@ characteristic groups.</p>
 <div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_Histogram.html">TADA_Histogram</a></span><span class="op">(</span><span class="va">plot_data</span>, id_col <span class="op">=</span> <span class="st">"TADA.ComparableDataIdentifier"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_boxplot.html">TADA_Boxplot</a></span><span class="op">(</span><span class="va">plot_data</span>, id_col <span class="op">=</span> <span class="st">"TADA.ComparableDataIdentifier"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_Boxplot.html">TADA_Boxplot</a></span><span class="op">(</span><span class="va">plot_data</span>, id_col <span class="op">=</span> <span class="st">"TADA.ComparableDataIdentifier"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_Stats.html">TADA_Stats</a></span><span class="op">(</span><span class="va">plot_data</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Finally, we can download our PASS and FAIL datasets together into an

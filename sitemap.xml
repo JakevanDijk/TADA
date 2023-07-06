@@ -43,6 +43,9 @@
     <loc>usepa.github.io/TADA/reference/TADA_BigDataRetrieval.html</loc>
   </url>
   <url>
+    <loc>usepa.github.io/TADA/reference/TADA_Boxplot.html</loc>
+  </url>
+  <url>
     <loc>usepa.github.io/TADA/reference/TADA_CheckColumns.html</loc>
   </url>
   <url>
@@ -118,6 +121,9 @@
     <loc>usepa.github.io/TADA/reference/TADA_GetActivityTypeRef.html</loc>
   </url>
   <url>
+    <loc>usepa.github.io/TADA/reference/TADA_GetCharacteristicRef.html</loc>
+  </url>
+  <url>
     <loc>usepa.github.io/TADA/reference/TADA_GetDetCondRef.html</loc>
   </url>
   <url>
@@ -163,6 +169,9 @@
     <loc>usepa.github.io/TADA/reference/TADA_Stats.html</loc>
   </url>
   <url>
+    <loc>usepa.github.io/TADA/reference/TADA_SubstituteDeprecatedChars.html</loc>
+  </url>
+  <url>
     <loc>usepa.github.io/TADA/reference/TADA_SummarizeCensoredData.html</loc>
   </url>
   <url>
@@ -170,6 +179,9 @@
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_UpdateActivityTypeRef.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_UpdateCharacteristicRef.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_UpdateDetCondRef.html</loc>
@@ -184,9 +196,6 @@
     <loc>usepa.github.io/TADA/reference/TADA_UpdateWQXCharValRef.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/TADA_boxplot.html</loc>
-  </url>
-  <url>
     <loc>usepa.github.io/TADA/reference/TribalData.html</loc>
   </url>
   <url>
@@ -194,6 +203,9 @@
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/WQXCharValRef_Cached.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/WQXCharacteristicRef_Cached.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/WQXDetCondRef_Cached.html</loc>
