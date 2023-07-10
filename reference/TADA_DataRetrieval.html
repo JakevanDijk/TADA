@@ -108,7 +108,7 @@ format for R users than the WQP GUI's endDateHi = "MM-DD-YYYY".</p>
 
 
 <dt>siteid</dt>
-<dd><p>Unique monitoring station identifier</p></dd>
+<dd><p>Unique monitoring location identifier</p></dd>
 
 
 <dt>siteType</dt>
@@ -177,31 +177,29 @@ datetimes, numerics based on a standard algorithm. See: ?dataRetrieval::readWQPd
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span><span class="va">tada1</span> <span class="op">&lt;-</span> <span class="fu">TADA_DataRetrieval</span><span class="op">(</span>statecode <span class="op">=</span> <span class="st">"WI"</span>, countycode <span class="op">=</span> <span class="st">"Dane"</span>, characteristicName <span class="op">=</span> <span class="st">"Phosphorus"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">tada2</span> <span class="op">&lt;-</span> <span class="fu">TADA_DataRetrieval</span><span class="op">(</span>project <span class="op">=</span> <span class="st">"Anchorage Bacteria 20-21"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">tada2</span> <span class="op">&lt;-</span> <span class="fu">TADA_DataRetrieval</span><span class="op">(</span>statecode <span class="op">=</span> <span class="st">"UT"</span>, characteristicName <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Ammonia"</span>, <span class="st">"Nitrate"</span>, <span class="st">"Nitrogen"</span><span class="op">)</span><span class="op">)</span> </span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">tada3</span> <span class="op">&lt;-</span> <span class="fu">TADA_DataRetrieval</span><span class="op">(</span>statecode <span class="op">=</span> <span class="st">"UT"</span>, characteristicName <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Ammonia"</span>, <span class="st">"Nitrate"</span>, <span class="st">"Nitrogen"</span><span class="op">)</span><span class="op">)</span> </span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">tada4</span> <span class="op">&lt;-</span> <span class="fu">TADA_DataRetrieval</span><span class="op">(</span>statecode <span class="op">=</span> <span class="st">"SC"</span>, countycode  <span class="op">=</span> <span class="st">"Abbeville"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">tada3</span> <span class="op">&lt;-</span> <span class="fu">TADA_DataRetrieval</span><span class="op">(</span>statecode <span class="op">=</span> <span class="st">"SC"</span>, countycode  <span class="op">=</span> <span class="st">"Abbeville"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># example for CT</span></span></span>
-<span class="r-in"><span><span class="va">tada5</span> <span class="op">&lt;-</span> <span class="fu">TADA_DataRetrieval</span><span class="op">(</span>statecode <span class="op">=</span> <span class="st">"CT"</span>, startDate <span class="op">=</span> <span class="st">"2020-10-01"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">tada4</span> <span class="op">&lt;-</span> <span class="fu">TADA_DataRetrieval</span><span class="op">(</span>statecode <span class="op">=</span> <span class="st">"CT"</span>, startDate <span class="op">=</span> <span class="st">"2020-10-01"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># note that countycode queries require a statecode (see example below)</span></span></span>
-<span class="r-in"><span><span class="va">tada6</span> <span class="op">&lt;-</span> <span class="fu">TADA_DataRetrieval</span><span class="op">(</span>countycode <span class="op">=</span> <span class="st">"US:02:020"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">tada5</span> <span class="op">&lt;-</span> <span class="fu">TADA_DataRetrieval</span><span class="op">(</span>countycode <span class="op">=</span> <span class="st">"US:02:020"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># example for NM</span></span></span>
-<span class="r-in"><span><span class="va">tada7</span> <span class="op">&lt;-</span> <span class="fu">TADA_DataRetrieval</span><span class="op">(</span>statecode <span class="op">=</span> <span class="st">"NM"</span>, </span></span>
+<span class="r-in"><span><span class="va">tada6</span> <span class="op">&lt;-</span> <span class="fu">TADA_DataRetrieval</span><span class="op">(</span>statecode <span class="op">=</span> <span class="st">"NM"</span>, </span></span>
 <span class="r-in"><span>                           characteristicName <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Ammonia"</span>,</span></span>
 <span class="r-in"><span>                                                  <span class="st">"Nitrate"</span>, </span></span>
 <span class="r-in"><span>                                                  <span class="st">"Nitrogen"</span><span class="op">)</span>, </span></span>
 <span class="r-in"><span>                           startDate <span class="op">=</span> <span class="st">"2020-05-01"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>                           </span></span>
-<span class="r-in"><span><span class="co"># example for AK</span></span></span>
-<span class="r-in"><span><span class="va">tada8</span> <span class="op">&lt;-</span> <span class="fu">TADA_DataRetrieval</span><span class="op">(</span>project <span class="op">=</span> <span class="st">"Anchorage Bacteria 20-21"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># example for AK project</span></span></span>
+<span class="r-in"><span><span class="va">tada7</span> <span class="op">&lt;-</span> <span class="fu">TADA_DataRetrieval</span><span class="op">(</span>project <span class="op">=</span> <span class="st">"Anchorage Bacteria 20-21"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># another example for AK</span></span></span>
-<span class="r-in"><span><span class="va">tada9</span> <span class="op">&lt;-</span> <span class="fu">TADA_DataRetrieval</span><span class="op">(</span>statecode <span class="op">=</span> <span class="st">"AK"</span>, </span></span>
+<span class="r-in"><span><span class="va">tada8</span> <span class="op">&lt;-</span> <span class="fu">TADA_DataRetrieval</span><span class="op">(</span>statecode <span class="op">=</span> <span class="st">"AK"</span>, </span></span>
 <span class="r-in"><span>                           characteristicName <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Fecal Coliform"</span>,</span></span>
 <span class="r-in"><span>                                                  <span class="st">"Escherichia coli"</span>,</span></span>
 <span class="r-in"><span>                                                  <span class="st">"Enterococcus"</span>, </span></span>
@@ -234,7 +232,7 @@ datetimes, numerics based on a standard algorithm. See: ?dataRetrieval::readWQPd
 <span class="r-in"><span><span class="co"># Wyandotte Nation "WNENVDPT_WQX"</span></span></span>
 <span class="r-in"><span><span class="co"># Pueblo of Pojoaque "PUEBLO_POJOAQUE"</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">tada10</span> <span class="op">&lt;-</span> <span class="fu">TADA_DataRetrieval</span><span class="op">(</span>organization <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"SFNOES_WQX"</span>,</span></span>
+<span class="r-in"><span><span class="va">tada9</span> <span class="op">&lt;-</span> <span class="fu">TADA_DataRetrieval</span><span class="op">(</span>organization <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"SFNOES_WQX"</span>,</span></span>
 <span class="r-in"><span>                                             <span class="st">"CPNWATER"</span>,</span></span>
 <span class="r-in"><span>                                             <span class="st">"DELAWARENATION"</span>,</span></span>
 <span class="r-in"><span>                                             <span class="st">"HVTEPA_WQX"</span>,</span></span>

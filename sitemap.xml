@@ -28,13 +28,28 @@
     <loc>usepa.github.io/TADA/index.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/NCTCShepherdstown_HUC12.html</loc>
+    <loc>usepa.github.io/TADA/reference/Data_6Tribes_5y.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/Nutrients_Utah.html</loc>
+    <loc>usepa.github.io/TADA/reference/Data_NCTCShepherdstown_HUC12.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/TADAProfileCleanTP.html</loc>
+    <loc>usepa.github.io/TADA/reference/Data_Narrow_5d.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/Data_Nutrients_UT.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/Data_PhysChem_5d.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/Data_Site_5d.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/Data_TP_6Tribes_5y.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/Data_WaterT_US.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_AutoClean.html</loc>
@@ -196,42 +211,12 @@
     <loc>usepa.github.io/TADA/reference/TADA_UpdateWQXCharValRef.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/TribalData.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/WQXActivityTypeRef_Cached.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/WQXCharValRef_Cached.html</loc>
-  </url>
-  <url>
     <loc>usepa.github.io/TADA/reference/WQXCharacteristicRef_Cached.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/WQXDetCondRef_Cached.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/WQXDetLimitRef_Cached.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/WQXunitRef_Cached.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/WaterTemp_US.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/index.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/narrow.html</loc>
-  </url>
-  <url>
     <loc>usepa.github.io/TADA/reference/pipe.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/resultphyschem.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/station.html</loc>
   </url>
 </urlset>

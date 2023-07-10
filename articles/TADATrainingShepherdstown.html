@@ -74,7 +74,7 @@
       <img src="" class="logo" alt=""><h1>TADA R Package Training: A Markdown for Shepherdstown</h1>
                         <h4 data-toc-skip class="author">TADA Team</h4>
             
-            <h4 data-toc-skip class="date">2023-07-07</h4>
+            <h4 data-toc-skip class="date">2023-07-10</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/USEPA/TADA/blob/HEAD/vignettes/TADATrainingShepherdstown.Rmd" class="external-link"><code>vignettes/TADATrainingShepherdstown.Rmd</code></a></small>
       <div class="d-none name"><code>TADATrainingShepherdstown.Rmd</code></div>
@@ -180,14 +180,14 @@ character) align with WQP profiles.</p>
 <p>If you are interested in reviewing the column headers and formats
 required to run TADA, use the function below, which saves an example
 spreadsheet to the user’s working directory. You can also take a look at
-an example dataset, like <code><a href="../reference/Nutrients_Utah.html">TADA::Nutrients_Utah</a></code> to get an
+an example dataset, like <code><a href="../reference/Data_Nutrients_UT.html">TADA::Data_Nutrients_UT</a></code> to get an
 idea of the data structure and format.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># find your working directory</span></span>
 <span><span class="fu">TADA</span><span class="fu">::</span><span class="fu"><a href="../reference/TADA_GetTemplate.html">TADA_GetTemplate</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># download template to working directory</span></span>
 <span></span>
 <span><span class="co"># uncomment below to review example dataset</span></span>
-<span><span class="co"># Nutrients_Utah &lt;- TADA::Nutrients_Utah </span></span></code></pre></div>
+<span><span class="co"># Data_Nutrients_UT &lt;- TADA::Data_Nutrients_UT </span></span></code></pre></div>
 <p><code>TADA_DataRetrieval</code> is built upon USGS’s
 <code>readWQPdata</code> function within the dataRetrieval package,
 which uses web service calls to bring WQP data into the R environment.
@@ -236,7 +236,7 @@ information about input parameters and to see several examples.</p>
 <span><span class="co"># )</span></span>
 <span></span>
 <span><span class="co"># For brevity, we'll skip pinging the WQP and instead load the example dataset:</span></span>
-<span><span class="va">dataset_0</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="va"><a href="../reference/NCTCShepherdstown_HUC12.html">NCTCShepherdstown_HUC12</a></span></span>
+<span><span class="va">dataset_0</span> <span class="op">=</span> <span class="fu">TADA</span><span class="fu">::</span><span class="va"><a href="../reference/Data_NCTCShepherdstown_HUC12.html">Data_NCTCShepherdstown_HUC12</a></span></span>
 <span></span>
 <span><span class="co"># Let's take a look at all of the TADA-created columns:</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">dataset_0</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grepl</a></span><span class="op">(</span><span class="st">"TADA."</span>,<span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">dataset_0</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span></code></pre></div>
