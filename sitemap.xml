@@ -100,7 +100,10 @@
     <loc>usepa.github.io/TADA/reference/TADA_FindNearbySites.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/TADA_FindPotentialDuplicates.html</loc>
+    <loc>usepa.github.io/TADA/reference/TADA_FindPotentialDuplicatesMultipleOrgs.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_FindPotentialDuplicatesSingleOrg.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_FindQAPPApproval.html</loc>
