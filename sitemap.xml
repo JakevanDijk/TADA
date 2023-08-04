@@ -52,6 +52,9 @@
     <loc>usepa.github.io/TADA/reference/Data_WaterT_US.html</loc>
   </url>
   <url>
+    <loc>usepa.github.io/TADA/reference/TADA_AggregateMeasurements.html</loc>
+  </url>
+  <url>
     <loc>usepa.github.io/TADA/reference/TADA_AutoClean.html</loc>
   </url>
   <url>
@@ -59,6 +62,9 @@
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_Boxplot.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_CalculateTotalNP.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_CheckColumns.html</loc>
@@ -151,6 +157,9 @@
     <loc>usepa.github.io/TADA/reference/TADA_GetMeasureUnitRef.html</loc>
   </url>
   <url>
+    <loc>usepa.github.io/TADA/reference/TADA_GetNutrientSummationRef.html</loc>
+  </url>
+  <url>
     <loc>usepa.github.io/TADA/reference/TADA_GetSynonymRef.html</loc>
   </url>
   <url>
@@ -179,6 +188,9 @@
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_ReadWQPWebServices.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_RunKeyFlagFunctions.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_SimpleCensoredMethods.html</loc>
