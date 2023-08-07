@@ -31,6 +31,9 @@
     <loc>usepa.github.io/TADA/reference/Data_6Tribes_5y.html</loc>
   </url>
   <url>
+    <loc>usepa.github.io/TADA/reference/Data_6Tribes_5y_Harmonized.html</loc>
+  </url>
+  <url>
     <loc>usepa.github.io/TADA/reference/Data_NCTCShepherdstown_HUC12.html</loc>
   </url>
   <url>
@@ -46,9 +49,6 @@
     <loc>usepa.github.io/TADA/reference/Data_Site_5d.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/Data_TP_6Tribes_5y.html</loc>
-  </url>
-  <url>
     <loc>usepa.github.io/TADA/reference/Data_WaterT_US.html</loc>
   </url>
   <url>
@@ -56,6 +56,9 @@
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_AutoClean.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_AutoFilter.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_BigDataRetrieval.html</loc>
@@ -136,6 +139,9 @@
     <loc>usepa.github.io/TADA/reference/TADA_FlagMethod.html</loc>
   </url>
   <url>
+    <loc>usepa.github.io/TADA/reference/TADA_FlagResultMeasureQualifier.html</loc>
+  </url>
+  <url>
     <loc>usepa.github.io/TADA/reference/TADA_FlagResultUnit.html</loc>
   </url>
   <url>
@@ -158,6 +164,9 @@
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_GetNutrientSummationRef.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_GetResultMeasureQualifierRef.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_GetSynonymRef.html</loc>

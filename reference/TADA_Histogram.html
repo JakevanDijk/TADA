@@ -90,653 +90,341 @@ for each data group.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Create histogram using defaults, and view first plot in list:</span></span></span>
-<span class="r-in"><span><span class="co"># Load example dataset:</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">Data_TP_6Tribes_5y</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Load example dataset:</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">Data_6Tribes_5y_Harmonized</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">Histogram_output</span> <span class="op">=</span> <span class="fu">TADA_Histogram</span><span class="op">(</span><span class="va">Data_TP_6Tribes_5y</span>, id_cols <span class="op">=</span> <span class="st">"TADA.ComparableDataIdentifier"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">Histogram_output</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $visdat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $visdat$`1b7f461f097`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> function () </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> plotlyVisDat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;bytecode: 0x558e159c3188&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x558e18c75348&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $cur_data</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1b7f461f097"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $attrs</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $attrs$`1b7f461f097`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $attrs$`1b7f461f097`$alpha_stroke</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $attrs$`1b7f461f097`$sizes</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  10 100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $attrs$`1b7f461f097`$spans</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  1 20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $attrs$`1b7f461f097`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $alpha_stroke</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $sizes</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  10 100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $spans</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  1 20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $x</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    [1]  10.0  17.0  10.0  16.0  13.0  14.0  21.0  15.0  12.0  15.0  11.0  15.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [13]  21.0  18.0  21.0  16.0  20.0  27.0  27.0  27.0  27.0  15.0  15.0  18.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [25]  23.0  24.0  32.0  10.0  15.0  13.0  10.0  10.0  46.0  53.0  27.0  23.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [37]  47.0  46.0  32.0  48.0  20.0  20.0  17.0  44.0  27.0  43.0  47.0  24.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [49]  22.0  41.0  20.0  45.0  47.0  13.0  13.0  15.0  16.0  20.0  14.0  17.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [61]  11.0  12.0  16.0  13.0  15.0  12.0  11.0   9.0   6.0  10.0  11.0  13.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [73]  21.0  54.0  26.0  40.0  34.0  20.0  51.0  39.0  34.0  35.0  21.0  14.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [85]  14.0  12.0  12.0  58.0  17.0  10.0  10.0  10.0  11.0  14.0  16.0  10.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [97]   5.0   9.0   9.0   9.0   9.0   9.0  11.0   9.0  12.0  14.0  12.0   8.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [109]  12.0   7.0   8.0  10.0  12.0   7.0  32.0  44.0  18.0  62.0  50.0  39.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [121]  42.0  32.0  32.0  18.0  21.0  15.0  14.0  22.0  30.0  14.0  11.0  12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [133]  10.0   9.0   8.0   9.0  12.0  10.0  10.0   6.0   9.0  14.0  12.0  13.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [145]  12.0   8.0  11.0  42.0  11.0  11.0   9.0   7.0  39.0  31.0  42.0  17.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [157]  37.0  34.0  12.0  25.0  14.0  20.0  12.0  10.0  21.0  36.0  16.0  40.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [169]  39.0  37.0  40.0  30.0  64.0  26.0  35.0  41.0  39.0  29.0  39.0  29.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [181]  38.0  71.0  33.0  31.0  17.0  44.0  34.0  39.0  32.0  63.0  28.0  18.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [193]  45.0  32.0  41.0  21.0  12.0  17.0  45.0  13.0  11.0  12.0  10.0  12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [205]  20.0  25.0  20.0  16.0  20.0  12.0  16.0  21.0  15.0  15.0  81.0  17.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [217]  17.0  19.0  24.0  16.0  28.0   7.0  16.0  12.0  15.0   9.0  17.0  41.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [229]  13.0  18.0  38.0  46.0  19.0  43.0  31.0  21.0  36.0  20.0  17.0  18.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [241]  23.0  22.0  21.0  14.0  10.0  21.0  16.0  16.0  13.0  24.0  23.0  37.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [253]  20.0  36.0  34.0  35.0  34.0  35.0  35.0  41.0  40.0  41.0  35.0  25.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [265]  20.0  16.0  12.0  15.0  11.0  19.0  15.0   8.0  18.0  18.0  13.0  26.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [277]  13.0  21.0  14.0  17.0  23.0  21.0  19.0  19.0   9.0   8.0   9.0  20.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [289]  17.0  20.0  12.0  21.0  16.0  31.0  28.0  60.0  63.0  29.0  34.0  38.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [301]  32.0  29.0  31.0  36.0  36.0  34.0  31.0  36.0  54.0  51.0  40.0  42.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [313]  47.0  36.0  50.0  46.0  52.0  48.0  42.0  48.0  44.0  10.0  12.0  15.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [325]   8.0  19.0  13.0  20.0  12.0  14.0  16.0  17.0  16.0  13.0  16.0  12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [337]   8.0   9.0  13.0  15.0   9.0  28.0  11.0   6.0  12.0  21.0  13.0  12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [349]  11.0  12.0   7.0  10.0  17.0  40.0  39.0  42.0  39.0  24.0  29.0  25.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [361]  24.0  26.0  27.0  24.0  33.0  31.0  33.0  27.0  33.0  32.0  20.0  46.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [373]  24.0   9.0  12.0  11.0  14.0  20.0  11.0   6.0  11.0  10.0  26.0  13.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [385]   8.0  14.0   7.0  11.0   9.0   6.0  11.0   8.0   8.0  15.0  18.0  16.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [397]  13.0  12.0  13.0  14.0  10.0  10.0  11.0   8.0  10.0  37.0  44.0  33.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [409]  45.0  46.0  50.0  51.0  10.0  11.0  14.0  16.0  13.0  12.0   9.0  14.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [421]  22.0  10.0  49.0  46.0  47.0  53.0  48.0  48.0  36.0  50.0  46.0  51.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [433]  12.0  18.0  11.0   6.0  16.0  15.0  19.0  11.0  12.0  20.0  14.0  24.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [445]  11.0  18.0  11.0   6.0  12.0  14.0  11.0  46.0  13.0  10.0  21.0  12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [457]   8.0  14.0  12.0   8.0  22.0   8.0   9.0  10.0  48.0  63.0  57.0  60.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [469] 124.0  71.0  82.0   4.0  11.0  14.0  13.0 210.0  16.0  22.0   9.0  22.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [481]   8.0  11.0  20.0   8.0  14.0  12.0  10.0  11.0  26.0   7.0  20.0  11.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [493]  10.0  16.0  23.0  24.0  23.0  28.0  25.0  35.0  38.0  16.0  16.0  16.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [505]  15.0  20.0  18.0  20.0  18.0  20.0  13.0  15.0  19.0  23.0  20.0  20.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [517]  21.0  20.0  18.0  10.0  15.0  16.0  14.0  27.0   9.0  18.0  13.0  14.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [529]  18.0  18.0  14.0  11.0  16.0  25.0  34.0  45.0  29.0  56.0  26.0  61.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [541]  45.0  35.0  48.0  24.0  21.0  32.0  28.0   9.0  10.0  13.0  14.0  14.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [553]  12.0  13.0   9.0  12.0   7.0  10.0  13.0  10.0  20.0   8.0  15.0  10.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [565]  10.0  12.0   9.0   8.0  12.0   8.0  12.0  39.0  39.0  41.0  44.0  38.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [577]  47.0  51.0  48.0  46.0  43.0  34.0  37.0  47.0  46.0  36.0  36.0  36.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [589]  38.0  35.0  50.0  51.0  50.0  50.0  58.0  10.0  12.0  12.0  14.0  14.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [601]  16.0  12.0  10.0  13.0   5.0  11.0  10.0  11.0  22.0   6.0  11.0   8.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [613]   9.0  10.0   8.0   7.0  10.0   8.0   9.0  53.0  54.0  56.0  32.0  35.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [625]  35.0  35.0  33.0  37.0  31.0  38.0  42.0  33.0  67.0  42.0  40.0  34.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [637]  42.0  15.0  11.0  13.0  12.0   6.0   8.0  17.0  21.0  18.0  16.0  12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [649]  17.0  10.0  13.0  11.0  10.0  66.0  10.0  13.0  13.0   9.0   9.0   9.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [661]  14.0  34.0  35.0  30.0  58.0  54.0  16.0  16.0  15.0  13.0  15.0  17.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [673]  15.0  15.0  16.0  18.0   9.0  14.0  15.0  23.0  21.0  11.0  12.0  10.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [685]  11.0   9.0   8.0  10.0  14.0  19.0   8.0  28.0   7.0  23.0  11.0  18.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [697]  14.0  15.0  11.0   8.0  15.0  14.0  14.0  13.0  13.0  14.0  13.0  16.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [709]  14.0  15.0  12.0   5.0   8.0  14.0  11.0  28.0   8.0  13.0   8.0  11.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [721]   6.0   7.0   8.0  24.0  12.0   7.0   8.0  10.0   9.0   9.0   6.0   5.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [733]  48.0  14.0   8.0   8.0  29.0  15.0  19.0  18.0  17.0  18.0  24.0  21.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [745]  24.0  22.0  35.0  38.0  43.0  37.0  18.0  17.0  16.0  18.0  18.0  35.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [757]  35.0  31.0  41.0  30.0  29.0  34.0  26.0  39.0  38.0  35.0  41.0  39.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [769]  33.0  29.0  25.0  34.0  28.0  55.0  68.0  56.0  58.0  56.0  12.0  13.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [781]  20.0  22.0  13.0  10.0  10.0  11.0   6.0   9.0   8.0  10.0  14.0  10.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [793]   8.0   5.0  12.0   9.0   5.0  10.0  10.0  12.0  11.0  24.0  24.0  15.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [805] 109.0  50.0  47.0  27.0  28.0  32.0  27.0  29.0  48.0  59.0  47.0  39.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [817]  42.0   9.0   9.0  10.0  13.0  14.0  13.0  12.0   7.0   9.0   8.0  12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [829]   9.0   9.0  25.0   7.0   9.0  15.0  12.0   7.0   8.0  13.0  12.0  12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [841]  31.0  28.0  33.0  30.0  30.0  39.0  35.0  37.0  35.0  37.0   9.0  13.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [853]  14.0  18.0  17.0  23.0  14.0  11.0  17.0   9.0  13.0  11.0  13.0  36.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [865]   8.0  16.0   8.0  11.0   6.0  10.0  12.0  20.0  10.0  41.0  40.0  44.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [877]  43.0  40.0  48.0  49.0  47.0  48.0  48.0  42.0  43.0  39.0  37.0  42.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [889]  45.0  54.0  51.0  48.0  46.0  54.0  11.0  13.0  12.0  19.0  16.0  18.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [901]  12.0  15.0  14.0   7.0  10.0  10.0  12.0  45.0  10.0  14.0   8.0  14.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [913]  12.0   7.0   8.0  11.0  13.0  13.0  34.0  38.0  39.0  44.0  38.0  42.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [925]  34.0  39.0  38.0  39.0  31.0  37.0 287.0  30.0  31.0  34.0  35.0  35.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [937]  32.0  31.0   5.0   5.0   5.0  11.0  29.0  21.0  13.0  16.0  33.0  11.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [949]  11.0  12.0  17.0  13.0  13.0   7.9  12.0  15.0  18.0  17.0  12.0   6.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [961]  23.0  24.0  36.0  34.0  10.0  11.0  12.0  17.0  13.0  13.0   7.9  25.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [973]  15.0  18.0  15.0  43.0  32.0  43.0  33.0  37.0  40.0  44.0  41.0  30.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [985]  43.0  36.0  48.0  33.0  12.0  12.0   9.9  10.0  16.0  14.0  12.0  14.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [997]  20.0  12.0  10.0  15.0  15.0   9.2  12.0  10.0  14.0  13.0  12.0  15.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1009]  11.0  10.0   8.4  12.0  12.0  16.0   8.1  10.0  12.0   9.4  10.0  38.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1021]  45.0  50.0  30.0  78.0  53.0  49.0  36.0  20.0  66.0  41.0  42.0  51.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1033]  44.0  28.0  32.0  53.0  61.0  18.0  25.0  28.0  34.0  29.0  64.0  49.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1045]  30.0  36.0  28.0  37.0  50.0  30.0  39.0  50.0  75.0  20.0  22.0  18.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1057]  45.0  23.0  15.0  17.0  22.0  15.0  17.0  25.0  25.0  18.0   7.4   8.6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1069]   8.6  11.0   9.9  22.0  10.0  12.0   9.9  16.0   8.4   8.3   8.2   9.6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1081]   7.4  11.0  15.0  15.0  16.0  15.0  13.0  20.0  16.0  12.0  14.0  21.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1093]  14.0  11.0  10.0   8.0  18.0  16.0  20.0  17.0  41.0  36.0  87.0  26.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1105]  30.0  16.0  27.0  22.0  19.0  26.0  26.0  47.0  20.0  55.0  43.0  22.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1117]  35.0  41.0  32.0  22.0  31.0  67.0  17.0  15.0  15.0  15.0  27.0  42.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1129]  17.0  18.0  18.0  15.0  15.0  17.0  20.0  15.0  15.0  14.0  11.0  14.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1141]  15.0  11.0   9.3  15.0  15.0  14.0  17.0  30.0  29.0  21.0  14.0  24.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1153]  18.0  17.0  23.0  18.0  21.0  23.0  23.0  17.0  45.0  14.0  31.0  15.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1165]  24.0  14.0  33.0  39.0 120.0  51.0  20.0  27.0  22.0  20.0  32.0  19.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1177]  20.0  23.0  35.0  35.0  21.0  36.0  35.0  24.0  23.0  35.0  79.0  56.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1189]  50.0  51.0  75.0  82.0  97.0 190.0  50.0  34.0  20.0  22.0  21.0  32.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1201]  30.0  20.0  28.0  36.0  27.0  46.0  22.0  24.0  19.0  50.0  46.0  42.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1213]  24.0  39.0  25.0  28.0  27.0  24.0  25.0  45.0  37.0  39.0  42.0  33.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1225]  39.0  64.0  36.0  28.0  23.0  59.0  38.0  27.0  54.0  21.0  26.0  28.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1237]  22.0  19.0  27.0  38.0  21.0  21.0  37.0  25.0  19.0  22.0  25.0  32.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1249]   8.9  17.0  20.0  22.0  18.0  20.0  64.0  27.0  29.0  28.0  27.0  28.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1261]  41.0  26.0  13.0  10.0   9.5   7.4  26.0  15.0  14.0   6.9  14.0  11.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1273]  10.0  11.0  12.0  12.0  11.0  12.0  15.0  18.0  18.0  20.0  15.0  19.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1285]  17.0  18.0  16.0  19.0  20.0  18.0  22.0  18.0  16.0  15.0  11.0  16.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1297]  15.0  15.0  19.0  17.0  20.0  22.0  23.0  21.0  13.0  16.0  14.0  19.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1309]  15.0  12.0  15.0   9.4  12.0  44.0  16.0  12.0   9.9  21.0  14.0  21.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1321]  13.0  56.0 102.0  69.0 119.0 109.0 108.0 118.0  82.0 145.0  97.0  82.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1333]  68.0  74.0  62.0  48.0  90.0  46.0  59.0  58.0  94.0 124.0 129.0  87.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1345]  62.0  94.0  91.0  62.0 154.0 161.0  22.0  60.0  34.0  56.0  34.0 402.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1357] 160.0  76.0  35.0  24.0  38.0  38.0  43.0  38.0  64.0  76.0 102.0 117.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1369] 109.0  56.0 160.0  65.0  76.0  74.0  90.0 111.0 109.0  80.0  86.0  55.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1381]  53.0  73.0  60.0  49.0  52.0  46.0  39.0  36.0  29.0  13.0  13.0  13.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1393]  16.0  14.0  16.0  14.0  15.0  15.0  21.0  15.0  13.0  14.0   9.0   6.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1405]   7.0  16.0  15.0   7.0  23.0  12.0  16.0   9.0  10.0  24.0  13.0   7.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1417]   6.0  17.0  13.0   9.0   7.0   7.0  87.0  71.0 256.0 158.0 141.0  69.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1429]  16.0  52.0 381.0 263.0  53.0  55.0  71.0  44.0  59.0  47.0  55.0  38.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1441]  30.0  31.0  32.0  35.0  37.0  32.0  27.0  36.0  39.0  56.0  39.0  40.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1453]  37.0  42.0  30.0  37.0  41.0  37.0  33.0  38.0  37.0  30.0  37.0  28.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1465]  34.0  31.0  34.0  31.0  36.0  34.0  39.0  44.0  40.0  45.0  38.0  49.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1477]  38.0  47.0  52.0  49.0  16.0  18.0  12.0  15.0  13.0  15.0  15.0   8.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1489]   9.0  16.0  10.0  25.0   6.0  10.0  12.0  14.0   9.0   8.0   8.0  13.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1501]  10.0  43.0  40.0  80.0  66.0  61.0  73.0  33.0  56.0  51.0  62.0 101.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1513]  45.0  47.0  69.0  57.0   9.0  12.0  15.0   8.0   9.0   9.0   7.0   9.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1525]   8.0   8.0  25.0   6.0  11.0   8.0  14.0  10.0   6.0   8.0  12.0  10.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1537]   8.0  34.0  36.0  52.0  42.0  10.0   9.0  14.0   3.0   9.0   9.0   7.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1549]   8.0  10.0   9.0  20.0   9.0  10.0  10.0  18.0  10.0   6.0   8.0   8.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1561]   9.0  41.0  41.0  43.0  35.0  35.0  50.0  44.0  38.0  44.0  39.0  49.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1573]  47.0  44.0  49.0  49.0  43.0  74.0  69.0  41.0  40.0  40.0  39.0  35.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1585]  34.0  38.0  42.0  42.0  47.0  36.0  31.0  29.0  32.0  26.0  29.0  64.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1597]  46.0  40.0  39.0  39.0  52.0  30.0  25.0  30.0  34.0  52.0  51.0  55.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1609]  51.0  61.0  59.0  43.0  50.0  42.0  51.0  56.0   8.0  10.0  11.0  14.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1621]  16.0  11.0   8.0  11.0   8.0   9.0  10.0  12.0  32.0   8.0  12.0   8.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1633]  10.0  11.0   8.0   6.0  10.0   8.0   8.0  59.0  54.0  51.0  54.0  57.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1645]  55.0  49.0  55.0  53.0  50.0  45.0  14.0  15.0  13.0  14.0  12.0  11.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1657]  13.0  11.0   9.0  10.0   6.0   7.0  18.0   9.0  23.0   6.0   5.0   4.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1669]   6.0   5.0   8.0   7.0  14.0   8.0   7.0   6.0   7.0  18.0   5.0   6.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1681]  12.0   5.0  13.0  36.0  41.0  14.0  17.0  14.0  13.0  14.0  14.0  12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1693]  14.0  14.0  12.0  93.0  84.0 122.0  64.0 117.0  54.0  54.0  55.0 122.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1705]  73.0  39.0  66.0  81.0  43.0  25.0  91.0  92.0  48.0  68.0  37.0   6.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1717]  40.0  51.0  29.0  28.0  38.0  24.0  63.0  50.0 102.0  38.0  36.0  38.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1729]  59.0  46.0 151.0  59.0 175.0  15.0  62.0  86.0  32.0  78.0   1.5 112.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1741]  48.0  62.0  45.0  53.0  73.0  74.0  83.0   1.5  38.0  49.0  25.0  75.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1753]  50.0  28.0  47.0  30.0  21.0   1.5  60.0  25.0  70.0  89.0 102.0  32.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1765] 109.0  29.0  40.0  21.0  42.0  57.0  81.0  41.0  43.0  16.0 155.0  33.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1777]  46.0  55.0  52.0  74.0  37.0  46.0  41.0  21.0  37.0  47.0  16.0  37.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1789]  27.0  26.0  32.0  31.0  21.0  37.0  80.0  61.0  76.0  97.0  39.0  40.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1801]  20.0  33.0  53.0  37.0  40.0  17.0 184.0  24.0 110.0  94.0  54.0  42.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1813]  18.0  27.0  14.0  49.0  33.0  60.0  21.0  32.0  35.0  40.0  24.0  43.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1825]  81.0  63.0  36.0  15.0   1.5  73.0  90.0  46.0  32.0  38.0  35.0  38.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1837]  23.0  33.0  39.0  70.0  21.0  41.0  33.0  63.0  37.0  46.0  38.0  33.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1849]  41.0  27.0  20.0  27.0  55.0  52.0  24.0  57.0  20.0  61.0  45.0  73.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1861]  37.0  73.0  34.0  26.0  35.0  48.0  47.0  10.0  34.0  46.0  29.0  44.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1873]  47.0  65.0  70.0  38.0  31.0  26.0  48.0  15.0  54.0  29.0  52.0  80.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1885]  24.0  43.0  38.0  37.0  25.0  18.0  46.0  71.0  73.0  54.0  36.0  37.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1897]  42.0  43.0  30.0  52.0  36.0  42.0  62.0  65.0  91.0  57.0  38.0   1.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1909]  30.0  67.0 107.0  42.0  65.0  38.0  30.0  46.0  41.0  29.0  50.0  46.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1921]  62.0  21.0  72.0  13.0  76.0  28.0  59.0  21.0  27.0  25.0  49.0  43.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1933]  36.0  63.0  83.0  50.0  58.0  30.0  14.0  61.0  30.0  31.0  10.0  45.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1945] 123.0  24.0  39.0  42.0  54.0  26.0  50.0  39.0 207.0  37.0  38.0  57.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1957]  67.0  35.0  35.0  60.0  37.0  46.0  22.0  63.0  29.0  23.0  29.0  61.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1969] 147.0  52.0  36.0  25.0  11.0  34.0  44.0  30.0  54.0  38.0  68.0  80.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1981]  25.0  31.0  25.0  46.0  48.0  25.0   8.0  32.0  39.0  60.0  27.0  31.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1993]  43.0  36.0  72.0  46.0  38.0  47.0  50.0  58.0  17.0  57.0  62.0  62.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2005]  32.0 159.0  31.0  48.0  50.0 112.0  31.0 128.0  50.0  64.0  58.0  28.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2017]  40.0  11.0  39.0  35.0  67.0  35.0  41.0  41.0  41.0  27.0  14.0  26.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2029]  49.0  14.0  42.0  87.0  24.0  36.0  39.0  24.0  34.0  46.0  41.0  54.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2041]  52.0  25.0  59.0  33.0  38.0  21.0  41.0  61.0  46.0  21.0  45.0  45.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2053]  42.0  37.0  58.0  43.0  51.0  51.0  40.0  41.0  54.0  25.0  20.0  24.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2065]  33.0  49.0  32.0  10.0  54.0  33.0  42.0  10.0  48.0  10.0  33.0  39.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2077]  66.0  68.0  38.0  26.0 104.0  66.0  28.0  70.0  32.0  48.0  47.0 125.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2089]  21.0  32.0  41.0  26.0  23.0  48.0  44.0  56.0  61.0  45.0  36.0  51.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2101]  26.0  39.0  35.0  30.0  45.0  62.0  11.0  43.0  38.0  24.0  42.0  26.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2113] 134.0 218.0  41.0  25.0  56.0  49.0  49.0  59.0   1.5  39.0  38.0  50.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2125]  55.0  55.0  62.0  28.0  34.0  29.0  26.0  46.0  53.0  42.0  32.0  43.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2137]  28.0  39.0  33.0  25.0  58.0  55.0  53.0  35.0  52.0  61.0  22.0  34.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2149]  30.0  36.0  41.0  50.0  23.0  67.0  42.0  59.0  19.0  28.0  23.0  41.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2161]  26.0  40.0  47.0  37.0  26.0  70.0  40.0  38.0  32.0  42.0  56.0  58.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2173]  76.0  36.0  40.0  35.0   9.0  24.0  35.0  99.0  38.0 133.0  31.0  45.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2185]  53.0  60.0  22.0  23.0  37.0  48.0 108.0  57.0  40.0  50.0  84.0  14.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2197]  46.0  32.0  73.0  64.0   1.5  28.0  40.0  64.0  33.0  56.0  25.0  46.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2209]  41.0  29.0  50.0  77.0  69.0   8.0  43.0  71.0  28.0  39.0  23.0  76.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2221]  36.0  37.0  37.0  39.0  17.0  22.0  76.0  34.0  37.0  25.0  64.0  40.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2233]  37.0  45.0  83.0  26.0  26.0  44.0  42.0  54.0   6.0  53.0  47.0  35.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2245]   1.5  48.0  30.0  32.0  56.0  44.0 112.0  35.0  56.0  83.0  23.0  38.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2257]  32.0  23.0  40.0  21.0  65.0  24.0  99.0  65.0  46.0  71.0  33.0  43.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2269]  54.0  49.0  64.0  60.0  31.0  24.0  30.0  60.0  41.0  31.0  23.0  58.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2281]  25.0  24.0  30.0  22.0  93.0  18.0  36.0  26.0  22.0  15.0  38.0  37.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2293]  32.0  45.0  16.0   8.0  36.0  33.0  71.0  76.0  40.0  32.0  64.0  61.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2305]  44.0  43.0  22.0  75.0  98.0  55.0  25.0  65.0  35.0  42.0  50.0  35.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2317]  52.0   1.5 104.0  19.0  33.0  17.0   1.5   8.0  57.0 123.0   1.5  63.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2329]  30.0  45.0   1.5  55.0  33.0  65.0  55.0  21.0  18.0  85.0  39.0  57.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2341]  56.0  36.0  32.0  37.0  46.0  39.0  66.0  72.0  34.0  41.0  41.0  32.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2353] 194.0  62.0  24.0  21.0  33.0  44.0  36.0  99.0  98.0  51.0 123.0  34.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2365]  70.0  34.0  26.0  31.0  27.0  42.0  31.0  33.0  41.0  48.0  22.0  71.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2377]  66.0  47.0  60.0  48.0 157.0  33.0  51.0  96.0  15.0  65.0  63.0  32.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2389]  26.0  21.0  48.0  47.0  31.0   9.0  65.0  38.0  42.0  57.0  92.0  40.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2401]  21.0  25.0  54.0  41.0  15.0  58.0  62.0  35.0 101.0  12.0  43.0  28.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2413]  83.0  41.0  42.0  62.0  38.0  58.0  33.0  51.0  46.0  49.0  24.0  67.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2425]  39.0  42.0  36.0  80.0   1.5  24.0  23.0  22.0  33.0  17.0  36.0  13.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2437]  45.0  60.0  62.0 238.0  57.0  15.0  49.0  23.0  61.0  81.0  31.0  30.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2449]  36.0  38.0  35.0  43.0  42.0  35.0  48.0  34.0  95.0  33.0  41.0  23.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2461]  34.0  86.0  32.0  61.0  22.0  86.0  55.0  95.0  60.0  46.0  64.0  37.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2473]  22.0  46.0  22.0  35.0  39.0  42.0 148.0  40.0  89.0  52.0  50.0  54.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2485] 118.0 131.0  30.0  38.0  28.0  43.0  14.0  42.0 116.0  49.0  53.0  67.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2497]  59.0  64.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $type</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "histogram"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $xbins</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $xbins$start</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $marker</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $marker$color</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "#00bde3"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $stroke</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "#005ea2"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $bingroup</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "&lt;b&gt;All Data&lt;b&gt;"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $inherit</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "plotly_histogram" "list"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $attrs$`1b7f461f097`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $alpha_stroke</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $sizes</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  10 100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $spans</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  1 20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $x</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    [1] 10.0 17.0 10.0 16.0 13.0 14.0 21.0 15.0 12.0 15.0 11.0 15.0 21.0 18.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [15] 21.0 16.0 20.0 27.0 27.0 27.0 27.0 15.0 15.0 18.0 23.0 24.0 32.0 10.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [29] 15.0 13.0 10.0 10.0 46.0 53.0 27.0 23.0 47.0 46.0 32.0 48.0 20.0 20.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [43] 17.0 44.0 27.0 43.0 47.0 24.0 22.0 41.0 20.0 45.0 47.0 13.0 13.0 15.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [57] 16.0 20.0 14.0 17.0 11.0 12.0 16.0 13.0 15.0 12.0 11.0  9.0  6.0 10.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [71] 11.0 13.0 21.0 54.0 26.0 40.0 34.0 20.0 51.0 39.0 34.0 35.0 21.0 14.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [85] 14.0 12.0 12.0 58.0 17.0 10.0 10.0 10.0 11.0 14.0 16.0 10.0  5.0  9.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [99]  9.0  9.0  9.0  9.0 11.0  9.0 12.0 14.0 12.0  8.0 12.0  7.0  8.0 10.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [113] 12.0  7.0 32.0 44.0 18.0 62.0 50.0 39.0 42.0 32.0 32.0 18.0 21.0 15.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [127] 14.0 22.0 30.0 14.0 11.0 12.0 10.0  9.0  8.0  9.0 12.0 10.0 10.0  6.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [141]  9.0 14.0 12.0 13.0 12.0  8.0 11.0 42.0 11.0 11.0  9.0  7.0 39.0 31.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [155] 42.0 17.0 37.0 34.0 12.0 25.0 14.0 20.0 12.0 10.0 21.0 36.0 16.0 40.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [169] 39.0 37.0 40.0 30.0 64.0 26.0 35.0 41.0 39.0 29.0 39.0 29.0 38.0 71.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [183] 33.0 31.0 17.0 44.0 34.0 39.0 32.0 63.0 28.0 18.0 45.0 32.0 41.0 21.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [197] 12.0 17.0 45.0 13.0 11.0 12.0 10.0 12.0 20.0 25.0 20.0 16.0 20.0 12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [211] 16.0 21.0 15.0 15.0 81.0 17.0 17.0 19.0 24.0 16.0 28.0  7.0 16.0 12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [225] 15.0  9.0 17.0 41.0 13.0 18.0 38.0 46.0 19.0 43.0 31.0 21.0 36.0 20.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [239] 17.0 18.0 23.0 22.0 21.0 14.0 10.0 21.0 16.0 16.0 13.0 24.0 23.0 37.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [253] 20.0 36.0 34.0 35.0 34.0 35.0 35.0 41.0 40.0 41.0 35.0 25.0 20.0 16.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [267] 12.0 15.0 11.0 19.0 15.0  8.0 18.0 18.0 13.0 26.0 13.0 21.0 14.0 17.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [281] 23.0 21.0 19.0 19.0  9.0  8.0  9.0 20.0 17.0 20.0 12.0 21.0 16.0 31.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [295] 28.0 60.0 63.0 29.0 34.0 38.0 32.0 29.0 31.0 36.0 36.0 34.0 31.0 36.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [309] 54.0 51.0 40.0 42.0 47.0 36.0 50.0 46.0 52.0 48.0 42.0 48.0 44.0 10.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [323] 12.0 15.0  8.0 19.0 13.0 20.0 12.0 14.0 16.0 17.0 16.0 13.0 16.0 12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [337]  8.0  9.0 13.0 15.0  9.0 28.0 11.0  6.0 12.0 21.0 13.0 12.0 11.0 12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [351]  7.0 10.0 17.0 40.0 39.0 42.0 39.0 24.0 29.0 25.0 24.0 26.0 27.0 24.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [365] 33.0 31.0 33.0 27.0 33.0 32.0 20.0 46.0 24.0  9.0 12.0 11.0 14.0 20.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [379] 11.0  6.0 11.0 10.0 26.0 13.0  8.0 14.0  7.0 11.0  9.0  6.0 11.0  8.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [393]  8.0 15.0 18.0 16.0 13.0 12.0 13.0 14.0 10.0 10.0 11.0  8.0 10.0 37.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [407] 44.0 33.0 45.0 46.0 50.0 51.0 10.0 11.0 14.0 16.0 13.0 12.0  9.0 14.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [421] 22.0 10.0 49.0 46.0 47.0 53.0 48.0 48.0 36.0 50.0 46.0 51.0 12.0 18.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [435] 11.0  6.0 16.0 15.0 19.0 11.0 12.0 20.0 14.0 24.0 11.0 18.0 11.0  6.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [449] 12.0 14.0 11.0 46.0 13.0 10.0 21.0 12.0  8.0 14.0 12.0  8.0 22.0  8.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [463]  9.0 10.0 48.0 63.0 57.0 60.0 71.0 82.0  4.0 11.0 14.0 13.0 16.0 22.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [477]  9.0 22.0  8.0 11.0 20.0  8.0 14.0 12.0 10.0 11.0 26.0  7.0 20.0 11.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [491] 10.0 16.0 23.0 24.0 23.0 28.0 25.0 35.0 38.0 16.0 16.0 16.0 15.0 20.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [505] 18.0 20.0 18.0 20.0 13.0 15.0 19.0 23.0 20.0 20.0 21.0 20.0 18.0 10.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [519] 15.0 16.0 14.0 27.0  9.0 18.0 13.0 14.0 18.0 18.0 14.0 11.0 16.0 25.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [533] 34.0 45.0 29.0 56.0 26.0 61.0 45.0 35.0 48.0 24.0 21.0 32.0 28.0  9.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [547] 10.0 13.0 14.0 14.0 12.0 13.0  9.0 12.0  7.0 10.0 13.0 10.0 20.0  8.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [561] 15.0 10.0 10.0 12.0  9.0  8.0 12.0  8.0 12.0 39.0 39.0 41.0 44.0 38.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [575] 47.0 51.0 48.0 46.0 43.0 34.0 37.0 47.0 46.0 36.0 36.0 36.0 38.0 35.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [589] 50.0 51.0 50.0 50.0 58.0 10.0 12.0 12.0 14.0 14.0 16.0 12.0 10.0 13.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [603]  5.0 11.0 10.0 11.0 22.0  6.0 11.0  8.0  9.0 10.0  8.0  7.0 10.0  8.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [617]  9.0 53.0 54.0 56.0 32.0 35.0 35.0 35.0 33.0 37.0 31.0 38.0 42.0 33.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [631] 67.0 42.0 40.0 34.0 42.0 15.0 11.0 13.0 12.0  6.0  8.0 17.0 21.0 18.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [645] 16.0 12.0 17.0 10.0 13.0 11.0 10.0 66.0 10.0 13.0 13.0  9.0  9.0  9.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [659] 14.0 34.0 35.0 30.0 58.0 54.0 16.0 16.0 15.0 13.0 15.0 17.0 15.0 15.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [673] 16.0 18.0  9.0 14.0 15.0 23.0 21.0 11.0 12.0 10.0 11.0  9.0  8.0 10.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [687] 14.0 19.0  8.0 28.0  7.0 23.0 11.0 18.0 14.0 15.0 11.0  8.0 15.0 14.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [701] 14.0 13.0 13.0 14.0 13.0 16.0 14.0 15.0 12.0  5.0  8.0 14.0 11.0 28.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [715]  8.0 13.0  8.0 11.0  6.0  7.0  8.0 24.0 12.0  7.0  8.0 10.0  9.0  9.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [729]  6.0  5.0 48.0 14.0  8.0  8.0 29.0 15.0 19.0 18.0 17.0 18.0 24.0 21.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [743] 24.0 22.0 35.0 38.0 43.0 37.0 18.0 17.0 16.0 18.0 18.0 35.0 35.0 31.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [757] 41.0 30.0 29.0 34.0 26.0 39.0 38.0 35.0 41.0 39.0 33.0 29.0 25.0 34.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [771] 28.0 55.0 68.0 56.0 58.0 56.0 12.0 13.0 20.0 22.0 13.0 10.0 10.0 11.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [785]  6.0  9.0  8.0 10.0 14.0 10.0  8.0  5.0 12.0  9.0  5.0 10.0 10.0 12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [799] 11.0 24.0 24.0 15.0 50.0 47.0 27.0 28.0 32.0 27.0 29.0 48.0 59.0 47.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [813] 39.0 42.0  9.0  9.0 10.0 13.0 14.0 13.0 12.0  7.0  9.0  8.0 12.0  9.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [827]  9.0 25.0  7.0  9.0 15.0 12.0  7.0  8.0 13.0 12.0 12.0 31.0 28.0 33.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [841] 30.0 30.0 39.0 35.0 37.0 35.0 37.0  9.0 13.0 14.0 18.0 17.0 23.0 14.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [855] 11.0 17.0  9.0 13.0 11.0 13.0 36.0  8.0 16.0  8.0 11.0  6.0 10.0 12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [869] 20.0 10.0 41.0 40.0 44.0 43.0 40.0 48.0 49.0 47.0 48.0 48.0 42.0 43.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [883] 39.0 37.0 42.0 45.0 54.0 51.0 48.0 46.0 54.0 11.0 13.0 12.0 19.0 16.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [897] 18.0 12.0 15.0 14.0  7.0 10.0 10.0 12.0 45.0 10.0 14.0  8.0 14.0 12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [911]  7.0  8.0 11.0 13.0 13.0 34.0 38.0 39.0 44.0 38.0 42.0 34.0 39.0 38.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [925] 39.0 31.0 37.0 30.0 31.0 34.0 35.0 35.0 32.0 31.0  5.0  5.0  5.0 11.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [939] 29.0 21.0 13.0 16.0 33.0 11.0 11.0 12.0 17.0 13.0 13.0  7.9 12.0 15.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [953] 18.0 17.0 12.0  6.9 23.0 24.0 36.0 34.0 10.0 11.0 12.0 17.0 13.0 13.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [967]  7.9 25.0 15.0 18.0 15.0 43.0 32.0 43.0 33.0 37.0 40.0 44.0 41.0 30.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [981] 43.0 36.0 48.0 33.0 12.0 12.0  9.9 10.0 16.0 14.0 12.0 14.0 20.0 12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [995] 10.0 15.0 15.0  9.2 12.0 10.0 14.0 13.0 12.0 15.0 11.0 10.0  8.4 12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1009] 12.0 16.0  8.1 10.0 12.0  9.4 10.0 38.0 45.0 50.0 30.0 78.0 53.0 49.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1023] 36.0 20.0 66.0 41.0 42.0 51.0 44.0 28.0 32.0 53.0 61.0 18.0 25.0 28.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1037] 34.0 29.0 64.0 49.0 30.0 36.0 28.0 37.0 50.0 30.0 39.0 50.0 75.0 20.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1051] 22.0 18.0 45.0 23.0 15.0 17.0 22.0 15.0 17.0 25.0 25.0 18.0  7.4  8.6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1065]  8.6 11.0  9.9 22.0 10.0 12.0  9.9 16.0  8.4  8.3  8.2  9.6  7.4 11.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1079] 15.0 15.0 16.0 15.0 13.0 20.0 16.0 12.0 14.0 21.0 14.0 11.0 10.0  8.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1093] 18.0 16.0 20.0 17.0 41.0 36.0 87.0 26.0 30.0 16.0 27.0 22.0 19.0 26.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1107] 26.0 47.0 20.0 55.0 43.0 22.0 35.0 41.0 32.0 22.0 31.0 67.0 17.0 15.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1121] 15.0 15.0 27.0 42.0 17.0 18.0 18.0 15.0 15.0 17.0 20.0 15.0 15.0 14.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1135] 11.0 14.0 15.0 11.0  9.3 15.0 15.0 14.0 17.0 30.0 29.0 21.0 14.0 24.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1149] 18.0 17.0 23.0 18.0 21.0 23.0 23.0 17.0 45.0 14.0 31.0 15.0 24.0 14.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1163] 33.0 39.0 51.0 20.0 27.0 22.0 20.0 32.0 19.0 20.0 23.0 35.0 35.0 21.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1177] 36.0 35.0 24.0 23.0 35.0 79.0 56.0 50.0 51.0 75.0 82.0 50.0 34.0 20.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1191] 22.0 21.0 32.0 30.0 20.0 28.0 36.0 27.0 46.0 22.0 24.0 19.0 50.0 46.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1205] 42.0 24.0 39.0 25.0 28.0 27.0 24.0 25.0 45.0 37.0 39.0 42.0 33.0 39.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1219] 64.0 36.0 28.0 23.0 59.0 38.0 27.0 54.0 21.0 26.0 28.0 22.0 19.0 27.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1233] 38.0 21.0 21.0 37.0 25.0 19.0 22.0 25.0 32.0  8.9 17.0 20.0 22.0 18.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1247] 20.0 64.0 27.0 29.0 28.0 27.0 28.0 41.0 26.0 13.0 10.0  9.5  7.4 26.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1261] 15.0 14.0  6.9 14.0 11.0 10.0 11.0 12.0 12.0 11.0 12.0 15.0 18.0 18.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1275] 20.0 15.0 19.0 17.0 18.0 16.0 19.0 20.0 18.0 22.0 18.0 16.0 15.0 11.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1289] 16.0 15.0 15.0 19.0 17.0 20.0 22.0 23.0 21.0 13.0 16.0 14.0 19.0 15.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1303] 12.0 15.0  9.4 12.0 44.0 16.0 12.0  9.9 21.0 14.0 21.0 13.0 56.0 69.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1317] 82.0 82.0 68.0 74.0 62.0 48.0 46.0 59.0 58.0 87.0 62.0 62.0 22.0 60.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1331] 34.0 56.0 34.0 76.0 35.0 24.0 38.0 38.0 43.0 38.0 64.0 76.0 56.0 65.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1345] 76.0 74.0 80.0 86.0 55.0 53.0 73.0 60.0 49.0 52.0 46.0 39.0 36.0 29.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1359] 13.0 13.0 13.0 16.0 14.0 16.0 14.0 15.0 15.0 21.0 15.0 13.0 14.0  9.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1373]  6.0  7.0 16.0 15.0  7.0 23.0 12.0 16.0  9.0 10.0 24.0 13.0  7.0  6.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1387] 17.0 13.0  9.0  7.0  7.0 87.0 71.0 69.0 16.0 52.0 53.0 55.0 71.0 44.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1401] 59.0 47.0 55.0 38.0 30.0 31.0 32.0 35.0 37.0 32.0 27.0 36.0 39.0 56.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1415] 39.0 40.0 37.0 42.0 30.0 37.0 41.0 37.0 33.0 38.0 37.0 30.0 37.0 28.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1429] 34.0 31.0 34.0 31.0 36.0 34.0 39.0 44.0 40.0 45.0 38.0 49.0 38.0 47.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1443] 52.0 49.0 16.0 18.0 12.0 15.0 13.0 15.0 15.0  8.0  9.0 16.0 10.0 25.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1457]  6.0 10.0 12.0 14.0  9.0  8.0  8.0 13.0 10.0 43.0 40.0 80.0 66.0 61.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1471] 73.0 33.0 56.0 51.0 62.0 45.0 47.0 69.0 57.0  9.0 12.0 15.0  8.0  9.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1485]  9.0  7.0  9.0  8.0  8.0 25.0  6.0 11.0  8.0 14.0 10.0  6.0  8.0 12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1499] 10.0  8.0 34.0 36.0 52.0 42.0 10.0  9.0 14.0  3.0  9.0  9.0  7.0  8.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1513] 10.0  9.0 20.0  9.0 10.0 10.0 18.0 10.0  6.0  8.0  8.0  9.0 41.0 41.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1527] 43.0 35.0 35.0 50.0 44.0 38.0 44.0 39.0 49.0 47.0 44.0 49.0 49.0 43.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1541] 74.0 69.0 41.0 40.0 40.0 39.0 35.0 34.0 38.0 42.0 42.0 47.0 36.0 31.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1555] 29.0 32.0 26.0 29.0 64.0 46.0 40.0 39.0 39.0 52.0 30.0 25.0 30.0 34.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1569] 52.0 51.0 55.0 51.0 61.0 59.0 43.0 50.0 42.0 51.0 56.0  8.0 10.0 11.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1583] 14.0 16.0 11.0  8.0 11.0  8.0  9.0 10.0 12.0 32.0  8.0 12.0  8.0 10.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1597] 11.0  8.0  6.0 10.0  8.0  8.0 59.0 54.0 51.0 54.0 57.0 55.0 49.0 55.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1611] 53.0 50.0 45.0 14.0 15.0 13.0 14.0 12.0 11.0 13.0 11.0  9.0 10.0  6.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1625]  7.0 18.0  9.0 23.0  6.0  5.0  4.0  6.0  5.0  8.0  7.0 14.0  8.0  7.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1639]  6.0  7.0 18.0  5.0  6.0 12.0  5.0 13.0 36.0 41.0 14.0 17.0 14.0 13.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1653] 14.0 14.0 12.0 14.0 14.0 12.0 84.0 64.0 54.0 54.0 55.0 73.0 39.0 66.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1667] 81.0 43.0 25.0 48.0 68.0 37.0  6.0 40.0 51.0 29.0 28.0 38.0 24.0 63.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1681] 50.0 38.0 36.0 38.0 59.0 46.0 59.0 15.0 62.0 86.0 32.0 78.0  1.5 48.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1695] 62.0 45.0 53.0 73.0 74.0 83.0  1.5 38.0 49.0 25.0 75.0 50.0 28.0 47.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1709] 30.0 21.0  1.5 60.0 25.0 70.0 89.0 32.0 29.0 40.0 21.0 42.0 57.0 81.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1723] 41.0 43.0 16.0 33.0 46.0 55.0 52.0 74.0 37.0 46.0 41.0 21.0 37.0 47.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1737] 16.0 37.0 27.0 26.0 32.0 31.0 21.0 37.0 80.0 61.0 76.0 39.0 40.0 20.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1751] 33.0 53.0 37.0 40.0 17.0 24.0 54.0 42.0 18.0 27.0 14.0 49.0 33.0 60.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1765] 21.0 32.0 35.0 40.0 24.0 43.0 81.0 63.0 36.0 15.0  1.5 73.0 46.0 32.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1779] 38.0 35.0 38.0 23.0 33.0 39.0 70.0 21.0 41.0 33.0 63.0 37.0 46.0 38.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1793] 33.0 41.0 27.0 20.0 27.0 55.0 52.0 24.0 57.0 20.0 61.0 45.0 73.0 37.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1807] 73.0 34.0 26.0 35.0 48.0 47.0 10.0 34.0 46.0 29.0 44.0 47.0 65.0 70.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1821] 38.0 31.0 26.0 48.0 15.0 54.0 29.0 52.0 80.0 24.0 43.0 38.0 37.0 25.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1835] 18.0 46.0 71.0 73.0 54.0 36.0 37.0 42.0 43.0 30.0 52.0 36.0 42.0 62.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1849] 65.0 57.0 38.0  1.5 30.0 67.0 42.0 65.0 38.0 30.0 46.0 41.0 29.0 50.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1863] 46.0 62.0 21.0 72.0 13.0 76.0 28.0 59.0 21.0 27.0 25.0 49.0 43.0 36.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1877] 63.0 83.0 50.0 58.0 30.0 14.0 61.0 30.0 31.0 10.0 45.0 24.0 39.0 42.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1891] 54.0 26.0 50.0 39.0 37.0 38.0 57.0 67.0 35.0 35.0 60.0 37.0 46.0 22.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1905] 63.0 29.0 23.0 29.0 61.0 52.0 36.0 25.0 11.0 34.0 44.0 30.0 54.0 38.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1919] 68.0 80.0 25.0 31.0 25.0 46.0 48.0 25.0  8.0 32.0 39.0 60.0 27.0 31.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1933] 43.0 36.0 72.0 46.0 38.0 47.0 50.0 58.0 17.0 57.0 62.0 62.0 32.0 31.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1947] 48.0 50.0 31.0 50.0 64.0 58.0 28.0 40.0 11.0 39.0 35.0 67.0 35.0 41.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1961] 41.0 41.0 27.0 14.0 26.0 49.0 14.0 42.0 87.0 24.0 36.0 39.0 24.0 34.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1975] 46.0 41.0 54.0 52.0 25.0 59.0 33.0 38.0 21.0 41.0 61.0 46.0 21.0 45.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1989] 45.0 42.0 37.0 58.0 43.0 51.0 51.0 40.0 41.0 54.0 25.0 20.0 24.0 33.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2003] 49.0 32.0 10.0 54.0 33.0 42.0 10.0 48.0 10.0 33.0 39.0 66.0 68.0 38.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2017] 26.0 66.0 28.0 70.0 32.0 48.0 47.0 21.0 32.0 41.0 26.0 23.0 48.0 44.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2031] 56.0 61.0 45.0 36.0 51.0 26.0 39.0 35.0 30.0 45.0 62.0 11.0 43.0 38.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2045] 24.0 42.0 26.0 41.0 25.0 56.0 49.0 49.0 59.0  1.5 39.0 38.0 50.0 55.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2059] 55.0 62.0 28.0 34.0 29.0 26.0 46.0 53.0 42.0 32.0 43.0 28.0 39.0 33.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2073] 25.0 58.0 55.0 53.0 35.0 52.0 61.0 22.0 34.0 30.0 36.0 41.0 50.0 23.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2087] 67.0 42.0 59.0 19.0 28.0 23.0 41.0 26.0 40.0 47.0 37.0 26.0 70.0 40.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2101] 38.0 32.0 42.0 56.0 58.0 76.0 36.0 40.0 35.0  9.0 24.0 35.0 38.0 31.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2115] 45.0 53.0 60.0 22.0 23.0 37.0 48.0 57.0 40.0 50.0 84.0 14.0 46.0 32.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2129] 73.0 64.0  1.5 28.0 40.0 64.0 33.0 56.0 25.0 46.0 41.0 29.0 50.0 77.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2143] 69.0  8.0 43.0 71.0 28.0 39.0 23.0 76.0 36.0 37.0 37.0 39.0 17.0 22.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2157] 76.0 34.0 37.0 25.0 64.0 40.0 37.0 45.0 83.0 26.0 26.0 44.0 42.0 54.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2171]  6.0 53.0 47.0 35.0  1.5 48.0 30.0 32.0 56.0 44.0 35.0 56.0 83.0 23.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2185] 38.0 32.0 23.0 40.0 21.0 65.0 24.0 65.0 46.0 71.0 33.0 43.0 54.0 49.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2199] 64.0 60.0 31.0 24.0 30.0 60.0 41.0 31.0 23.0 58.0 25.0 24.0 30.0 22.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2213] 18.0 36.0 26.0 22.0 15.0 38.0 37.0 32.0 45.0 16.0  8.0 36.0 33.0 71.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2227] 76.0 40.0 32.0 64.0 61.0 44.0 43.0 22.0 75.0 55.0 25.0 65.0 35.0 42.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2241] 50.0 35.0 52.0  1.5 19.0 33.0 17.0  1.5  8.0 57.0  1.5 63.0 30.0 45.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2255]  1.5 55.0 33.0 65.0 55.0 21.0 18.0 85.0 39.0 57.0 56.0 36.0 32.0 37.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2269] 46.0 39.0 66.0 72.0 34.0 41.0 41.0 32.0 62.0 24.0 21.0 33.0 44.0 36.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2283] 51.0 34.0 70.0 34.0 26.0 31.0 27.0 42.0 31.0 33.0 41.0 48.0 22.0 71.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2297] 66.0 47.0 60.0 48.0 33.0 51.0 15.0 65.0 63.0 32.0 26.0 21.0 48.0 47.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2311] 31.0  9.0 65.0 38.0 42.0 57.0 40.0 21.0 25.0 54.0 41.0 15.0 58.0 62.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2325] 35.0 12.0 43.0 28.0 83.0 41.0 42.0 62.0 38.0 58.0 33.0 51.0 46.0 49.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2339] 24.0 67.0 39.0 42.0 36.0 80.0  1.5 24.0 23.0 22.0 33.0 17.0 36.0 13.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2353] 45.0 60.0 62.0 57.0 15.0 49.0 23.0 61.0 81.0 31.0 30.0 36.0 38.0 35.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2367] 43.0 42.0 35.0 48.0 34.0 33.0 41.0 23.0 34.0 86.0 32.0 61.0 22.0 86.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2381] 55.0 60.0 46.0 64.0 37.0 22.0 46.0 22.0 35.0 39.0 42.0 40.0 89.0 52.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2395] 50.0 54.0 30.0 38.0 28.0 43.0 14.0 42.0 49.0 53.0 67.0 59.0 64.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $type</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "histogram"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $xbins</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $xbins$start</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $marker</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $marker$color</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "#00bde3"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $stroke</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "#005ea2"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $bingroup</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "&lt;b&gt;Outliers Removed&lt;/b&gt;\nUpper Threshold: 89\nLower Threshold: 1.5"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $visible</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "legendonly"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $inherit</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "plotly_histogram" "list"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layout</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layout$width</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layout$height</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layout$margin</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layout$margin$b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 40</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layout$margin$l</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 60</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layout$margin$t</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layout$margin$r</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $source</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "A"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $config</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $config$modeBarButtonsToAdd</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "hoverclosest" "hovercompare"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $config$showSendToCloud</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $config$displayModeBar</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$xaxis</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$xaxis$title</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "UG/L"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$xaxis$titlefont</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$xaxis$titlefont$size</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$xaxis$titlefont$family</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Arial"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$xaxis$tickfont</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$xaxis$tickfont$size</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$xaxis$tickfont$family</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Arial"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$xaxis$hoverformat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ",.4r"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$xaxis$linecolor</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "black"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$xaxis$rangemode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "tozero"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$xaxis$showgrid</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$xaxis$tickcolor</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "black"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$yaxis</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$yaxis$title</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Frequency"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$yaxis$titlefont</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$yaxis$titlefont$size</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$yaxis$titlefont$family</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Arial"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$yaxis$tickfont</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$yaxis$tickfont$size</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$yaxis$tickfont$family</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Arial"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$yaxis$hoverformat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ",.4r"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$yaxis$linecolor</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "black"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$yaxis$rangemode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "tozero"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$yaxis$showgrid</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$yaxis$tickcolor</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "black"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$hoverlabel</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$hoverlabel$bgcolor</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "white"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$title</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Total Phosphorus_as P_ug/L"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$plot_bgcolor</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "#e5ecf6"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$barmode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "overlay"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$legend</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$legend$title</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $layoutAttrs$`1b7f461f097`$legend$title$text</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "&lt;b&gt;Select 'Outliers Removed' \nand Deselect 'All Data' \nto View a Subset of the Data&lt;b&gt;"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"TOJSON_FUNC")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> function (x, ...) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     jsonlite::toJSON(x, digits = 50, auto_unbox = TRUE, force = TRUE, </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         null = "null", na = "null", time_format = "%Y-%m-%d %H:%M:%OS6", </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         ...)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> }</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;bytecode: 0x558e15702128&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: namespace:plotly&gt;</span>
+<span class="r-in"><span><span class="co"># Create a histogram for each comparable data group (TADA.ComparableDataIdentifier)</span></span></span>
+<span class="r-in"><span><span class="co"># in the input dataframe:</span></span></span>
+<span class="r-in"><span><span class="fu">TADA_Histogram</span><span class="op">(</span><span class="va">Data_6Tribes_5y_Harmonized</span>, id_cols <span class="op">=</span> <span class="st">"TADA.ComparableDataIdentifier"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ALKALINITY, TOTAL_NA_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ALKALINITY, TOTAL_TOTAL_AS CACO3_PCU`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ALKALINITY, TOTAL_TOTAL_AS CACO3_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ALKALINITY, TOTAL_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ALPHA PARTICLE_DISSOLVED_NA_PCI/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ALPHA PARTICLE_NA_NA_PCI/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ALPHA PARTICLE_TOTAL_NA_PCI/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ALUMINUM_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`AMMONIA-NITROGEN_DISSOLVED_AS NH3_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`AMMONIA-NITROGEN_DISSOLVED_AS N_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`AMMONIA-NITROGEN_TOTAL_AS NH3_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`AMMONIA-NITROGEN_TOTAL_AS N_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`AMMONIA-NITROGEN_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`AMMONIA-NITROGEN_TOTAL_NONE_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`AMMONIA_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`AMMONIUM_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`APPARENT COLOR_TOTAL_NA_PCU`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ARSENIC_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ARSENIC_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`BARIUM_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`BAROMETRIC PRESSURE_NA_NA_G/M2`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`BENZENE HEXACHLORIDE, ALPHA (BHC)_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`BERYLLIUM_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`BHC, .BETA.-BHC &amp; .GAMMA.-BHC MIX, UNSPECIFIED_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`BIOCHEMICAL OXYGEN DEMAND, STANDARD CONDITIONS_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`BORON_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`CADMIUM_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`CADMIUM_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`CALCIUM_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`CHEMICAL OXYGEN DEMAND_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`CHLORIDE_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`CHLOROPHYLL A, CORRECTED FOR PHEOPHYTIN_SUSPENDED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`CHLOROPHYLL A_NA_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`CHLOROPHYLL A_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`CHROMIUM_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`CHROMIUM_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`COBALT_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`CONDUCTIVITY_NA_NA_US/CM`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`COPPER_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`COPPER_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $COUNT_NA_NA_COUNT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`CYANIDE_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`CYANIDE_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`DEPTH, SECCHI DISK DEPTH_NA_NA_FT`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`DEPTH, SECCHI DISK DEPTH_NA_NA_M`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`DEPTH, SNOW COVER_NA_NA_IN`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $DEPTH_NA_NA_FT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $DEPTH_NA_NA_IN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $DEPTH_NA_NA_M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`DISCHARGE, RIVER/STREAM_NA_NA_CFS`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`DISSOLVED OXYGEN (DO)_NA_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`DISSOLVED OXYGEN SATURATION_NA_NA_%`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`DISSOLVED OXYGEN UPTAKE_NA_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ENDRIN ALDEHYDE_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ENDRIN_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ESCHERICHIA COLI_NA_NA_#/100ML`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ESCHERICHIA COLI_NA_NA_MPN/100ML`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $FLOW_NA_NA_CFS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`FLUORIDE_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`GLYPHOSATE_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`GLYPHOSATE_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`HARDNESS, CA, MG_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`HARDNESS, CARBONATE_NA_AS CACO3_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`HARDNESS, CARBONATE_NA_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`HARDNESS, CARBONATE_TOTAL_AS CACO3_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`HARDNESS, CARBONATE_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ICE THICKNESS_NA_NA_IN`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`IRON_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`IRON_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`KJELDAHL NITROGEN_TOTAL RECOVERABLE_AS N_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`KJELDAHL NITROGEN_TOTAL RECOVERABLE_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`KJELDAHL NITROGEN_TOTAL_AS N_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`KJELDAHL NITROGEN_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`LEAD_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`LEAD_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`MAGNESIUM_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`MANGANESE_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`MANGANESE_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`MERCURY_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`MERCURY_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`MOLYBDENUM_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`NICKEL_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`NICKEL_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`NITRATE + NITRITE_DISSOLVED_AS N_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`NITRATE + NITRITE_INORGANIC_AS NO3_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`NITRATE + NITRITE_TOTAL_AS N_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`NITRATE_TOTAL_AS NO3_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`NITRATE_TOTAL_AS N_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`NITRATE_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`NITRATE_TOTAL_NONE_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`NITRATE_UNFILTERED_AS N_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`NITRITE_TOTAL_AS NO2_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`NITRITE_TOTAL_AS N_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`NITRITE_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`NITRITE_UNFILTERED_AS N_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`NITROGEN_TOTAL_NONE_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ORGANIC CARBON_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ORGANIC CARBON_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ORTHOPHOSPHATE_DISSOLVED_AS P_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ORTHOPHOSPHATE_TOTAL RECOVERABLE_AS P_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ORTHOPHOSPHATE_TOTAL_AS PO4_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ORTHOPHOSPHATE_TOTAL_AS P_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ORTHOPHOSPHATE_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`PERIPHYTON_NA_NA_G/M2`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`PHEOPHYTIN A_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`PHOSPHORUS_TOTAL_AS PO4_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`PHOSPHORUS_TOTAL_AS P_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`PHOSPHORUS_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $PH_NA_NA_NONE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`POTASSIUM_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`PRESSURE_NA_NA_G/M2`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $PRESSURE_NA_NA_MMHG</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`RADIUM-226_NA_NA_PCI/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`RADIUM-226_TOTAL_NA_PCI/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`RADIUM-228_NA_NA_PCI/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`RADIUM-228_TOTAL_NA_PCI/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $SALINITY_NA_NA_PSS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`SELENIUM_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`SELENIUM_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`SILICON_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`SILVER_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`SODIUM_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`SPECIFIC CONDUCTANCE_NA_NA_US/CM`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`STREAM STAGE_NA_NA_FT`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`SULFATE_TOTAL_AS SO4_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`SULFATE_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`TEMPERATURE, AIR_NA_NA_DEG C`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`TEMPERATURE, SAMPLE_NA_NA_DEG C`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`TEMPERATURE, WATER_NA_NA_DEG C`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`THALLIUM_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`TOTAL DISSOLVED SOLIDS_NA_NA_UG/KG`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`TOTAL DISSOLVED SOLIDS_NA_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`TOTAL DISSOLVED SOLIDS_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`TOTAL HARDNESS_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`TOTAL KJELDAHL NITROGEN (ORGANIC N &amp; NH3)_UNFILTERED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`TOTAL NITROGEN, MIXED FORMS_TOTAL_AS N_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`TOTAL NITROGEN, MIXED FORMS_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`TOTAL PHOSPHORUS, MIXED FORMS_UNFILTERED_AS P_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`TOTAL PHOSPHORUS, MIXED FORMS_UNFILTERED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`TOTAL SUSPENDED SOLIDS_NA_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`TOXAPHENE_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`TRANSPARENCY, SECCHI TUBE WITH DISK_NA_NA_CM`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`TRITIUM_NA_NA_PCI/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`TURBIDITY FIELD_NA_NA_FNU`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`TURBIDITY FIELD_NA_NA_FTU`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $TURBIDITY_NA_NA_FNU</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $TURBIDITY_NA_NA_FTU</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $TURBIDITY_TOTAL_NA_FTU</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`URANIUM_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`VANADIUM_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`VOLATILE SUSPENDED SOLIDS_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ZINC_DISSOLVED_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`ZINC_TOTAL_NA_UG/L`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Create histogram with additional grouping columns and view first plot in list. In this example, we will group by both the comparable data identifier and the monitoring location type (e.g. stream, reservoir, canal, etc.)</span></span></span>
+<span class="r-in"><span><span class="co"># Create a single histogram using defaults. The input dataframe in this example</span></span></span>
+<span class="r-in"><span><span class="co"># is filtered so it includes only one TADA.ComparableDataIdentifier</span></span></span>
+<span class="r-in"><span><span class="va">df</span> <span class="op">=</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">Data_6Tribes_5y_Harmonized</span>, <span class="va">TADA.ComparableDataIdentifier</span> <span class="op">==</span> <span class="st">"TOTAL PHOSPHORUS, MIXED FORMS_UNFILTERED_AS P_UG/L"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">TADA_Histogram</span><span class="op">(</span><span class="va">df</span>, id_cols <span class="op">=</span> <span class="st">"TADA.ComparableDataIdentifier"</span><span class="op">)</span></span></span>
+<div id="htmlwidget-36a0012070b88b60c744" style="width:700px;height:432.632880098888px;" class="plotly html-widget "></div>
+<script type="application/json" data-for="htmlwidget-36a0012070b88b60c744">{"x":{"visdat":{"1b902a962d7c":["function () ","plotlyVisDat"]},"cur_data":"1b902a962d7c","attrs":{"1b902a962d7c":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[24.131399999999999,41.7408,37.827600000000004,25.1097,38.479800000000004,90.98190000000001,71.089799999999997,29.6751,41.414699999999996,55.763100000000001,154.89749999999998,183.59429999999998,53.8065,27.392400000000002,25.1097,511.97700000000003,258.27119999999996,176.42009999999999,60.328499999999998,34.892699999999998,18.913800000000002,95.873400000000004,40.436399999999999,28.370699999999999,29.349,30.979500000000002,298.70760000000001,260.88,117.7221,32.609999999999999,24.4575,80.872799999999998,450.01799999999997,348.92699999999996,368.49299999999999,77.285700000000006,21.61487,88.717749999999995,20.001819999999999,57.424580000000006,36.454930000000004,28.712290000000003,27.74446,27.421850000000003,25.761900000000001,16.305,25.1097,66.198300000000003,44.675699999999999,38.805899999999994,40.110300000000002,14.0223,20.5443,44.675699999999999,18.261599999999998,21.522600000000001,335.88299999999998,134.35320000000002,43.045200000000001,198.5949,38.479800000000004,21.522600000000001,34.566600000000001,146.74499999999998,100.76490000000001,67.176600000000008,27.421850000000003,25.1097,13.044,26.740199999999998,28.370699999999999,41.0886],"type":"histogram","xbins":{"start":13.044},"marker":{"color":"#00bde3"},"stroke":["#005ea2"],"bingroup":1,"name":"<b>All Data<b>","inherit":true},"1b902a962d7c.1":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[24.131399999999999,41.7408,37.827600000000004,25.1097,38.479800000000004,90.98190000000001,71.089799999999997,29.6751,41.414699999999996,55.763100000000001,154.89749999999998,53.8065,27.392400000000002,25.1097,176.42009999999999,60.328499999999998,34.892699999999998,18.913800000000002,95.873400000000004,40.436399999999999,28.370699999999999,29.349,30.979500000000002,117.7221,32.609999999999999,24.4575,80.872799999999998,77.285700000000006,21.61487,88.717749999999995,20.001819999999999,57.424580000000006,36.454930000000004,28.712290000000003,27.74446,27.421850000000003,25.761900000000001,16.305,25.1097,66.198300000000003,44.675699999999999,38.805899999999994,40.110300000000002,14.0223,20.5443,44.675699999999999,18.261599999999998,21.522600000000001,134.35320000000002,43.045200000000001,38.479800000000004,21.522600000000001,34.566600000000001,146.74499999999998,100.76490000000001,67.176600000000008,27.421850000000003,25.1097,13.044,26.740199999999998,28.370699999999999,41.0886],"type":"histogram","xbins":{"start":13.044},"marker":{"color":"#00bde3"},"stroke":["#005ea2"],"bingroup":1,"name":"<b>Outliers Removed<\/b><br />Upper Threshold: 176.4201<br />Lower Threshold: 13.044","visible":"legendonly","inherit":true}},"layout":{"margin":{"b":20,"l":50,"t":55,"r":20,"pad":0},"xaxis":{"domain":[0,1],"automargin":true,"title":"UG/L","titlefont":{"size":16,"family":"Arial"},"tickfont":{"size":16,"family":"Arial"},"hoverformat":",.4r","linecolor":"black","rangemode":"tozero","showgrid":false,"tickcolor":"black"},"yaxis":{"domain":[0,1],"automargin":true,"title":"Frequency","titlefont":{"size":16,"family":"Arial"},"tickfont":{"size":16,"family":"Arial"},"hoverformat":",.4r","linecolor":"black","rangemode":"tozero","showgrid":false,"tickcolor":"black"},"hoverlabel":{"bgcolor":"white"},"title":"Histogram of <br />TOTAL PHOSPHORUS, MIXED FORMS_UNFILTERED_AS P_UG/L","plot_bgcolor":"#e5ecf6","barmode":"overlay","legend":{"title":{"text":"<b>Select 'Outliers Removed' <br />and Deselect 'All Data' <br />to View a Subset of the Data<b>"}},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":true},"data":[{"x":[24.131399999999999,41.7408,37.827600000000004,25.1097,38.479800000000004,90.98190000000001,71.089799999999997,29.6751,41.414699999999996,55.763100000000001,154.89749999999998,183.59429999999998,53.8065,27.392400000000002,25.1097,511.97700000000003,258.27119999999996,176.42009999999999,60.328499999999998,34.892699999999998,18.913800000000002,95.873400000000004,40.436399999999999,28.370699999999999,29.349,30.979500000000002,298.70760000000001,260.88,117.7221,32.609999999999999,24.4575,80.872799999999998,450.01799999999997,348.92699999999996,368.49299999999999,77.285700000000006,21.61487,88.717749999999995,20.001819999999999,57.424580000000006,36.454930000000004,28.712290000000003,27.74446,27.421850000000003,25.761900000000001,16.305,25.1097,66.198300000000003,44.675699999999999,38.805899999999994,40.110300000000002,14.0223,20.5443,44.675699999999999,18.261599999999998,21.522600000000001,335.88299999999998,134.35320000000002,43.045200000000001,198.5949,38.479800000000004,21.522600000000001,34.566600000000001,146.74499999999998,100.76490000000001,67.176600000000008,27.421850000000003,25.1097,13.044,26.740199999999998,28.370699999999999,41.0886],"type":"histogram","xbins":{"start":13.044},"marker":{"color":"#00bde3","line":{"color":"rgba(0,94,162,1)","width":1}},"bingroup":1,"name":"<b>All Data<b>","error_y":{"color":"rgba(31,119,180,1)","thickness":1},"error_x":{"color":"rgba(31,119,180,1)","thickness":1},"xaxis":"x","yaxis":"y","frame":null},{"x":[24.131399999999999,41.7408,37.827600000000004,25.1097,38.479800000000004,90.98190000000001,71.089799999999997,29.6751,41.414699999999996,55.763100000000001,154.89749999999998,53.8065,27.392400000000002,25.1097,176.42009999999999,60.328499999999998,34.892699999999998,18.913800000000002,95.873400000000004,40.436399999999999,28.370699999999999,29.349,30.979500000000002,117.7221,32.609999999999999,24.4575,80.872799999999998,77.285700000000006,21.61487,88.717749999999995,20.001819999999999,57.424580000000006,36.454930000000004,28.712290000000003,27.74446,27.421850000000003,25.761900000000001,16.305,25.1097,66.198300000000003,44.675699999999999,38.805899999999994,40.110300000000002,14.0223,20.5443,44.675699999999999,18.261599999999998,21.522600000000001,134.35320000000002,43.045200000000001,38.479800000000004,21.522600000000001,34.566600000000001,146.74499999999998,100.76490000000001,67.176600000000008,27.421850000000003,25.1097,13.044,26.740199999999998,28.370699999999999,41.0886],"type":"histogram","xbins":{"start":13.044},"marker":{"color":"#00bde3","line":{"color":"rgba(0,94,162,1)","width":1}},"bingroup":1,"name":"<b>Outliers Removed<\/b><br />Upper Threshold: 176.4201<br />Lower Threshold: 13.044","visible":"legendonly","error_y":{"color":"rgba(255,127,14,1)","thickness":1},"error_x":{"color":"rgba(255,127,14,1)","thickness":1},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Create multiple histograms with additional grouping columns and view the first</span></span></span>
+<span class="r-in"><span><span class="co"># plot in list. In this example, we will group by both TADA.ComparableDataIdentifier</span></span></span>
+<span class="r-in"><span><span class="co"># and MonitoringLocationTypeName (e.g. stream, reservoir, canal, etc.)</span></span></span>
 <span class="r-in"><span><span class="co"># Load example dataset:</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">Data_Nutrients_Utah</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>data set ‘Data_Nutrients_Utah’ not found</span>
-<span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">Histogram_output</span> <span class="op">=</span> <span class="fu">TADA_Histogram</span><span class="op">(</span><span class="va">Data_Nutrients_UT</span>, id_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"TADA.ComparableDataIdentifier"</span>,<span class="st">"MonitoringLocationTypeName"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Plotting function removed 17 results where TADA.ResultMeasureValue = NA. These results cannot be plotted."</span>
-<span class="r-in"><span><span class="va">Histogram_output</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span></span>
-<div id="htmlwidget-ee790f2bfda856293041" style="width:700px;height:432.632880098888px;" class="plotly html-widget "></div>
-<script type="application/json" data-for="htmlwidget-ee790f2bfda856293041">{"x":{"visdat":{"1b7f38004796":["function () ","plotlyVisDat"]},"cur_data":"1b7f38004796","attrs":{"1b7f38004796":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200],"type":"histogram","xbins":{"start":200},"marker":{"color":"#00bde3"},"stroke":["#005ea2"],"bingroup":1,"name":"<b>All Data<b>","inherit":true},"1b7f38004796.1":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200],"type":"histogram","xbins":{"start":200},"marker":{"color":"#00bde3"},"stroke":["#005ea2"],"bingroup":1,"name":"<b>Outliers Removed<\/b><br />Upper Threshold: 200<br />Lower Threshold: 200","visible":"legendonly","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"UG/L","titlefont":{"size":16,"family":"Arial"},"tickfont":{"size":16,"family":"Arial"},"hoverformat":",.4r","linecolor":"black","rangemode":"tozero","showgrid":false,"tickcolor":"black"},"yaxis":{"domain":[0,1],"automargin":true,"title":"Frequency","titlefont":{"size":16,"family":"Arial"},"tickfont":{"size":16,"family":"Arial"},"hoverformat":",.4r","linecolor":"black","rangemode":"tozero","showgrid":false,"tickcolor":"black"},"hoverlabel":{"bgcolor":"white"},"title":"AMMONIA_TOTAL_AS N_UG/L-River/Stream","plot_bgcolor":"#e5ecf6","barmode":"overlay","legend":{"title":{"text":"<b>Select 'Outliers Removed' <br />and Deselect 'All Data' <br />to View a Subset of the Data<b>"}},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":true},"data":[{"x":[200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200],"type":"histogram","xbins":{"start":200},"marker":{"color":"#00bde3","line":{"color":"rgba(0,94,162,1)","width":1}},"bingroup":1,"name":"<b>All Data<b>","error_y":{"color":"rgba(31,119,180,1)","thickness":1},"error_x":{"color":"rgba(31,119,180,1)","thickness":1},"xaxis":"x","yaxis":"y","frame":null},{"x":[200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200],"type":"histogram","xbins":{"start":200},"marker":{"color":"#00bde3","line":{"color":"rgba(0,94,162,1)","width":1}},"bingroup":1,"name":"<b>Outliers Removed<\/b><br />Upper Threshold: 200<br />Lower Threshold: 200","visible":"legendonly","error_y":{"color":"rgba(255,127,14,1)","thickness":1},"error_x":{"color":"rgba(255,127,14,1)","thickness":1},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># This example generates 45 histograms</span></span></span>
+<span class="r-in"><span><span class="va">Histogram_output</span><span class="op">[[</span><span class="fl">10</span><span class="op">]</span><span class="op">]</span></span></span>
+<div id="htmlwidget-9dcc5be226c665e73ae7" style="width:700px;height:432.632880098888px;" class="plotly html-widget "></div>
+<script type="application/json" data-for="htmlwidget-9dcc5be226c665e73ae7">{"x":{"visdat":{"1b9048c6037f":["function () ","plotlyVisDat"]},"cur_data":"1b9048c6037f","attrs":{"1b9048c6037f":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[8.5800000000000001,0.036999999999999998,0.93500000000000005,3.8599999999999999,4.9100000000000001,1.8999999999999999,2.0699999999999998,0.33200000000000002,3.4500000000000002,2.0299999999999998,1.8400000000000001,0.54500000000000004,4.46,0.214,2.73,4.2400000000000002,3.8300000000000001,0.95599999999999996,0.040000000000000001,0.040000000000000001,4.4199999999999999,3.8100000000000001,1.46,0.040000000000000001,0.92100000000000004,1.5600000000000001,0.040000000000000001,4.5800000000000001,1.46,1.6499999999999999,0.24399999999999999,0.55500000000000005,0.56899999999999995,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.33700000000000002,1.6599999999999999,3.71,0.19800000000000001,0.86699999999999999,3.48,0.040000000000000001,0.040000000000000001,4.1799999999999997,2.7999999999999998],"type":"histogram","xbins":{"start":0.036999999999999998},"marker":{"color":"#00bde3"},"stroke":["#005ea2"],"bingroup":1,"name":"<b>All Data<b>","inherit":true},"1b9048c6037f.1":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[0.036999999999999998,0.93500000000000005,3.8599999999999999,4.9100000000000001,1.8999999999999999,2.0699999999999998,0.33200000000000002,3.4500000000000002,2.0299999999999998,1.8400000000000001,0.54500000000000004,4.46,0.214,2.73,4.2400000000000002,3.8300000000000001,0.95599999999999996,0.040000000000000001,0.040000000000000001,4.4199999999999999,3.8100000000000001,1.46,0.040000000000000001,0.92100000000000004,1.5600000000000001,0.040000000000000001,4.5800000000000001,1.46,1.6499999999999999,0.24399999999999999,0.55500000000000005,0.56899999999999995,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.33700000000000002,1.6599999999999999,3.71,0.19800000000000001,0.86699999999999999,3.48,0.040000000000000001,0.040000000000000001,4.1799999999999997,2.7999999999999998],"type":"histogram","xbins":{"start":0.036999999999999998},"marker":{"color":"#00bde3"},"stroke":["#005ea2"],"bingroup":1,"name":"<b>Outliers Removed<\/b><br />Upper Threshold: 4.91<br />Lower Threshold: 0.037","visible":"legendonly","inherit":true}},"layout":{"margin":{"b":20,"l":50,"t":55,"r":20,"pad":0},"xaxis":{"domain":[0,1],"automargin":true,"title":"MG/L AS N","titlefont":{"size":16,"family":"Arial"},"tickfont":{"size":16,"family":"Arial"},"hoverformat":",.4r","linecolor":"black","rangemode":"tozero","showgrid":false,"tickcolor":"black"},"yaxis":{"domain":[0,1],"automargin":true,"title":"Frequency","titlefont":{"size":16,"family":"Arial"},"tickfont":{"size":16,"family":"Arial"},"hoverformat":",.4r","linecolor":"black","rangemode":"tozero","showgrid":false,"tickcolor":"black"},"hoverlabel":{"bgcolor":"white"},"title":"Histogram of <br />NITRATE_DISSOLVED_NA_MG/L AS N_Well","plot_bgcolor":"#e5ecf6","barmode":"overlay","legend":{"title":{"text":"<b>Select 'Outliers Removed' <br />and Deselect 'All Data' <br />to View a Subset of the Data<b>"}},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":true},"data":[{"x":[8.5800000000000001,0.036999999999999998,0.93500000000000005,3.8599999999999999,4.9100000000000001,1.8999999999999999,2.0699999999999998,0.33200000000000002,3.4500000000000002,2.0299999999999998,1.8400000000000001,0.54500000000000004,4.46,0.214,2.73,4.2400000000000002,3.8300000000000001,0.95599999999999996,0.040000000000000001,0.040000000000000001,4.4199999999999999,3.8100000000000001,1.46,0.040000000000000001,0.92100000000000004,1.5600000000000001,0.040000000000000001,4.5800000000000001,1.46,1.6499999999999999,0.24399999999999999,0.55500000000000005,0.56899999999999995,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.33700000000000002,1.6599999999999999,3.71,0.19800000000000001,0.86699999999999999,3.48,0.040000000000000001,0.040000000000000001,4.1799999999999997,2.7999999999999998],"type":"histogram","xbins":{"start":0.036999999999999998},"marker":{"color":"#00bde3","line":{"color":"rgba(0,94,162,1)","width":1}},"bingroup":1,"name":"<b>All Data<b>","error_y":{"color":"rgba(31,119,180,1)","thickness":1},"error_x":{"color":"rgba(31,119,180,1)","thickness":1},"xaxis":"x","yaxis":"y","frame":null},{"x":[0.036999999999999998,0.93500000000000005,3.8599999999999999,4.9100000000000001,1.8999999999999999,2.0699999999999998,0.33200000000000002,3.4500000000000002,2.0299999999999998,1.8400000000000001,0.54500000000000004,4.46,0.214,2.73,4.2400000000000002,3.8300000000000001,0.95599999999999996,0.040000000000000001,0.040000000000000001,4.4199999999999999,3.8100000000000001,1.46,0.040000000000000001,0.92100000000000004,1.5600000000000001,0.040000000000000001,4.5800000000000001,1.46,1.6499999999999999,0.24399999999999999,0.55500000000000005,0.56899999999999995,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.040000000000000001,0.33700000000000002,1.6599999999999999,3.71,0.19800000000000001,0.86699999999999999,3.48,0.040000000000000001,0.040000000000000001,4.1799999999999997,2.7999999999999998],"type":"histogram","xbins":{"start":0.036999999999999998},"marker":{"color":"#00bde3","line":{"color":"rgba(0,94,162,1)","width":1}},"bingroup":1,"name":"<b>Outliers Removed<\/b><br />Upper Threshold: 4.91<br />Lower Threshold: 0.037","visible":"legendonly","error_y":{"color":"rgba(255,127,14,1)","thickness":1},"error_x":{"color":"rgba(255,127,14,1)","thickness":1},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><span class="r-in"><span><span class="va">Histogram_output</span><span class="op">[[</span><span class="fl">25</span><span class="op">]</span><span class="op">]</span></span></span>
+<div id="htmlwidget-d7fb02644b25ec836d4c" style="width:700px;height:432.632880098888px;" class="plotly html-widget "></div>
+<script type="application/json" data-for="htmlwidget-d7fb02644b25ec836d4c">{"x":{"visdat":{"1b90470082e1":["function () ","plotlyVisDat"]},"cur_data":"1b90470082e1","attrs":{"1b90470082e1":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[0.54400000000000004,0.65300000000000002,0.70199999999999996,0.73599999999999999,0.92000000000000004,0.41999999999999998,1.05,0.63200000000000001,0.56999999999999995,0.90100000000000002,0.878,0.71099999999999997,1.0700000000000001,0.57799999999999996,1.05,0.76000000000000001,1.2,0.60999999999999999,0.66900000000000004,0.71799999999999997,1.3300000000000001,0.79500000000000004,1.2,6.7199999999999998,7.2800000000000002,8.4199999999999999,9.3300000000000001,0.57199999999999995,1.3100000000000001,1.3600000000000001,1.25,3.4500000000000002,0.58699999999999997,0.69099999999999995],"type":"histogram","xbins":{"start":0.41999999999999998},"marker":{"color":"#00bde3"},"stroke":["#005ea2"],"bingroup":1,"name":"<b>All Data<b>","inherit":true},"1b90470082e1.1":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[0.54400000000000004,0.65300000000000002,0.70199999999999996,0.73599999999999999,0.92000000000000004,0.41999999999999998,1.05,0.63200000000000001,0.56999999999999995,0.90100000000000002,0.878,0.71099999999999997,1.0700000000000001,0.57799999999999996,1.05,0.76000000000000001,1.2,0.60999999999999999,0.66900000000000004,0.71799999999999997,1.3300000000000001,0.79500000000000004,1.2,0.57199999999999995,1.3100000000000001,1.3600000000000001,1.25,0.58699999999999997,0.69099999999999995],"type":"histogram","xbins":{"start":0.41999999999999998},"marker":{"color":"#00bde3"},"stroke":["#005ea2"],"bingroup":1,"name":"<b>Outliers Removed<\/b><br />Upper Threshold: 1.36<br />Lower Threshold: 0.42","visible":"legendonly","inherit":true}},"layout":{"margin":{"b":20,"l":50,"t":55,"r":20,"pad":0},"xaxis":{"domain":[0,1],"automargin":true,"title":"MG/L","titlefont":{"size":16,"family":"Arial"},"tickfont":{"size":16,"family":"Arial"},"hoverformat":",.4r","linecolor":"black","rangemode":"tozero","showgrid":false,"tickcolor":"black"},"yaxis":{"domain":[0,1],"automargin":true,"title":"Frequency","titlefont":{"size":16,"family":"Arial"},"tickfont":{"size":16,"family":"Arial"},"hoverformat":",.4r","linecolor":"black","rangemode":"tozero","showgrid":false,"tickcolor":"black"},"hoverlabel":{"bgcolor":"white"},"title":"Histogram of <br />NITROGEN_DISSOLVED_AS N_MG/L_Canal Irrigation","plot_bgcolor":"#e5ecf6","barmode":"overlay","legend":{"title":{"text":"<b>Select 'Outliers Removed' <br />and Deselect 'All Data' <br />to View a Subset of the Data<b>"}},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":true},"data":[{"x":[0.54400000000000004,0.65300000000000002,0.70199999999999996,0.73599999999999999,0.92000000000000004,0.41999999999999998,1.05,0.63200000000000001,0.56999999999999995,0.90100000000000002,0.878,0.71099999999999997,1.0700000000000001,0.57799999999999996,1.05,0.76000000000000001,1.2,0.60999999999999999,0.66900000000000004,0.71799999999999997,1.3300000000000001,0.79500000000000004,1.2,6.7199999999999998,7.2800000000000002,8.4199999999999999,9.3300000000000001,0.57199999999999995,1.3100000000000001,1.3600000000000001,1.25,3.4500000000000002,0.58699999999999997,0.69099999999999995],"type":"histogram","xbins":{"start":0.41999999999999998},"marker":{"color":"#00bde3","line":{"color":"rgba(0,94,162,1)","width":1}},"bingroup":1,"name":"<b>All Data<b>","error_y":{"color":"rgba(31,119,180,1)","thickness":1},"error_x":{"color":"rgba(31,119,180,1)","thickness":1},"xaxis":"x","yaxis":"y","frame":null},{"x":[0.54400000000000004,0.65300000000000002,0.70199999999999996,0.73599999999999999,0.92000000000000004,0.41999999999999998,1.05,0.63200000000000001,0.56999999999999995,0.90100000000000002,0.878,0.71099999999999997,1.0700000000000001,0.57799999999999996,1.05,0.76000000000000001,1.2,0.60999999999999999,0.66900000000000004,0.71799999999999997,1.3300000000000001,0.79500000000000004,1.2,0.57199999999999995,1.3100000000000001,1.3600000000000001,1.25,0.58699999999999997,0.69099999999999995],"type":"histogram","xbins":{"start":0.41999999999999998},"marker":{"color":"#00bde3","line":{"color":"rgba(0,94,162,1)","width":1}},"bingroup":1,"name":"<b>Outliers Removed<\/b><br />Upper Threshold: 1.36<br />Lower Threshold: 0.42","visible":"legendonly","error_y":{"color":"rgba(255,127,14,1)","thickness":1},"error_x":{"color":"rgba(255,127,14,1)","thickness":1},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><span class="r-in"><span><span class="va">Histogram_output</span><span class="op">[[</span><span class="fl">35</span><span class="op">]</span><span class="op">]</span></span></span>
+<div id="htmlwidget-1bfd8b2c6e38da154a93" style="width:700px;height:432.632880098888px;" class="plotly html-widget "></div>
+<script type="application/json" data-for="htmlwidget-1bfd8b2c6e38da154a93">{"x":{"visdat":{"1b903530b6fd":["function () ","plotlyVisDat"]},"cur_data":"1b903530b6fd","attrs":{"1b903530b6fd":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[0.13800000000000001,0.13300000000000001,0.034000000000000002,0.031,0.29399999999999998,0.23699999999999999,0.189,0.053999999999999999,0.050999999999999997,0.079000000000000001,0.042999999999999997,0.11899999999999999,0.048000000000000001,0.13100000000000001,0.029999999999999999,0.21099999999999999,0.33000000000000002,0.23100000000000001,0.19900000000000001,0.248,0.155,0.155,0.152,0.108,0.12,0.14999999999999999,0.14999999999999999,0.315,0.067000000000000004,0.437,0.48099999999999998,0.375,0.624,0.57199999999999995,0.39600000000000002,0.029999999999999999,0.41499999999999998,0.35799999999999998,0.29599999999999999,0.043999999999999997,0.050000000000000003,0.188,0.039,0.186,0.039,0.34799999999999998,0.78400000000000003,0.029999999999999999,0.23599999999999999,0.050999999999999997,0.215,0.037999999999999999,0.16600000000000001,0.029999999999999999,0.19500000000000001,0.035000000000000003,0.157,0.029999999999999999,0.182,0.113,0.072999999999999995,0.11600000000000001,0.090999999999999998,0.26600000000000001,0.17799999999999999,0.128,0.40400000000000003,0.21299999999999999,0.33300000000000002,0.092999999999999999,0.029999999999999999,0.28199999999999997,0.26100000000000001],"type":"histogram","xbins":{"start":0.029999999999999999},"marker":{"color":"#00bde3"},"stroke":["#005ea2"],"bingroup":1,"name":"<b>All Data<b>","inherit":true},"1b903530b6fd.1":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[0.13800000000000001,0.13300000000000001,0.034000000000000002,0.031,0.29399999999999998,0.23699999999999999,0.189,0.053999999999999999,0.050999999999999997,0.079000000000000001,0.042999999999999997,0.11899999999999999,0.048000000000000001,0.13100000000000001,0.029999999999999999,0.21099999999999999,0.33000000000000002,0.23100000000000001,0.19900000000000001,0.248,0.155,0.155,0.152,0.108,0.12,0.14999999999999999,0.14999999999999999,0.315,0.067000000000000004,0.437,0.48099999999999998,0.375,0.39600000000000002,0.029999999999999999,0.41499999999999998,0.35799999999999998,0.29599999999999999,0.043999999999999997,0.050000000000000003,0.188,0.039,0.186,0.039,0.34799999999999998,0.029999999999999999,0.23599999999999999,0.050999999999999997,0.215,0.037999999999999999,0.16600000000000001,0.029999999999999999,0.19500000000000001,0.035000000000000003,0.157,0.029999999999999999,0.182,0.113,0.072999999999999995,0.11600000000000001,0.090999999999999998,0.26600000000000001,0.17799999999999999,0.128,0.40400000000000003,0.21299999999999999,0.33300000000000002,0.092999999999999999,0.029999999999999999,0.28199999999999997,0.26100000000000001],"type":"histogram","xbins":{"start":0.029999999999999999},"marker":{"color":"#00bde3"},"stroke":["#005ea2"],"bingroup":1,"name":"<b>Outliers Removed<\/b><br />Upper Threshold: 0.481<br />Lower Threshold: 0.03","visible":"legendonly","inherit":true}},"layout":{"margin":{"b":20,"l":50,"t":55,"r":20,"pad":0},"xaxis":{"domain":[0,1],"automargin":true,"title":"MG/L","titlefont":{"size":16,"family":"Arial"},"tickfont":{"size":16,"family":"Arial"},"hoverformat":",.4r","linecolor":"black","rangemode":"tozero","showgrid":false,"tickcolor":"black"},"yaxis":{"domain":[0,1],"automargin":true,"title":"Frequency","titlefont":{"size":16,"family":"Arial"},"tickfont":{"size":16,"family":"Arial"},"hoverformat":",.4r","linecolor":"black","rangemode":"tozero","showgrid":false,"tickcolor":"black"},"hoverlabel":{"bgcolor":"white"},"title":"Histogram of <br />NITROGEN_SUSPENDED_NA_MG/L_Stream","plot_bgcolor":"#e5ecf6","barmode":"overlay","legend":{"title":{"text":"<b>Select 'Outliers Removed' <br />and Deselect 'All Data' <br />to View a Subset of the Data<b>"}},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":true},"data":[{"x":[0.13800000000000001,0.13300000000000001,0.034000000000000002,0.031,0.29399999999999998,0.23699999999999999,0.189,0.053999999999999999,0.050999999999999997,0.079000000000000001,0.042999999999999997,0.11899999999999999,0.048000000000000001,0.13100000000000001,0.029999999999999999,0.21099999999999999,0.33000000000000002,0.23100000000000001,0.19900000000000001,0.248,0.155,0.155,0.152,0.108,0.12,0.14999999999999999,0.14999999999999999,0.315,0.067000000000000004,0.437,0.48099999999999998,0.375,0.624,0.57199999999999995,0.39600000000000002,0.029999999999999999,0.41499999999999998,0.35799999999999998,0.29599999999999999,0.043999999999999997,0.050000000000000003,0.188,0.039,0.186,0.039,0.34799999999999998,0.78400000000000003,0.029999999999999999,0.23599999999999999,0.050999999999999997,0.215,0.037999999999999999,0.16600000000000001,0.029999999999999999,0.19500000000000001,0.035000000000000003,0.157,0.029999999999999999,0.182,0.113,0.072999999999999995,0.11600000000000001,0.090999999999999998,0.26600000000000001,0.17799999999999999,0.128,0.40400000000000003,0.21299999999999999,0.33300000000000002,0.092999999999999999,0.029999999999999999,0.28199999999999997,0.26100000000000001],"type":"histogram","xbins":{"start":0.029999999999999999},"marker":{"color":"#00bde3","line":{"color":"rgba(0,94,162,1)","width":1}},"bingroup":1,"name":"<b>All Data<b>","error_y":{"color":"rgba(31,119,180,1)","thickness":1},"error_x":{"color":"rgba(31,119,180,1)","thickness":1},"xaxis":"x","yaxis":"y","frame":null},{"x":[0.13800000000000001,0.13300000000000001,0.034000000000000002,0.031,0.29399999999999998,0.23699999999999999,0.189,0.053999999999999999,0.050999999999999997,0.079000000000000001,0.042999999999999997,0.11899999999999999,0.048000000000000001,0.13100000000000001,0.029999999999999999,0.21099999999999999,0.33000000000000002,0.23100000000000001,0.19900000000000001,0.248,0.155,0.155,0.152,0.108,0.12,0.14999999999999999,0.14999999999999999,0.315,0.067000000000000004,0.437,0.48099999999999998,0.375,0.39600000000000002,0.029999999999999999,0.41499999999999998,0.35799999999999998,0.29599999999999999,0.043999999999999997,0.050000000000000003,0.188,0.039,0.186,0.039,0.34799999999999998,0.029999999999999999,0.23599999999999999,0.050999999999999997,0.215,0.037999999999999999,0.16600000000000001,0.029999999999999999,0.19500000000000001,0.035000000000000003,0.157,0.029999999999999999,0.182,0.113,0.072999999999999995,0.11600000000000001,0.090999999999999998,0.26600000000000001,0.17799999999999999,0.128,0.40400000000000003,0.21299999999999999,0.33300000000000002,0.092999999999999999,0.029999999999999999,0.28199999999999997,0.26100000000000001],"type":"histogram","xbins":{"start":0.029999999999999999},"marker":{"color":"#00bde3","line":{"color":"rgba(0,94,162,1)","width":1}},"bingroup":1,"name":"<b>Outliers Removed<\/b><br />Upper Threshold: 0.481<br />Lower Threshold: 0.03","visible":"legendonly","error_y":{"color":"rgba(255,127,14,1)","thickness":1},"error_x":{"color":"rgba(255,127,14,1)","thickness":1},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
