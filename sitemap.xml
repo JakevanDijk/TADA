@@ -136,10 +136,10 @@
     <loc>usepa.github.io/TADA/reference/TADA_FlagFraction.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/TADA_FlagMethod.html</loc>
+    <loc>usepa.github.io/TADA/reference/TADA_FlagMeasureQualifierCode.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/TADA_FlagResultMeasureQualifier.html</loc>
+    <loc>usepa.github.io/TADA/reference/TADA_FlagMethod.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_FlagResultUnit.html</loc>
@@ -160,13 +160,13 @@
     <loc>usepa.github.io/TADA/reference/TADA_GetDetLimitRef.html</loc>
   </url>
   <url>
+    <loc>usepa.github.io/TADA/reference/TADA_GetMeasureQualifierCodeRef.html</loc>
+  </url>
+  <url>
     <loc>usepa.github.io/TADA/reference/TADA_GetMeasureUnitRef.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_GetNutrientSummationRef.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/TADA_GetResultMeasureQualifierRef.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_GetSynonymRef.html</loc>
@@ -202,6 +202,9 @@
     <loc>usepa.github.io/TADA/reference/TADA_RunKeyFlagFunctions.html</loc>
   </url>
   <url>
+    <loc>usepa.github.io/TADA/reference/TADA_Scatterplot.html</loc>
+  </url>
+  <url>
     <loc>usepa.github.io/TADA/reference/TADA_SimpleCensoredMethods.html</loc>
   </url>
   <url>
@@ -212,6 +215,9 @@
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_SummarizeColumn.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_UpdateExampleData.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/index.html</loc>

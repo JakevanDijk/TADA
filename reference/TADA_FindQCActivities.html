@@ -66,7 +66,7 @@ or spiked samples as "QC_calibration", and other QC samples as "QC_other".</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">TADA_FindQCActivities</span><span class="op">(</span><span class="va">.data</span>, clean <span class="op">=</span> <span class="cn">FALSE</span>, errorsonly <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">TADA_FindQCActivities</span><span class="op">(</span><span class="va">.data</span>, clean <span class="op">=</span> <span class="cn">FALSE</span>, flaggedonly <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -88,9 +88,9 @@ will be removed. And when clean = "other", any rows of data flagged as some
 other type of Quality Control sample will be removed.</p></dd>
 
 
-<dt>errorsonly</dt>
-<dd><p>Boolean argument; the default is errorsonly = FALSE. When
-errorsonly = TRUE, the function will filter the dataframe to show only the
+<dt>flaggedonly</dt>
+<dd><p>Boolean argument; the default is flaggedonly = FALSE. When
+flaggedonly = TRUE, the function will filter the dataframe to show only the
 rows of data flagged as Quality Control samples.</p></dd>
 
 </dl></div>
@@ -106,9 +106,9 @@ data flagged as QC duplicates are removed from the dataframe. When clean =
 "blanks", data flagged as QC blanks are removed from the dataframe. When
 clean = "calibrations", data flagged as QC calibration checks or spikes are
 removed from the dataframe. When clean = "other", data flagged as other QC
-samples are removed from the dataframe. When errorsonly = TRUE, the dataframe
-is filtered to show only the flagged data. When errorsonly = FALSE, the full,
-cleaned dataframe is returned. The default is clean = "none" and errorsonly = FALSE.</p>
+samples are removed from the dataframe. When flaggedonly = TRUE, the dataframe
+is filtered to show only the flagged data. When flaggedonly = FALSE, the full,
+cleaned dataframe is returned. The default is clean = "none" and flaggedonly = FALSE.</p>
     </div>
 
     <div class="section level2">
@@ -120,7 +120,7 @@ cleaned dataframe is returned. The default is clean = "none" and errorsonly = FA
 <span class="r-in"><span><span class="va">QC_flagged</span> <span class="op">&lt;-</span> <span class="fu">TADA_FindQCActivities</span><span class="op">(</span><span class="va">Data_Nutrients_UT</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Flag QC samples and filter to flagged data only:</span></span></span>
-<span class="r-in"><span><span class="va">QC_flags_only</span> <span class="op">&lt;-</span> <span class="fu">TADA_FindQCActivities</span><span class="op">(</span><span class="va">Data_Nutrients_UT</span>, errorsonly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">QC_flags_only</span> <span class="op">&lt;-</span> <span class="fu">TADA_FindQCActivities</span><span class="op">(</span><span class="va">Data_Nutrients_UT</span>, flaggedonly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Remove all QC samples:</span></span></span>
 <span class="r-in"><span><span class="va">QC_clean</span> <span class="op">&lt;-</span> <span class="fu">TADA_FindQCActivities</span><span class="op">(</span><span class="va">Data_Nutrients_UT</span>, clean <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
