@@ -102,11 +102,11 @@ result in each group and flag all others as duplicates.</p></dd>
 <p>The same input TADA dataframe with additional columns: a
 TADA.SingleOrgDupGroupID column indicating whether a result is part of a
 group that shares the same date, time, location, characteristic, etc. and
-TADA.ResultSelectedSingleOrg, which defaults to TRUE (all results
+TADA.ResultSelectedSingleOrg, which defaults to 'Y' (all results
 selected), unless the user specifies the handling method as 'pick_one', in
 which case there exists one result (selected at random) in each duplicate group where
-TADA.ResultSelectedSingleOrg = TRUE and for all other results in the group
-TADA.ResultSelectedSingleOrg = FALSE.</p>
+TADA.ResultSelectedSingleOrg = 'Y' and for all other results in the group
+TADA.ResultSelectedSingleOrg = 'N'.</p>
     </div>
 
     <div class="section level2">
@@ -115,10 +115,10 @@ TADA.ResultSelectedSingleOrg = FALSE.</p>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">Data_6Tribes_5y</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="co"># If duplicates across organizations exist, pick the result belonging to "21PA_WQX" if available.</span></span></span>
 <span class="r-in"><span><span class="va">Data_6Tribes_5y_dups</span> <span class="op">&lt;-</span> <span class="fu">TADA_FindPotentialDuplicatesSingleOrg</span><span class="op">(</span><span class="va">Data_6Tribes_5y</span>, handling_method <span class="op">=</span> <span class="st">"pick_one"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "802 groups of potentially duplicated results found in dataset. These have been placed into duplicate groups in the TADA.SingleOrgDupGroupID column and the function randomly selected one result from each group to represent a single, unduplicated value. Selected values are indicated in the TADA.ResultSelectedSingleOrg as TRUE, while duplicates are flagged as FALSE for easy filtering."</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "802 groups of potentially duplicated results found in dataset. These have been placed into duplicate groups in the TADA.SingleOrgDupGroupID column and the function randomly selected one result from each group to represent a single, unduplicated value. Selected values are indicated in the TADA.ResultSelectedSingleOrg as 'Y', while duplicates are flagged as 'N' for easy filtering."</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">Data_6Tribes_5y_dups</span><span class="op">$</span><span class="va">TADA.ResultSelectedSingleOrg</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  FALSE   TRUE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      N      Y </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    803 138230 </span>
 <span class="r-in"><span></span></span>
 </code></pre></div>

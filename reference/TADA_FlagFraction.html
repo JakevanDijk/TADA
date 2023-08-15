@@ -107,14 +107,16 @@ the function does not execute and an error message is returned.</p>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Remove data with invalid characteristic-fraction combinations:</span></span></span>
 <span class="r-in"><span><span class="va">InvalidFraction_clean</span> <span class="op">&lt;-</span> <span class="fu">TADA_FlagFraction</span><span class="op">(</span><span class="va">Data_Nutrients_UT</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "All characteristic/fraction combinations are valid in your dataframe. Returning input dataframe with TADA.SampleFraction.Flag column for tracking."</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Flag, but do not remove, data with invalid characteristic-fraction combinations</span></span></span>
 <span class="r-in"><span><span class="co"># in new column titled "TADA.SampleFraction.Flag":</span></span></span>
 <span class="r-in"><span><span class="va">InvalidFraction_flags</span> <span class="op">&lt;-</span> <span class="fu">TADA_FlagFraction</span><span class="op">(</span><span class="va">Data_Nutrients_UT</span>, clean <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Rows with invalid sample fractions have been flagged but retained. Review these rows before proceeding and/or set clean = TRUE."</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "All characteristic/fraction combinations are valid in your dataframe. Returning input dataframe with TADA.SampleFraction.Flag column for tracking."</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Show only invalid characteristic-fraction combinations:</span></span></span>
 <span class="r-in"><span><span class="va">InvalidFraction_flaggedonly</span> <span class="op">&lt;-</span> <span class="fu">TADA_FlagFraction</span><span class="op">(</span><span class="va">Data_Nutrients_UT</span>, clean <span class="op">=</span> <span class="cn">FALSE</span>, flaggedonly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "This dataframe is empty because we did not find any invalid fraction/characteristic combinations in your dataframe"</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
