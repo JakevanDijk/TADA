@@ -73,23 +73,67 @@
 </h2>
 <p><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg"></a></p>
 <p><a href="https://github.com/USEPA/TADA/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/USEPA/TADA/actions/workflows/R-CMD-check.yaml/badge.svg"></a></p>
-<p>We encourage you to read this package’s <a href="https://usepa.github.io/TADA/articles/CONTRIBUTING.html">CONTRIBUTING</a>, <a href="https://usepa.github.io/TADA/LICENSE.html">LICENSE</a>, and <a href="https://usepa.github.io/TADA/index.html">README</a> files (you are here).</p>
 <p>Tools for Automated Data Analysis, or TADA, is a draft R package being developed to help States, Tribes, Tribal Nations, Pueblos, and other stakeholders more efficiently compile and evaluate <a href="https://www.waterqualitydata.us/" class="external-link">Water Quality Portal (WQP)</a> data collected from surface water monitoring sites. TADA is both a stand-alone R package, and a building block to support development of the <a href="https://github.com/USEPA/TADAShiny" class="external-link">TADA R Shiny application</a>.</p>
-<p>We encourage stakeholders to test the functionality and provide feedback. Moreover, open source software provides an avenue for water quality data originators and users to develop and share code, and we welcome your contributions! More information on how to contribute can be found in the <a href="https://usepa.github.io/TADA/articles/CONTRIBUTING.html">CONTRIBUTING</a> file. This file explains how users can contribute to the R package by submitting a pull request or issue to request a change or provide feedback. We hope to build a collaborative community dedicated to this effort where contributors can discover, share and build the package functionality over time.</p>
-<p><a href="https://www.epa.gov/waterdata/TADA" class="external-link">More about the TADA Project</a></p>
+<p>We encourage you to read this package’s <a href="https://usepa.github.io/TADA/LICENSE.html">LICENSE</a> and <a href="https://usepa.github.io/TADA/index.html">README</a> files (you are here). In addition, all components of this package are documented and guidance on how to use it is provided <a href="usepa.github.io/TADA/">here</a>:</p>
+<ul>
+<li>
+<p>How to use TADA:</p>
+<ul>
+<li><p><a href="https://usepa.github.io/TADA/reference/index.html">Function Reference</a></p></li>
+<li><p>Example Workflow 1: <a href="https://usepa.github.io/TADA/articles/TADAModule1.html">Water Quality Portal Data Discovery and Cleaning</a> (Beginner)</p></li>
+<li><p>Example Workflow 2: <a href="https://usepa.github.io/TADA/articles/TADATrainingShepherdstown.html">2023 Shepherdstown Training</a> (Advanced)</p></li>
+</ul>
+</li>
+<li>
+<p><a href="https://usepa.github.io/TADA/articles/CONTRIBUTING.html">How to Contribute</a></p>
+<ul>
+<li>We encourage stakeholders to test the functionality and provide feedback. Moreover, open source software provides an avenue for water quality data originators and users to develop and share code, and we welcome your contributions! We hope to build a collaborative community dedicated to this effort where TADA users and contributors can discover, share and build the functionality over time.</li>
+</ul>
+</li>
+<li><p>More information on how TADA leverages the <a href="https://usepa.github.io/TADA/articles/WQXValidationService.html">WQX QAQC Service</a></p></li>
+<li><p><a href="https://www.epa.gov/waterdata/TADA" class="external-link">More about the TADA Project</a></p></li>
+</ul>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install and load the most recent version of the TADA R Package from <a href="https://github.com/USEPA/TADA" class="external-link">GitHub</a> by running:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span> <span class="op">(</span><span class="va"><a href="https://remotes.r-lib.org" class="external-link">remotes</a></span><span class="op">)</span></span>
-<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"USEPA/TADA"</span>, ref <span class="op">=</span> <span class="st">"develop"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<p>You must first have R and R Studio installed to use the TADA R Package (see instructions below if needed). You can install and load the most recent version of the TADA R Package on <a href="https://github.com/USEPA/TADA" class="external-link">GitHub</a> by running:</p>
+<pre class="{r}"><code><span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="st">"remotes"</span><span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span><span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"USEPA/TADA"</span>, ref <span class="op">=</span> <span class="st">"develop"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre>
+<p>The TADA R Shiny application can be run <a href="https://owshiny-dev.app.cloud.gov/tada-dev/" class="external-link">on the web</a> (R and R Studio install not required), or within R Studio. Run the following code within R Studio to install and run the most recent version of the TADA R Shiny application on <a href="https://github.com/USEPA/TADAShiny" class="external-link">GitHub</a>:</p>
+<pre class="{r}"><code><span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="st">"remotes"</span><span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span><span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"USEPA/TADAShiny"</span>, ref <span class="op">=</span> <span class="st">"develop"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">TADAShiny</span><span class="fu">::</span><span class="fu">run_app</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="section level2">
 <h2 id="water-quality-portal">Water Quality Portal<a class="anchor" aria-label="anchor" href="#water-quality-portal"></a>
 </h2>
 <p>In 2012, the WQP was deployed by the U.S. Geological Survey (USGS), the U.S. Environmental Protection Agency (USEPA), and the National Water Quality Monitoring Council to combine and serve water-quality data from numerous sources in a standardized format. The WQP holds over 420 million water quality sample results from over 1000 federal, state, tribal and other partners, and is the nation’s largest source for single point of access for water-quality data. Participating organizations submit their data to the WQP using the EPA’s Water Quality Exchange (WQX), a framework designed to map their data holdings to a common data structure.</p>
+</div>
+<div class="section level2">
+<h2 id="install-r-and-r-studio">Install R and R Studio<a class="anchor" aria-label="anchor" href="#install-r-and-r-studio"></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>To download R: Go to <a href="https://cran.r-project.org/" class="external-link uri">https://cran.r-project.org/</a> and click the link that describes your computer operating system in the first box in the menu entitled “Download and Install R”.</li>
+<li>Clicking your operating system will take you to a new page, which looks slightly different for PC (first image) and Macs (second image):</li>
+</ol>
+<p><img src="images/Install1.png"></p>
+<p><img src="images/Install2.png"></p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Download the program by clicking the appropriate link for your system, and click through the installer windows on your computer, accepting all defaults.</p></li>
+<li><p>Next, go to the following link to download RStudio: <a href="https://posit.co/download/rstudio-desktop/" class="external-link uri">https://posit.co/download/rstudio-desktop/</a>, scroll down a little, and click download RStudio.</p></li>
+</ol>
+<p><img src="images/Install3-01.png"></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Again, download the installer, click through the prompts, and accept the defaults.</li>
+</ol>
 </div>
 <div class="section level2">
 <h2 id="open-source-code-policy">Open-Source Code Policy<a class="anchor" aria-label="anchor" href="#open-source-code-policy"></a>
