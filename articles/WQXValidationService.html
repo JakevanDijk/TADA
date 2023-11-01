@@ -74,7 +74,7 @@
       <img src="" class="logo" alt=""><h1>WQX QAQC Service User Guide</h1>
                         <h4 data-toc-skip class="author">TADA Team</h4>
             
-            <h4 data-toc-skip class="date">2023-10-26</h4>
+            <h4 data-toc-skip class="date">2023-11-01</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/USEPA/TADA/blob/HEAD/vignettes/WQXValidationService.Rmd" class="external-link"><code>vignettes/WQXValidationService.Rmd</code></a></small>
       <div class="d-none name"><code>WQXValidationService.Rmd</code></div>
@@ -128,8 +128,7 @@ Package for use with data retrieved from the WQP:</p>
 data if mg/L or °C was used for pH; flag if units were left blank, NA,
 None, etc. but are required for the characteristic)</p>
 <ul>
-<li>See TADA Function: <a href="https://usepa.github.io/TADA/reference/InvalidResultUnit.html">InvalidResultUnit()</a>
-</li>
+<li><a href="https://usepa.github.io/TADA/reference/TADA_FlagResultUnit.html">TADA_FlagResultUnit()</a></li>
 </ul>
 </li>
 <li>
@@ -137,32 +136,29 @@ None, etc. but are required for the characteristic)</p>
 methods for the characteristic. This is contingent on the activity type
 since some activity types don’t require methods.</p>
 <ul>
-<li>See TADA Function: <a href="https://usepa.github.io/TADA/reference/InvalidMethod.html">InvalidMethod()</a>
-</li>
+<li><a href="https://usepa.github.io/TADA/reference/TADA_FlagMethod.html">TADA_FlagMethod()</a></li>
 </ul>
 </li>
 <li>
 <p>Flag data with invalid characteristic and fraction
 cominations</p>
 <ul>
-<li>See TADA Function: <a href="https://usepa.github.io/TADA/reference/InvalidFraction.html">InvalidFraction()</a>
-</li>
+<li><a href="https://usepa.github.io/TADA/reference/TADA_FlagFraction.html">TADA_FlagFraction()</a></li>
 </ul>
 </li>
 <li>
 <p>Flag data with invalid characteristic and speciation
 combination</p>
 <ul>
-<li>See TADA Function: <a href="https://usepa.github.io/TADA/reference/InvalidSpeciation.html">InvalidSpeciation()</a>
-</li>
+<li><a href="https://usepa.github.io/TADA/reference/TADA_FlagSpeciation.html">TADA_FlagSpeciation()</a></li>
 </ul>
 </li>
 <li>
 <p>Flag results that do not have an approved QAPP and/or do not
 include a QAPP attachment</p>
 <ul>
-<li><p>See TADA Function: <a href="https://usepa.github.io/TADA/reference/QAPPDocAvailable.html">QAPPDocAvailable()</a></p></li>
-<li><p>See TADA Function: <a href="https://usepa.github.io/TADA/reference/QAPPapproved.html">QAPPapproved()</a></p></li>
+<li><p><a href="https://usepa.github.io/TADA/reference/TADA_FindQAPPDoc.html">TADA_FindQAPPDoc()</a></p></li>
+<li><p><a href="https://usepa.github.io/TADA/reference/TADA_FindQAPPApproval.html">TADA_FindQAPPApproval()</a></p></li>
 </ul>
 </li>
 <li>
@@ -175,16 +171,14 @@ dataset.</p>
 <p>Upper Threshold= 75th Percentile + 1.5 * (75th percentile - 25th
 percentile)</p>
 <ul>
-<li>See TADA Function: <a href="https://usepa.github.io/TADA/reference/AboveNationalWQXUpperThreshold.html">AboveNationalWQXUpperThreshold()</a>
-</li>
+<li><a href="https://usepa.github.io/TADA/reference/TADA_FlagAboveThreshold.html">TADA_FlagAboveThreshold()</a></li>
 </ul>
 </li>
 <li>
 <p>Lower Threshold= 25th Percentile - 1.5 * (75th percentile - 25th
 percentile)</p>
 <ul>
-<li>See TADA Function: <a href="https://usepa.github.io/TADA/reference/BelowNationalWQXLowerThreshold.html">BelowNationalWQXLowerThreshold()</a>
-</li>
+<li><a href="https://usepa.github.io/TADA/reference/TADA_FlagBelowThreshold.html">TADA_FlagBelowThreshold()</a></li>
 </ul>
 </li>
 </ul>
@@ -225,14 +219,15 @@ TADA leverages many of the WQX domain tables.</p>
 <ul>
 <li>
 <p>Both WQX and TADA leverage the table above to flag invalid and
-uncommon results. See relevant TADA functions:</p>
+uncommon results. This reference table is used in the following TADA
+functions:</p>
 <ul>
-<li><p><a href="https://usepa.github.io/TADA/reference/AboveNationalWQXUpperThreshold.html">AboveNationalWQXUpperThreshold()</a></p></li>
-<li><p><a href="https://usepa.github.io/TADA/reference/BelowNationalWQXLowerThreshold.html">BelowNationalWQXLowerThreshold()</a></p></li>
-<li><p><a href="https://usepa.github.io/TADA/reference/InvalidResultUnit.html">InvalidResultUnit()</a></p></li>
-<li><p><a href="https://usepa.github.io/TADA/reference/InvalidMethod.html">InvalidMethod()</a></p></li>
-<li><p><a href="https://usepa.github.io/TADA/reference/InvalidFraction.html">InvalidFraction()</a></p></li>
-<li><p><a href="https://usepa.github.io/TADA/reference/InvalidSpeciation.html">InvalidSpeciation()</a></p></li>
+<li><p><a href="https://usepa.github.io/TADA/reference/TADA_FlagAboveThreshold.html">TADA_FlagAboveThreshold()</a></p></li>
+<li><p><a href="https://usepa.github.io/TADA/reference/TADA_FlagBelowThreshold.html">TADA_FlagBelowThreshold()</a></p></li>
+<li><p><a href="https://usepa.github.io/TADA/reference/TADA_FlagResultUnit.html">TADA_FlagResultUnit()</a></p></li>
+<li><p><a href="https://usepa.github.io/TADA/reference/TADA_FlagMethod.html">TADA_FlagMethod()</a></p></li>
+<li><p><a href="https://usepa.github.io/TADA/reference/TADA_FlagFraction.html">TADA_FlagFraction()</a></p></li>
+<li><p><a href="https://usepa.github.io/TADA/reference/TADA_FlagSpeciation.html">TADA_FlagSpeciation()</a></p></li>
 </ul>
 </li>
 </ul>
@@ -244,11 +239,11 @@ uncommon results. See relevant TADA functions:</p>
 <li><p>Both WQX and TADA leverage the table above to convert all data
 for each unique characteristic to a consistent unit, so that results can
 then we assessed against the WQX upper and lower thresholds in the
-validataion table. Target units for each charactersitic are included in
+validation table. Target units for each charactersitic are included in
 the MeasureUnit domain table. TADA leverages this table to convert all
 data for each unique characteristic to a consistent target unit. See
 relevant TADA functions:</p></li>
-<li><p>See TADA Function: <a href="https://usepa.github.io/TADA/reference/ConvertResultUnits.html">TADA_ConvertResultUnits()</a></p></li>
+<li><p>See TADA Function: <a href="https://usepa.github.io/TADA/reference/TADA_ConvertResultUnits.html">TADA_ConvertResultUnits()</a></p></li>
 </ul>
 </li>
 </ul>

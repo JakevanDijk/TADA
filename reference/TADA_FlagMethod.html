@@ -100,30 +100,34 @@ is flaggedonly = FALSE.</p></dd>
 <p>This function adds the TADA.AnalyticalMethod.Flag to a TADA dataframe. This column
 flags invalid CharacteristicName, ResultAnalyticalMethod/MethodIdentifier,
 and ResultAnalyticalMethod/MethodIdentifierContext combinations in your dataframe
-as either "NonStandardized", "Invalid", or "Valid". When clean = FALSE and
+as either "Not Reviewed", "Invalid", or "Valid". When clean = FALSE and
 flaggedonly = TRUE, the dataframe is filtered to show only "Invalid"
 characteristic-analytical method combinations; the column TADA.AnalyticalMethod.Flag
 is still appended. When clean = TRUE and flaggedonly = FALSE, "Invalid" rows
 are removed from the dataframe and no column will be appended.</p>
     </div>
+    <div class="section level2">
+    <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
+    <p>The “Not Reviewed” value within "TADA.ResultAboveUpperThreshold.Flag" means
+that the EPA WQX team has not yet reviewed the combinations
+(see https://cdx.epa.gov/wqx/download/DomainValues/QAQCCharacteristicValidation.CSV).
+The WQX team plans to review and update these new combinations quarterly.</p>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Load example dataset</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">Data_Nutrients_UT</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">Data_NCTCShepherdstown_HUC12</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Remove invalid characteristic-analytical method combinations from dataframe:</span></span></span>
-<span class="r-in"><span><span class="va">InvalidMethod_clean</span> <span class="op">&lt;-</span> <span class="fu">TADA_FlagMethod</span><span class="op">(</span><span class="va">Data_Nutrients_UT</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "No invalid method/characteristic combinations in your dataframe. Returning the input dataframe with TADA.AnalyticalMethod.Flag column for tracking."</span>
+<span class="r-in"><span><span class="va">InvalidMethod_clean</span> <span class="op">&lt;-</span> <span class="fu">TADA_FlagMethod</span><span class="op">(</span><span class="va">Data_NCTCShepherdstown_HUC12</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Flag, but do not remove, invalid characteristic-analytical method combinations</span></span></span>
 <span class="r-in"><span><span class="co"># in new column titled "TADA.AnalyticalMethod.Flag":</span></span></span>
-<span class="r-in"><span><span class="va">InvalidMethod_flags</span> <span class="op">&lt;-</span> <span class="fu">TADA_FlagMethod</span><span class="op">(</span><span class="va">Data_Nutrients_UT</span>, clean <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "No invalid method/characteristic combinations in your dataframe. Returning the input dataframe with TADA.AnalyticalMethod.Flag column for tracking."</span>
+<span class="r-in"><span><span class="va">InvalidMethod_flags</span> <span class="op">&lt;-</span> <span class="fu">TADA_FlagMethod</span><span class="op">(</span><span class="va">Data_NCTCShepherdstown_HUC12</span>, clean <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Show only invalid characteristic-analytical method combinations:</span></span></span>
-<span class="r-in"><span><span class="va">InvalidMethod_flaggedonly</span> <span class="op">&lt;-</span> <span class="fu">TADA_FlagMethod</span><span class="op">(</span><span class="va">Data_Nutrients_UT</span>, clean <span class="op">=</span> <span class="cn">FALSE</span>, flaggedonly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "This dataframe is empty because we did not find any invalid method/characteristic combinations in your dataframe"</span>
+<span class="r-in"><span><span class="va">InvalidMethod_flaggedonly</span> <span class="op">&lt;-</span> <span class="fu">TADA_FlagMethod</span><span class="op">(</span><span class="va">Data_NCTCShepherdstown_HUC12</span>, clean <span class="op">=</span> <span class="cn">FALSE</span>, flaggedonly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
