@@ -102,10 +102,12 @@ blank, the function chooses the representative duplicate result at random.</p></
 <p>The same input TADA dataframe with additional columns: a
 TADA.MultipleOrgDuplicate column indicating if there is evidence that
 results are likely duplicated due to submission of the same dataset by two
-or more different organizations, a TADA.MultipleOrgDupGroupID column,
+or more different organizations, a TADA.MultipleOrgDupGroupID column
 containing a number unique to results that may represent duplicated
-measurement events, and one or more TADA.SiteGroup columns indicating
-monitoring locations within the distance buffer from each other.</p>
+measurement events, a TADA.ResultSelectedMultipleOrgs column indicating
+which rows are selected to keep (Y) and remove (N) based on the
+org hierarchy, and a TADA.NearbySiteGroups column indicating which
+monitoring locations are within the distance buffer from each other.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
@@ -134,17 +136,15 @@ that the sites within each group are within the specified distance from each oth
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "NOTE: This version of the TADA package is designed to work with quantitative (numeric) data with media name: 'WATER'. TADA_AutoClean does not currently remove (filter) data with non-water media types. If desired, the user must make this specification on their own outside of package functions. Example: dplyr::filter(.data, TADA.ActivityMediaName == 'WATER')"</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">OrganizationIdentifier</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "USGS-PA"      "DRBC"         "31ORWUNT_WQX" "21PA_WQX"     "31DELRBC_WQX"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [6] "WVDEP_WQX"   </span>
 <span class="r-in"><span><span class="co"># If duplicates across organizations exist, pick the result belonging to "21PA_WQX" if available.</span></span></span>
 <span class="r-in"><span><span class="va">dat1</span> <span class="op">&lt;-</span> <span class="fu">TADA_FindPotentialDuplicatesMultipleOrgs</span><span class="op">(</span><span class="va">dat</span>, dist_buffer <span class="op">=</span> <span class="fl">100</span>, org_hierarchy <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"21PA_WQX"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Joining with `by = join_by(ActivityStartDate, ActivityStartTime.Time,</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> TADA.CharacteristicName, ActivityTypeCode, OrganizationIdentifier,</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ResultIdentifier, TADA.ResultMeasureValue)`</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Joining with `by = join_by(OrganizationIdentifier)`</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1894 potentially duplicated results found in dataset. These have been placed into duplicate groups in the TADA.MultipleOrgDupGroupID column and the TADA.MultipleOrgDuplicate column is set to 'Y' (yes). If you provided an organization hierarchy, the result with the lowest ranked organization identifier was selected as the representative result in the TADA.ResultSelectedMultipleOrgs (this column is set to 'Y' for all results either selected or not considered duplicates)."</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">dat1</span><span class="op">$</span><span class="va">TADA.ResultSelectedMultipleOrgs</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     N     Y </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1001 70681 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1001 71035 </span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
