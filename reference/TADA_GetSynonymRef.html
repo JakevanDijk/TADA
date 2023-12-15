@@ -77,7 +77,7 @@ run TADA_FlagFraction, TADA_FlagSpeciation, TADA_FlagResultUnit, etc.).'><!-- ma
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Generate Unique Synonym Reference Table</h1>
-      <small class="dont-index">Source: <a href="https://github.com/USEPA/TADA/blob/HEAD/R/Transformations.R" class="external-link"><code>R/Transformations.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/USEPA/TADA/blob/HEAD/R/TADARefTables.R" class="external-link"><code>R/TADARefTables.R</code></a></small>
       <div class="d-none name"><code>TADA_GetSynonymRef.Rd</code></div>
     </div>
 
@@ -102,18 +102,13 @@ run TADA_FlagFraction, TADA_FlagSpeciation, TADA_FlagResultUnit, etc.).</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">TADA_GetSynonymRef</span><span class="op">(</span><span class="va">.data</span>, download <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">TADA_GetSynonymRef</span><span class="op">(</span><span class="va">.data</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>.data</dt>
 <dd><p>TADA dataframe. If a data frame is not provided, the function will return the default internal reference table.</p></dd>
-
-
-<dt>download</dt>
-<dd><p>Boolean argument; when download = TRUE, the output is
-downloaded to the current working directory.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -135,12 +130,6 @@ downloaded to the current working directory.</p></dd>
 <span class="r-in"><span><span class="va">Data_6Tribes_5yClean</span> <span class="op">&lt;-</span> <span class="fu"><a href="TADA_FlagSpeciation.html">TADA_FlagSpeciation</a></span><span class="op">(</span><span class="va">Data_6Tribes_5yClean</span>, clean <span class="op">=</span> <span class="st">"invalid_only"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">Data_6Tribes_5yClean</span> <span class="op">&lt;-</span> <span class="fu"><a href="TADA_FlagMethod.html">TADA_FlagMethod</a></span><span class="op">(</span><span class="va">Data_6Tribes_5yClean</span>, clean <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">CreateRefTable</span> <span class="op">&lt;-</span> <span class="fu">TADA_GetSynonymRef</span><span class="op">(</span><span class="va">Data_6Tribes_5yClean</span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Create and download (to your working directory) a synonym reference</span></span></span>
-<span class="r-in"><span><span class="co"># table for dataframe:</span></span></span>
-<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
-<span class="r-in"><span><span class="va">DownloadRefTable</span> <span class="op">&lt;-</span> <span class="fu">TADA_GetSynonymRef</span><span class="op">(</span><span class="va">Data_6Tribes_5yClean</span>, download <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Get internal synonym reference table</span></span></span>
 <span class="r-in"><span><span class="va">reference</span> <span class="op">&lt;-</span> <span class="fu">TADA_GetSynonymRef</span><span class="op">(</span><span class="op">)</span></span></span>
