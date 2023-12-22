@@ -135,7 +135,7 @@ that the sites within each group are within the specified distance from each oth
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "NOTE: This version of the TADA package is designed to work with quantitative (numeric) data with media name: 'WATER'. TADA_AutoClean does not currently remove (filter) data with non-water media types. If desired, the user must make this specification on their own outside of package functions. Example: dplyr::filter(.data, TADA.ActivityMediaName == 'WATER')"</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">OrganizationIdentifier</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "USGS-PA"      "DRBC"         "31ORWUNT_WQX" "21PA_WQX"     "31DELRBC_WQX"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [6] "WVDEP_WQX"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [6] "WVDEP_WQX"    "EPA_GLNPO"   </span>
 <span class="r-in"><span><span class="co"># If duplicates across organizations exist, pick the result belonging to "21PA_WQX" if available.</span></span></span>
 <span class="r-in"><span><span class="va">dat1</span> <span class="op">&lt;-</span> <span class="fu">TADA_FindPotentialDuplicatesMultipleOrgs</span><span class="op">(</span><span class="va">dat</span>, dist_buffer <span class="op">=</span> <span class="fl">100</span>, org_hierarchy <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"21PA_WQX"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Joining with `by = join_by(OrganizationIdentifier)`</span>
@@ -143,7 +143,7 @@ that the sites within each group are within the specified distance from each oth
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">dat1</span><span class="op">$</span><span class="va">TADA.ResultSelectedMultipleOrgs</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     N     Y </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   615 72072 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   615 72156 </span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
