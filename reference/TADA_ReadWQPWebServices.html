@@ -93,12 +93,11 @@ data directly into R.</p>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>We recommend retrieving data for all the following profiles
-(you can run this function four separate times to bring in all four profiles):</p><ol><li><p>Sample Results (physical/chemical metadata)</p></li>
-<li><p>Sample Results (narrow)</p></li>
+(you can run this function three separate times to bring in all three profiles):</p><ol><li><p>Sample Results (physical/chemical metadata)</p></li>
 <li><p>Project Data</p></li>
 <li><p>Site Data Only</p></li>
-</ol><p>After you retrieve all four profiles, you can use TADA::TADA_JoinWQPProfiles to
-joining the four dataframes into a single dataframe.</p>
+</ol><p>After you retrieve all three profiles, you can use TADA::TADA_JoinWQPProfiles to
+join the three dataframes into a single dataframe.</p>
 <p>Note: It may be useful to save the Query URL from the WQP as well as a
 comment within your code. This URL let's you return to the WQP query page
 with all your selected data filters. For example, this is the query used
@@ -122,7 +121,6 @@ stick with YYYY-MM-DD.</p>
 <span class="r-in"><span><span class="va">physchemresults1</span> <span class="op">&lt;-</span> <span class="fu">TADA_ReadWQPWebServices</span><span class="op">(</span><span class="st">"https://www.waterqualitydata.us/data/Result/search?statecode=US%3A09&amp;sampleMedia=water&amp;sampleMedia=Water&amp;startDateLo=01-01-2021&amp;mimeType=csv&amp;zip=yes&amp;dataProfile=biological&amp;providers=NWIS&amp;providers=STEWARDS&amp;providers=STORET"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">sites1</span> <span class="op">&lt;-</span> <span class="fu">TADA_ReadWQPWebServices</span><span class="op">(</span><span class="st">"https://www.waterqualitydata.us/data/Station/search?statecode=US%3A09&amp;sampleMedia=water&amp;sampleMedia=Water&amp;startDateLo=01-01-2021&amp;mimeType=csv&amp;zip=yes&amp;providers=NWIS&amp;providers=STEWARDS&amp;providers=STORET"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">projects1</span> <span class="op">&lt;-</span> <span class="fu">TADA_ReadWQPWebServices</span><span class="op">(</span><span class="st">"https://www.waterqualitydata.us/data/Project/search?statecode=US%3A09&amp;sampleMedia=water&amp;sampleMedia=Water&amp;startDateLo=01-01-2021&amp;mimeType=csv&amp;zip=yes&amp;providers=NWIS&amp;providers=STEWARDS&amp;providers=STORET"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">narrow1</span> <span class="op">&lt;-</span> <span class="fu">TADA_ReadWQPWebServices</span><span class="op">(</span><span class="st">"https://www.waterqualitydata.us/data/Result/search?statecode=US%3A09&amp;sampleMedia=water&amp;sampleMedia=Water&amp;startDateLo=01-01-2021&amp;mimeType=csv&amp;zip=yes&amp;dataProfile=narrowResult&amp;providers=NWIS&amp;providers=STEWARDS&amp;providers=STORET"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>

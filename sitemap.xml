@@ -37,19 +37,7 @@
     <loc>usepa.github.io/TADA/reference/Data_NCTCShepherdstown_HUC12.html</loc>
   </url>
   <url>
-    <loc>usepa.github.io/TADA/reference/Data_Narrow_5d.html</loc>
-  </url>
-  <url>
     <loc>usepa.github.io/TADA/reference/Data_Nutrients_UT.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/Data_PhysChem_5d.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/Data_Site_5d.html</loc>
-  </url>
-  <url>
-    <loc>usepa.github.io/TADA/reference/Data_WaterT_US.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_AggregateMeasurements.html</loc>
@@ -209,6 +197,9 @@
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_ReadWQPWebServices.html</loc>
+  </url>
+  <url>
+    <loc>usepa.github.io/TADA/reference/TADA_RetainRequired.html</loc>
   </url>
   <url>
     <loc>usepa.github.io/TADA/reference/TADA_RunKeyFlagFunctions.html</loc>
