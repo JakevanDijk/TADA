@@ -66,7 +66,7 @@ to the TADA.MethodSpeciationName field.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">TADA_ConvertResultUnits</span><span class="op">(</span><span class="va">.data</span>, transform <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">TADA_ConvertResultUnits</span><span class="op">(</span><span class="va">.data</span>, transform <span class="op">=</span> <span class="cn">TRUE</span>, detlimit <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -79,36 +79,49 @@ to the TADA.MethodSpeciationName field.</p>
 <dd><p>Boolean argument with two possible values, “TRUE” and “FALSE”.
 Default is transform = TRUE.</p></dd>
 
+
+<dt>detlimit</dt>
+<dd><p>Boolean argument with two possible values, "TRUE" and "FALSE".
+Default is detlimit = TRUE.</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>When transform=TRUE, result values and units are converted to WQX
+<p>When transform = TRUE, result values and units are converted to WQX
 target units. This function changes the values within the
 "TADA.ResultMeasure.MeasureUnitCode" to the WQX target units and converts
-respective values within the "TADA.ResultMeasureValue" field.</p>
+respective values within the "TADA.ResultMeasureValue" field.
+When detlimit = TRUE, detection limit values and units are converted to WQX
+target units. This function changes the
+"TADA.DetectionQuantitationLimitMeasure.MeasureUnitCode" to the WQX target
+units and converts respective values within the
+"TADA.DetectionQuantitationLimitMeasure.MeasureValue" field.</p>
 
 
 <p>When transform = FALSE, result values and units are NOT converted to WQX target units,
 but columns are appended to indicate what the target units and conversion factors are,
-and if the data can be converted. In addition to "TADA.WQXResultUnitConversion"
-and "TADA.WQXDetectionLimitUnitConversion",  transform=FALSE will add the
-following two fields to the input dataframe: "TADA.WQXUnitConversionFactor" and "TADA.WQXTargetUnit".</p>
+and if the data can be converted. This function adds the following four fields ONLY
+when transform = FALSE: "TADA.WQXUnitConversionFactor", "TADA.WQXTargetUnit",
+"TADA.SpeciationUnitConversion", and "TADA.WQXResultUnitConversion.</p>
+
+
+<p>"TADA.WQXResultUnitConversion" indicates if data can be converted."NoResultValue" means
+data cannot be converted because there is no ResultMeasureValue, and "NoTargetUnit"
+means data cannot be converted because the original unit is not associated with
+a target unit in WQX. "Convert" means the data can be transformed.</p>
+
+
+<p>When detlimit = FALSE, values and units for detection limit are not converted to WQX
+target units and no additional fields related to detection limit values or units
+are added to the input dataframe.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>This function will ALWAYS add "TADA.WQXResultUnitConversion" to the input dataframe.</p>
-<p>This field indicates if data can be converted."NoResultValue" means data
-cannot be converted because there is no ResultMeasureValue, and "NoTargetUnit"
-means data cannot be converted because the original unit is not associated with a target unit in WQX.
-"Convert" means the data can be transformed, and "Converted" means that this function
-has been run with the input transform = TRUE, and the values were already converted.</p>
-<p>It also uses the"TADA.ResultMeasureValue" and
+    <p>It also uses the"TADA.ResultMeasureValue" and
 "TADA.ResultMeasure.MeasureUnitCode" fields from an autocleaned input
 dataframe to perform conversions as necessary when transform = TRUE.</p>
-<p>This function adds the following three fields ONLY when transform=FALSE:
-Adds: "TADA.WQXUnitConversionFactor", "TADA.WQXTargetUnit", and "USGS.SpeciationConversion".</p>
     </div>
 
     <div class="section level2">
@@ -118,10 +131,13 @@ Adds: "TADA.WQXUnitConversionFactor", "TADA.WQXTargetUnit", and "USGS.Speciation
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">ResultUnitsConverted</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">Data_Nutrients_UT</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Do not convert result values and units, but add two new columns titled</span></span></span>
-<span class="r-in"><span><span class="co"># "TADA.WQXUnitConversionFactor" and "TADA.WQXTargetUnit":</span></span></span>
-<span class="r-in"><span><span class="va">ResultUnitsNotConverted</span> <span class="op">&lt;-</span> <span class="fu">TADA_ConvertResultUnits</span><span class="op">(</span><span class="va">Data_Nutrients_UT</span>, transform <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># Do not convert result values and units, but add three new columns titled</span></span></span>
+<span class="r-in"><span><span class="co"># "TADA.WQXUnitConversionFactor", "TADA.WQXTargetUnit", and "TADA.SpeciationUnitConversion":</span></span></span>
+<span class="r-in"><span><span class="va">ResultUnitsNotConverted</span> <span class="op">&lt;-</span> <span class="fu">TADA_ConvertResultUnits</span><span class="op">(</span><span class="va">Data_Nutrients_UT</span>, transform <span class="op">=</span> <span class="cn">FALSE</span>, detlimit <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Conversions required for range checks and TADATargetUnit conversions -- Unit conversions, data summaries, and data calculations may be affected."</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">#' # Convert values and units for results and detection limits:</span></span></span>
+<span class="r-in"><span><span class="va">ResultUnitsNotConverted</span> <span class="op">&lt;-</span> <span class="fu">TADA_ConvertResultUnits</span><span class="op">(</span><span class="va">Data_Nutrients_UT</span>, transform <span class="op">=</span> <span class="cn">TRUE</span>, detlimit <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
